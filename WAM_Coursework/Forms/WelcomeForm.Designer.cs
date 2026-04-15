@@ -1,6 +1,6 @@
 ﻿namespace WAM_Coursework
 {
-    partial class Form1
+    partial class WelcomeForm
     {
         /// <summary>
         /// Required designer variable.

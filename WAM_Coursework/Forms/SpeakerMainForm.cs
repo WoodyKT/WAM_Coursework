@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WAM_Coursework
+namespace WAM_Coursework.Forms
 {
-    public partial class Form1 : Form
+    public partial class SpeakerMainForm : Form
     {
-        public Form1()
+        public SpeakerMainForm()
         {
             InitializeComponent();
         }

@@ -46,11 +46,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Conferences\Conference.cs" />
+    <Compile Include="Conferences\Review.cs" />
+    <Compile Include="FileHandlers\CSVReader.cs" />
+    <Compile Include="Forms\ManagerMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\ManagerMainForm.Designer.cs">
+      <DependentUpon>ManagerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubmitReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubmitReviewForm.Designer.cs">
+      <DependentUpon>SubmitReviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReviewerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReviewerMainForm.Designer.cs">
+      <DependentUpon>ReviewerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubmitApplicationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubmitApplicationForm.Designer.cs">
+      <DependentUpon>SubmitApplicationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SpeakerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SpeakerMainForm.Designer.cs">
+      <DependentUpon>SpeakerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\LoginHelper.cs" />
+    <Compile Include="Users\Manager.cs" />
+    <Compile Include="Users\Reviewer.cs" />
+    <Compile Include="Users\Speaker.cs" />
+    <Compile Include="Users\User.cs" />
+    <Compile Include="Users\UserFactory.cs" />
+    <Compile Include="Forms\WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,5 +121,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
