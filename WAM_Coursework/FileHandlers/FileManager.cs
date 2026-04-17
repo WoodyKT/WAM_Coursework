@@ -33,11 +33,6 @@ namespace WAM_Coursework.FileHandlers
             return path;
         }
 
-        static FileManager()
-        {
-      
-        }
-
         static string GetFromFile(string valueToSearch, StorageFile file)
         {
             StreamReader reader = new StreamReader(Dirs[file]);
