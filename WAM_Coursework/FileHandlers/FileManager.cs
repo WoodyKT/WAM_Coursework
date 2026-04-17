@@ -16,15 +16,15 @@ namespace WAM_Coursework.FileHandlers
             conferences
         };
 
-        private static readonly string basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),  "FairView", "ConferenceSystem");
-       
+        private static readonly string basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "FairView", "ConferenceSystem");
+
 
         public static readonly IReadOnlyDictionary<StorageFile, string> Dirs =
          new Dictionary<StorageFile, string>
-          {
-              [StorageFile.users] = GetDir("Users"),
-              [StorageFile.conferences] = GetDir("Conferences")
-          };
+         {
+             [StorageFile.users] = GetDir("Users"),
+             [StorageFile.conferences] = GetDir("Conferences")
+         };
 
         private static string GetDir(string file)
         {
@@ -33,7 +33,7 @@ namespace WAM_Coursework.FileHandlers
             return path;
         }
 
-        static string GetFromFile(string valueToSearch, StorageFile file)
+        public static string GetFromFile(string valueToSearch, StorageFile file)
         {
             StreamReader reader = new StreamReader(Dirs[file]);
             CsvReader csvReader = new CsvReader(reader, CultureInfo.InvariantCulture);
@@ -42,13 +42,11 @@ namespace WAM_Coursework.FileHandlers
             return result;
         }
 
-        static void WriteToFile(string valueToSave, StorageFile file)
+        public static void WriteToFile(string valueToSave, StorageFile file)
         {
             StreamWriter writer = new StreamWriter(Dirs[file]);
             CsvWriter csvwriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
             csvwriter.WriteField(valueToSave, true);
         }
-
- 
     }
 }
