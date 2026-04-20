@@ -16,5 +16,10 @@
             }
             return null;
         }
+        
+        public static User GetUser(string email)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

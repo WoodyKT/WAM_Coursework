@@ -75,7 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conferences\Conference.cs" />
+    <Compile Include="Conferences\ConferenceRecord.cs" />
     <Compile Include="Conferences\Review.cs" />
+    <Compile Include="Conferences\ReviewRecord.cs" />
     <Compile Include="FileHandlers\FileManager.cs" />
     <Compile Include="Forms\CreateAccountForm.cs">
       <SubType>Form</SubType>

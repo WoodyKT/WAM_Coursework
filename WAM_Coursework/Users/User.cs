@@ -27,6 +27,7 @@ namespace WAM_Coursework.Users
 
         public void SaveAccount()
         {
+            //add check for if user exists by email
             var existing = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users);
             existing.Add(record);
             FileManager.WriteRecords(existing, FileManager.StorageFile.users);
