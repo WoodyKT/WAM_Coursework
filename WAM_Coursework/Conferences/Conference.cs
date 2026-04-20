@@ -2,6 +2,7 @@
 {
     internal class Conference
     {
+        private int id;
         private bool passedReview = false;
     }
 }

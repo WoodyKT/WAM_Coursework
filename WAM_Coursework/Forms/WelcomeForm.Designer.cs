@@ -21,7 +21,7 @@
         private System.Windows.Forms.PictureBox pbManager;
         private System.Windows.Forms.Label lblManagerTitle;
         private System.Windows.Forms.Label lblManagerDesc;
-        private System.Windows.Forms.LinkLabel linkSignUp;
+        private System.Windows.Forms.LinkLabel SignUpLink;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -59,7 +59,7 @@
             this.pbManager = new System.Windows.Forms.PictureBox();
             this.lblManagerTitle = new System.Windows.Forms.Label();
             this.lblManagerDesc = new System.Windows.Forms.Label();
-            this.linkSignUp = new System.Windows.Forms.LinkLabel();
+            this.SignUpLink = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel.SuspendLayout();
             this.panelSpeaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpeaker)).BeginInit();
@@ -125,7 +125,7 @@
             this.panelSpeaker.Name = "panelSpeaker";
             this.panelSpeaker.Size = new System.Drawing.Size(614, 94);
             this.panelSpeaker.TabIndex = 0;
-            this.panelSpeaker.Click += new System.EventHandler(this.PanelSpeaker_Click);
+            this.panelSpeaker.Click += new System.EventHandler(this.ReviewerClick);
             // 
             // pbSpeaker
             // 
@@ -135,7 +135,7 @@
             this.pbSpeaker.Size = new System.Drawing.Size(56, 56);
             this.pbSpeaker.TabIndex = 0;
             this.pbSpeaker.TabStop = false;
-            this.pbSpeaker.Click += new System.EventHandler(this.PanelSpeaker_Click);
+            this.pbSpeaker.Click += new System.EventHandler(this.ReviewerClick);
             // 
             // lblSpeakerTitle
             // 
@@ -147,7 +147,7 @@
             this.lblSpeakerTitle.Size = new System.Drawing.Size(84, 25);
             this.lblSpeakerTitle.TabIndex = 1;
             this.lblSpeakerTitle.Text = "Speaker";
-            this.lblSpeakerTitle.Click += new System.EventHandler(this.PanelSpeaker_Click);
+            this.lblSpeakerTitle.Click += new System.EventHandler(this.ReviewerClick);
             // 
             // lblSpeakerDesc
             // 
@@ -159,7 +159,7 @@
             this.lblSpeakerDesc.Size = new System.Drawing.Size(189, 19);
             this.lblSpeakerDesc.TabIndex = 2;
             this.lblSpeakerDesc.Text = "Submit and track applications";
-            this.lblSpeakerDesc.Click += new System.EventHandler(this.PanelSpeaker_Click);
+            this.lblSpeakerDesc.Click += new System.EventHandler(this.ReviewerClick);
             // 
             // panelReviewer
             // 
@@ -251,17 +251,18 @@
             this.lblManagerDesc.TabIndex = 2;
             this.lblManagerDesc.Text = "Administration";
             // 
-            // linkSignUp
+            // SignUpLink
             // 
-            this.linkSignUp.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.linkSignUp.AutoSize = true;
-            this.linkSignUp.LinkColor = System.Drawing.Color.LightSkyBlue;
-            this.linkSignUp.Location = new System.Drawing.Point(331, 588);
-            this.linkSignUp.Name = "linkSignUp";
-            this.linkSignUp.Size = new System.Drawing.Size(161, 13);
-            this.linkSignUp.TabIndex = 3;
-            this.linkSignUp.TabStop = true;
-            this.linkSignUp.Text = "Don\'t have an account? Sign up";
+            this.SignUpLink.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.SignUpLink.AutoSize = true;
+            this.SignUpLink.LinkColor = System.Drawing.Color.LightSkyBlue;
+            this.SignUpLink.Location = new System.Drawing.Point(331, 588);
+            this.SignUpLink.Name = "SignUpLink";
+            this.SignUpLink.Size = new System.Drawing.Size(161, 13);
+            this.SignUpLink.TabIndex = 3;
+            this.SignUpLink.TabStop = true;
+            this.SignUpLink.Text = "Don\'t have an account? Sign up";
+            this.SignUpLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SignUpLink_LinkClicked);
             // 
             // WelcomeForm
             // 
@@ -272,7 +273,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblSubtitle);
             this.Controls.Add(this.tableLayoutPanel);
-            this.Controls.Add(this.linkSignUp);
+            this.Controls.Add(this.SignUpLink);
             this.Name = "WelcomeForm";
             this.Text = "F@airView";
             this.tableLayoutPanel.ResumeLayout(false);

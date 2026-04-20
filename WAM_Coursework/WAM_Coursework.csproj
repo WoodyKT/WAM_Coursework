@@ -77,11 +77,11 @@
     <Compile Include="Conferences\Conference.cs" />
     <Compile Include="Conferences\Review.cs" />
     <Compile Include="FileHandlers\FileManager.cs" />
-    <Compile Include="Forms\CreateAccount.cs">
+    <Compile Include="Forms\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CreateAccount.Designer.cs">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
+    <Compile Include="Forms\CreateAccountForm.Designer.cs">
+      <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ManagerMainForm.cs">
       <SubType>Form</SubType>
@@ -124,6 +124,7 @@
     <Compile Include="Users\Reviewer.cs" />
     <Compile Include="Users\Speaker.cs" />
     <Compile Include="Users\User.cs" />
+    <Compile Include="Users\UserConstants.cs" />
     <Compile Include="Users\UserFactory.cs" />
     <Compile Include="Forms\WelcomeForm.cs">
       <SubType>Form</SubType>

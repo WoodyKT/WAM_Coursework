@@ -21,12 +21,5 @@ namespace WAM_Coursework.Users
             }
             return false;
         }
-
-        public void CreateAccount(string email, string firstName, string lastName, string password)
-        {
-            string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
-            string userInfo = $"{email},{firstName},{lastName},{passwordHash}";
-            FileManager.WriteToFile(userInfo, FileManager.StorageFile.users);
-        }
     }
 }

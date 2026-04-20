@@ -11,11 +11,17 @@ namespace WAM_Coursework
             InitializeComponent();
         }
 
-        private void PanelSpeaker_Click(object sender, EventArgs e)
+        private void ReviewerClick(object sender, EventArgs e)
         {
             var f = new SpeakerMainForm();
             f.Show();
             this.Hide();
+        }
+
+        private void SignUpLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreateAccountForm createAccountForm = new CreateAccountForm();
+            createAccountForm.Show();
         }
     }
 }
