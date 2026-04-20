@@ -1,8 +1,13 @@
 ﻿namespace WAM_Coursework.Conferences
 {
-    internal class Conference
+
+    public class Conference
     {
-        private int id;
-        private bool passedReview = false;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Datetime { get; set; }
+        public string Reviewers { get; set; }
+        public string Status { get; set; }
     }
 }

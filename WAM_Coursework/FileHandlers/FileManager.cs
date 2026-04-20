@@ -1,16 +1,14 @@
 ﻿using CsvHelper;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 
 namespace WAM_Coursework.FileHandlers
 {
     public sealed class FileManager
     {
-
-        private const string usersHeader = "email,firstName,lastName,passwordHash,role,relevantConferenceIds";
-        private const string conferencesHeader = "id,name,description,datetime,reviewers,status";
-
         FileManager()
         {
             CreateFileIfNotExists();
@@ -22,66 +20,56 @@ namespace WAM_Coursework.FileHandlers
             conferences
         };
 
-        private static readonly string basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "FairView");
+        private static readonly string basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "FairView");
 
         public static readonly FileManager Instance = new FileManager();
 
         private static string GetDir(StorageFile file)
         {
-            string fileName=string.Empty;
+            string fileName = string.Empty;
             switch (file)
             {
                 case StorageFile.users:
                     fileName = "users.csv";
                     break;
                 case StorageFile.conferences:
-                    fileName= "conferences.csv";
+                    fileName = "conferences.csv";
                     break;
                 default:
                     break;
             }
             var path = Path.Combine(basePath, fileName);
-            Directory.CreateDirectory(path);
+            Directory.CreateDirectory(basePath);
             return path;
         }
 
         #region Read/Write
-        public static string GetFromFile(string valueToSearch, StorageFile file)
+        public static void WriteRecords<T>(IEnumerable<T> records, StorageFile file)
         {
-            StreamReader reader = new StreamReader(GetDir(file));
-            CsvReader csvReader = new CsvReader(reader, CultureInfo.InvariantCulture);
-            string result = csvReader.GetRecord(valueToSearch);
-
-            return result;
+            using (var writer = new StreamWriter(GetDir(file), append: false))
+            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csv.WriteRecords(records);
+            }
         }
 
-        public static void WriteToFile(string valueToSave, StorageFile file)
+        public static List<T> ReadRecords<T>(StorageFile file)
         {
-            StreamWriter writer = new StreamWriter(GetDir(file));
-            CsvWriter csvwriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
-            csvwriter.WriteField(valueToSave, true);
+            using (var reader = new StreamReader(GetDir(file)))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                return csv.GetRecords<T>().ToList();
+            }
         }
-
         #endregion
 
         private void CreateFileIfNotExists()
         {
             if (!File.Exists(GetDir(StorageFile.users)))
-            {
-                using (var stream = File.Create(GetDir(StorageFile.users)))
-                {
-                    StreamWriter writer = new StreamWriter(stream);
-                    writer.WriteLine(usersHeader);
-                }
-            }
+                File.Create(GetDir(StorageFile.users));
+
             if (!File.Exists(GetDir(StorageFile.conferences)))
-            {
-                using (var stream = File.Create(GetDir(StorageFile.conferences)))
-                {
-                    StreamWriter writer = new StreamWriter(stream);
-                    writer.WriteLine(conferencesHeader);
-                }
-            }
+                File.Create(GetDir(StorageFile.conferences));
         }
     }
 }

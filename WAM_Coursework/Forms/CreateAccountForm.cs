@@ -46,13 +46,13 @@ namespace WAM_Coursework.Forms
                 return;
             }
 
-            UserFactory.CreateAccount(EmailTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text, PasswordTextBox.Text, selectedRole);
+            UserFactory.CreateUser(EmailTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text, PasswordTextBox.Text, selectedRole);
             MessageBox.Show($"Account created for {FirstNameTextBox.Text} {LastNameTextBox.Text} as {selectedRole}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
         private void LinkSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {     
+        {
             this.Dispose();
         }
     }

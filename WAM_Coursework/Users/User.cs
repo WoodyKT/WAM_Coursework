@@ -1,25 +1,35 @@
-﻿using WAM_Coursework.FileHandlers;
+﻿using System.Linq;
+using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Users
 {
-    abstract class User
+    public abstract class User
     {
-        public string _email { get; private set; }
-        public string _firstName { get; private set; }
-        public string _lastName { get; private set; }
+        UserRecord record = new UserRecord();
 
-
-        public bool AttemptLogin(string email, string password)
+        public User(string email, string firstName, string lastName, string passwordHash, string role)
         {
-            string userInfo = FileManager.GetFromFile(email, FileManager.StorageFile.users);
-            string savedPassword = userInfo.Split(',')[3];
-            string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
+            record.Email = email;
+            record.FirstName = firstName;
+            record.LastName = lastName;
+            record.PasswordHash = passwordHash;
+            record.Role = role;
+            SaveAccount();
+        }
 
-            if (BCrypt.Net.BCrypt.Verify(password, savedPassword))
-            {
-                return true;
-            }
-            return false;
+        public static bool AttemptLogin(string email, string password)
+        {
+            var users = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users);
+            var user = users.FirstOrDefault(u => u.Email == email);
+            if (user == null) return false;
+            return BCrypt.Net.BCrypt.Verify(password, user.PasswordHash);
+        }
+
+        public void SaveAccount()
+        {
+            var existing = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users);
+            existing.Add(record);
+            FileManager.WriteRecords(existing, FileManager.StorageFile.users);
         }
     }
 }
