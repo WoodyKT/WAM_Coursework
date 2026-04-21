@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using WAM_Coursework.Forms;
+using WAM_Coursework.Users;
 
 namespace WAM_Coursework
 {
@@ -13,9 +14,8 @@ namespace WAM_Coursework
 
         private void ReviewerClick(object sender, EventArgs e)
         {
-            var f = new SpeakerMainForm();
-            f.Show();
-            this.Hide();
+            LoginForm login = new LoginForm(UserConstants.ReviewerRole);
+            login.ShowDialog();
         }
 
         private void SignUpLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
