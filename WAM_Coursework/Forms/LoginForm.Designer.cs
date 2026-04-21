@@ -146,7 +146,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LogInButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.LogInButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.LogInButton.FlatAppearance.BorderSize = 0;
+            this.LogInButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.LogInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogInButton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogInButton.ForeColor = System.Drawing.Color.White;
             this.LogInButton.Location = new System.Drawing.Point(11, 142);
