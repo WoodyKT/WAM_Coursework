@@ -79,46 +79,46 @@
     <Compile Include="Conferences\Review.cs" />
     <Compile Include="Conferences\ReviewRecord.cs" />
     <Compile Include="FileHandlers\FileManager.cs" />
-    <Compile Include="Forms\CreateAccountForm.cs">
+    <Compile Include="Forms\Start\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CreateAccountForm.Designer.cs">
+    <Compile Include="Forms\Start\CreateAccountForm.Designer.cs">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManagerMainForm.cs">
+    <Compile Include="Forms\Manager\ManagerMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManagerMainForm.Designer.cs">
+    <Compile Include="Forms\Manager\ManagerMainForm.Designer.cs">
       <DependentUpon>ManagerMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SubmitReviewForm.cs">
+    <Compile Include="Forms\Reviewer\SubmitReviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SubmitReviewForm.Designer.cs">
+    <Compile Include="Forms\Reviewer\SubmitReviewForm.Designer.cs">
       <DependentUpon>SubmitReviewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ReviewerMainForm.cs">
+    <Compile Include="Forms\Reviewer\ReviewerMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ReviewerMainForm.Designer.cs">
+    <Compile Include="Forms\Reviewer\ReviewerMainForm.Designer.cs">
       <DependentUpon>ReviewerMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SubmitApplicationForm.cs">
+    <Compile Include="Forms\Speaker\SubmitApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SubmitApplicationForm.Designer.cs">
+    <Compile Include="Forms\Speaker\SubmitApplicationForm.Designer.cs">
       <DependentUpon>SubmitApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SpeakerMainForm.cs">
+    <Compile Include="Forms\Speaker\SpeakerMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SpeakerMainForm.Designer.cs">
+    <Compile Include="Forms\Speaker\SpeakerMainForm.Designer.cs">
       <DependentUpon>SpeakerMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LoginForm.cs">
+    <Compile Include="Forms\Start\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LoginForm.Designer.cs">
+    <Compile Include="Forms\Start\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\LoginHelper.cs" />
@@ -128,28 +128,31 @@
     <Compile Include="Users\User.cs" />
     <Compile Include="Users\UserConstants.cs" />
     <Compile Include="Users\UserFactory.cs" />
-    <Compile Include="Forms\WelcomeForm.cs">
+    <Compile Include="Forms\Start\WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WelcomeForm.Designer.cs">
+    <Compile Include="Forms\Start\WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\UserRecord.cs" />
-    <EmbeddedResource Include="Forms\CreateAccountForm.resx">
+    <EmbeddedResource Include="Forms\Start\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LoginForm.resx">
+    <EmbeddedResource Include="Forms\Start\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SpeakerMainForm.resx">
+    <EmbeddedResource Include="Forms\Speaker\SpeakerMainForm.resx">
       <DependentUpon>SpeakerMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubmitApplicationForm.resx">
+    <EmbeddedResource Include="Forms\Speaker\SubmitApplicationForm.resx">
       <DependentUpon>SubmitApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WelcomeForm.resx">
+    <EmbeddedResource Include="Forms\Reviewer\SubmitReviewForm.resx">
+      <DependentUpon>SubmitReviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Start\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
