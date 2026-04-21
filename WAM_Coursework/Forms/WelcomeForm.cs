@@ -18,10 +18,20 @@ namespace WAM_Coursework
             login.ShowDialog();
         }
 
+        private void SpeakerClick(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm(UserConstants.SpeakerRole);
+            login.ShowDialog();
+        }
         private void SignUpLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CreateAccountForm createAccountForm = new CreateAccountForm();
             createAccountForm.Show();
+        }
+
+        private void ManagerClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

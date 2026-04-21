@@ -8,5 +8,11 @@ namespace WAM_Coursework.Forms
         {
             InitializeComponent();
         }
+
+        private void NewApplicationButton_Click(object sender, System.EventArgs e)
+        {
+            SubmitApplicationForm submitForm = new SubmitApplicationForm();
+            submitForm.ShowDialog();
+        }
     }
 }

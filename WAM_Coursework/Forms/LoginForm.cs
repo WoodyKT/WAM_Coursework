@@ -15,10 +15,5 @@ namespace WAM_Coursework.Forms
         {
 
         }
-
-        private void LogInLabel_Click(object sender, System.EventArgs e)
-        {
-
-        }
     }
 }

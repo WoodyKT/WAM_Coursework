@@ -65,7 +65,6 @@
             this.LogInLabel.TabIndex = 3;
             this.LogInLabel.Text = "Log in to your account";
             this.LogInLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LogInLabel.Click += new System.EventHandler(this.LogInLabel_Click);
             // 
             // LoginLayoutTable
             // 
@@ -73,7 +72,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LoginLayoutTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.LoginLayoutTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.LoginLayoutTable.ColumnCount = 1;
             this.LoginLayoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.LoginLayoutTable.Controls.Add(this.PasswordLabel, 0, 2);
@@ -99,7 +97,7 @@
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.EmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.EmailLabel.Location = new System.Drawing.Point(11, 6);
+            this.EmailLabel.Location = new System.Drawing.Point(10, 5);
             this.EmailLabel.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(59, 28);
@@ -109,8 +107,9 @@
             // EmailTextBox
             // 
             this.EmailTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.EmailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EmailTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.EmailTextBox.Location = new System.Drawing.Point(11, 40);
+            this.EmailTextBox.Location = new System.Drawing.Point(10, 38);
             this.EmailTextBox.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(277, 20);
@@ -122,7 +121,7 @@
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.PasswordLabel.Location = new System.Drawing.Point(11, 71);
+            this.PasswordLabel.Location = new System.Drawing.Point(10, 68);
             this.PasswordLabel.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(93, 28);
@@ -132,8 +131,9 @@
             // PasswordTextBox
             // 
             this.PasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.PasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PasswordTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.PasswordTextBox.Location = new System.Drawing.Point(11, 105);
+            this.PasswordTextBox.Location = new System.Drawing.Point(10, 101);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(10, 0, 10, 5);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(277, 20);
@@ -152,10 +152,10 @@
             this.LogInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogInButton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogInButton.ForeColor = System.Drawing.Color.White;
-            this.LogInButton.Location = new System.Drawing.Point(11, 142);
+            this.LogInButton.Location = new System.Drawing.Point(10, 136);
             this.LogInButton.Margin = new System.Windows.Forms.Padding(10);
             this.LogInButton.Name = "LogInButton";
-            this.LogInButton.Size = new System.Drawing.Size(306, 68);
+            this.LogInButton.Size = new System.Drawing.Size(308, 68);
             this.LogInButton.TabIndex = 4;
             this.LogInButton.Text = "Log in";
             this.LogInButton.UseVisualStyleBackColor = false;
