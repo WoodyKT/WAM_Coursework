@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using WAM_Coursework.Users;
 
 namespace WAM_Coursework.FileHandlers
 {
@@ -17,7 +18,9 @@ namespace WAM_Coursework.FileHandlers
         public enum StorageFile
         {
             users,
-            conferences
+            conferences,
+            talks,
+            reviews
         };
 
         private static readonly string basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "FairView");
@@ -26,18 +29,7 @@ namespace WAM_Coursework.FileHandlers
 
         private static string GetDir(StorageFile file)
         {
-            string fileName = string.Empty;
-            switch (file)
-            {
-                case StorageFile.users:
-                    fileName = "users.csv";
-                    break;
-                case StorageFile.conferences:
-                    fileName = "conferences.csv";
-                    break;
-                default:
-                    break;
-            }
+            string fileName = file.ToString() + ".csv";
             var path = Path.Combine(basePath, fileName);
             Directory.CreateDirectory(basePath);
             return path;
@@ -46,10 +38,13 @@ namespace WAM_Coursework.FileHandlers
         #region Read/Write
         public static void WriteRecords<T>(IEnumerable<T> records, StorageFile file)
         {
+            var existing = ReadRecords<T>(file);
+            existing.AddRange(records);
+
             using (var writer = new StreamWriter(GetDir(file), append: false))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
-                csv.WriteRecords(records);
+                csv.WriteRecords(existing);
             }
         }
 
@@ -64,12 +59,14 @@ namespace WAM_Coursework.FileHandlers
         #endregion
 
         private void CreateFileIfNotExists()
-        {
-            if (!File.Exists(GetDir(StorageFile.users)))
-                File.Create(GetDir(StorageFile.users));
-
-            if (!File.Exists(GetDir(StorageFile.conferences)))
-                File.Create(GetDir(StorageFile.conferences));
+        {          
+            foreach (var file in Enum.GetValues(typeof(StorageFile)).Cast<StorageFile>())
+            {
+                if (!File.Exists(GetDir(file)))
+                {
+                    File.Create(GetDir(file));
+                }
+            }
         }
     }
 }

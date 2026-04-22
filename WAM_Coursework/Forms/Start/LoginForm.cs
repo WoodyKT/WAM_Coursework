@@ -13,8 +13,9 @@ namespace WAM_Coursework.Forms
 
         private void LogInButton_Click(object sender, System.EventArgs e)
         {
-            SubmitReviewForm submitReviewForm = new SubmitReviewForm();
-            submitReviewForm.Show();
+            CurrentUser.Instance.setUser(new Speaker("Wood@.com", "FirstName", "LastName", "PasswordHash"));
+            SubmitTalkForm submitForm = new SubmitTalkForm();
+            submitForm.Show();
         }
     }
 }

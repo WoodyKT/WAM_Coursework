@@ -78,6 +78,8 @@
     <Compile Include="Conferences\ConferenceRecord.cs" />
     <Compile Include="Conferences\Review.cs" />
     <Compile Include="Conferences\ReviewRecord.cs" />
+    <Compile Include="Conferences\Talk.cs" />
+    <Compile Include="Conferences\TalkRecord.cs" />
     <Compile Include="FileHandlers\FileManager.cs" />
     <Compile Include="Forms\Start\CreateAccountForm.cs">
       <SubType>Form</SubType>
@@ -103,11 +105,11 @@
     <Compile Include="Forms\Reviewer\ReviewerMainForm.Designer.cs">
       <DependentUpon>ReviewerMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Speaker\SubmitApplicationForm.cs">
+    <Compile Include="Forms\Speaker\SubmitTalkForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Speaker\SubmitApplicationForm.Designer.cs">
-      <DependentUpon>SubmitApplicationForm.cs</DependentUpon>
+    <Compile Include="Forms\Speaker\SubmitTalkForm.Designer.cs">
+      <DependentUpon>SubmitTalkForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Speaker\SpeakerMainForm.cs">
       <SubType>Form</SubType>
@@ -121,7 +123,7 @@
     <Compile Include="Forms\Start\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users\LoginHelper.cs" />
+    <Compile Include="Users\CurrentUser.cs" />
     <Compile Include="Users\Manager.cs" />
     <Compile Include="Users\Reviewer.cs" />
     <Compile Include="Users\Speaker.cs" />
@@ -146,8 +148,8 @@
     <EmbeddedResource Include="Forms\Speaker\SpeakerMainForm.resx">
       <DependentUpon>SpeakerMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Speaker\SubmitApplicationForm.resx">
-      <DependentUpon>SubmitApplicationForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Speaker\SubmitTalkForm.resx">
+      <DependentUpon>SubmitTalkForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reviewer\SubmitReviewForm.resx">
       <DependentUpon>SubmitReviewForm.cs</DependentUpon>

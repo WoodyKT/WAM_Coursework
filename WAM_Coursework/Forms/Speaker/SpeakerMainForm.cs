@@ -9,9 +9,9 @@ namespace WAM_Coursework.Forms
             InitializeComponent();
         }
 
-        private void NewApplicationButton_Click(object sender, System.EventArgs e)
+        private void NewTalkButton_Click(object sender, System.EventArgs e)
         {
-            SubmitApplicationForm submitForm = new SubmitApplicationForm();
+            SubmitTalkForm submitForm = new SubmitTalkForm();
             submitForm.ShowDialog();
         }
     }

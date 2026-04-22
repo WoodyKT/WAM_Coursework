@@ -8,7 +8,7 @@
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Label SubtitleLabel;
-        private System.Windows.Forms.Button NewApplicationButton;
+        private System.Windows.Forms.Button NewTalkButton;
         private System.Windows.Forms.Panel CardContainerPanel;
         private System.Windows.Forms.FlowLayoutPanel ApplicationsFlowPanel;
 
@@ -35,7 +35,7 @@
         {
             this.TitleLabel = new System.Windows.Forms.Label();
             this.SubtitleLabel = new System.Windows.Forms.Label();
-            this.NewApplicationButton = new System.Windows.Forms.Button();
+            this.NewTalkButton = new System.Windows.Forms.Button();
             this.CardContainerPanel = new System.Windows.Forms.Panel();
             this.ApplicationsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.CardContainerPanel.SuspendLayout();
@@ -63,22 +63,22 @@
             this.SubtitleLabel.TabIndex = 1;
             this.SubtitleLabel.Text = "My applications";
             // 
-            // NewApplicationButton
+            // NewTalkButton
             // 
-            this.NewApplicationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.NewApplicationButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.NewApplicationButton.FlatAppearance.BorderSize = 0;
-            this.NewApplicationButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.NewApplicationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewApplicationButton.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.NewApplicationButton.ForeColor = System.Drawing.Color.White;
-            this.NewApplicationButton.Location = new System.Drawing.Point(660, 40);
-            this.NewApplicationButton.Name = "NewApplicationButton";
-            this.NewApplicationButton.Size = new System.Drawing.Size(200, 36);
-            this.NewApplicationButton.TabIndex = 2;
-            this.NewApplicationButton.Text = "+ New application";
-            this.NewApplicationButton.UseVisualStyleBackColor = false;
-            this.NewApplicationButton.Click += new System.EventHandler(this.NewApplicationButton_Click);
+            this.NewTalkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewTalkButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.NewTalkButton.FlatAppearance.BorderSize = 0;
+            this.NewTalkButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.NewTalkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewTalkButton.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.NewTalkButton.ForeColor = System.Drawing.Color.White;
+            this.NewTalkButton.Location = new System.Drawing.Point(660, 40);
+            this.NewTalkButton.Name = "NewTalkButton";
+            this.NewTalkButton.Size = new System.Drawing.Size(200, 36);
+            this.NewTalkButton.TabIndex = 2;
+            this.NewTalkButton.Text = "+ New Talk";
+            this.NewTalkButton.UseVisualStyleBackColor = false;
+            this.NewTalkButton.Click += new System.EventHandler(this.NewTalkButton_Click);
             // 
             // CardContainerPanel
             // 
@@ -107,7 +107,7 @@
             this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
-            this.Controls.Add(this.NewApplicationButton);
+            this.Controls.Add(this.NewTalkButton);
             this.Controls.Add(this.CardContainerPanel);
             this.Name = "SpeakerMainForm";
             this.Text = "My applications";

@@ -1,11 +1,13 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using WAM_Coursework.Conferences;
 using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Users
 {
     public abstract class User
     {
-        UserRecord record = new UserRecord();
+        public UserRecord record = new UserRecord();
 
         public User(string email, string firstName, string lastName, string passwordHash, string role)
         {
@@ -27,10 +29,10 @@ namespace WAM_Coursework.Users
 
         public void SaveAccount()
         {
-            //add check for if user exists by email
-            var existing = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users);
-            existing.Add(record);
-            FileManager.WriteRecords(existing, FileManager.StorageFile.users);
+            FileManager.WriteRecords(new List<UserRecord> { record }, FileManager.StorageFile.users);
+
         }
+
+        public abstract void CreateAction(string args);
     }
 }
