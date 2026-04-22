@@ -2,9 +2,9 @@
 
 namespace WAM_Coursework.Forms
 {
-    public partial class LoginForm : Form
+    public partial class SubmitApplicationForm : Form
     {
-        public LoginForm()
+        public SubmitApplicationForm()
         {
             InitializeComponent();
         }

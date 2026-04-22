@@ -125,7 +125,7 @@
             this.panelSpeaker.Name = "panelSpeaker";
             this.panelSpeaker.Size = new System.Drawing.Size(614, 94);
             this.panelSpeaker.TabIndex = 0;
-            this.panelSpeaker.Click += new System.EventHandler(this.ReviewerClick);
+            this.panelSpeaker.Click += new System.EventHandler(this.SpeakerClick);
             // 
             // pbSpeaker
             // 
@@ -135,7 +135,7 @@
             this.pbSpeaker.Size = new System.Drawing.Size(56, 56);
             this.pbSpeaker.TabIndex = 0;
             this.pbSpeaker.TabStop = false;
-            this.pbSpeaker.Click += new System.EventHandler(this.ReviewerClick);
+            this.pbSpeaker.Click += new System.EventHandler(this.SpeakerClick);
             // 
             // lblSpeakerTitle
             // 
@@ -147,7 +147,7 @@
             this.lblSpeakerTitle.Size = new System.Drawing.Size(84, 25);
             this.lblSpeakerTitle.TabIndex = 1;
             this.lblSpeakerTitle.Text = "Speaker";
-            this.lblSpeakerTitle.Click += new System.EventHandler(this.ReviewerClick);
+            this.lblSpeakerTitle.Click += new System.EventHandler(this.SpeakerClick);
             // 
             // lblSpeakerDesc
             // 
@@ -159,7 +159,7 @@
             this.lblSpeakerDesc.Size = new System.Drawing.Size(189, 19);
             this.lblSpeakerDesc.TabIndex = 2;
             this.lblSpeakerDesc.Text = "Submit and track applications";
-            this.lblSpeakerDesc.Click += new System.EventHandler(this.ReviewerClick);
+            this.lblSpeakerDesc.Click += new System.EventHandler(this.SpeakerClick);
             // 
             // panelReviewer
             // 
@@ -174,6 +174,7 @@
             this.panelReviewer.Name = "panelReviewer";
             this.panelReviewer.Size = new System.Drawing.Size(614, 94);
             this.panelReviewer.TabIndex = 1;
+            this.panelReviewer.Click += new System.EventHandler(this.ReviewerClick);
             // 
             // pbReviewer
             // 
@@ -183,6 +184,7 @@
             this.pbReviewer.Size = new System.Drawing.Size(56, 56);
             this.pbReviewer.TabIndex = 0;
             this.pbReviewer.TabStop = false;
+            this.pbReviewer.Click += new System.EventHandler(this.ReviewerClick);
             // 
             // lblReviewerTitle
             // 
@@ -194,6 +196,7 @@
             this.lblReviewerTitle.Size = new System.Drawing.Size(92, 25);
             this.lblReviewerTitle.TabIndex = 1;
             this.lblReviewerTitle.Text = "Reviewer";
+            this.lblReviewerTitle.Click += new System.EventHandler(this.ReviewerClick);
             // 
             // lblReviewerDesc
             // 
@@ -205,6 +208,7 @@
             this.lblReviewerDesc.Size = new System.Drawing.Size(127, 19);
             this.lblReviewerDesc.TabIndex = 2;
             this.lblReviewerDesc.Text = "Review applications";
+            this.lblReviewerDesc.Click += new System.EventHandler(this.ReviewerClick);
             // 
             // panelManager
             // 
@@ -219,6 +223,7 @@
             this.panelManager.Name = "panelManager";
             this.panelManager.Size = new System.Drawing.Size(614, 134);
             this.panelManager.TabIndex = 2;
+            this.panelManager.Click += new System.EventHandler(this.ManagerClick);
             // 
             // pbManager
             // 
@@ -228,6 +233,7 @@
             this.pbManager.Size = new System.Drawing.Size(56, 56);
             this.pbManager.TabIndex = 0;
             this.pbManager.TabStop = false;
+            this.pbManager.Click += new System.EventHandler(this.ManagerClick);
             // 
             // lblManagerTitle
             // 
@@ -239,6 +245,7 @@
             this.lblManagerTitle.Size = new System.Drawing.Size(198, 25);
             this.lblManagerTitle.TabIndex = 1;
             this.lblManagerTitle.Text = "Conference manager";
+            this.lblManagerTitle.Click += new System.EventHandler(this.ManagerClick);
             // 
             // lblManagerDesc
             // 
@@ -250,6 +257,7 @@
             this.lblManagerDesc.Size = new System.Drawing.Size(99, 19);
             this.lblManagerDesc.TabIndex = 2;
             this.lblManagerDesc.Text = "Administration";
+            this.lblManagerDesc.Click += new System.EventHandler(this.ManagerClick);
             // 
             // SignUpLink
             // 
