@@ -1,6 +1,4 @@
 ﻿using System.Windows.Forms;
-using WAM_Coursework.FileHandlers;
-using WAM_Coursework.Conferences;
 using WAM_Coursework.Users;
 
 namespace WAM_Coursework.Forms

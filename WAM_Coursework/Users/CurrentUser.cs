@@ -1,6 +1,4 @@
-﻿using WAM_Coursework.FileHandlers;
-
-namespace WAM_Coursework.Users
+﻿namespace WAM_Coursework.Users
 {
     public class CurrentUser
     {

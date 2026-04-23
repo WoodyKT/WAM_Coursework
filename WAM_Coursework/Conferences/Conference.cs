@@ -3,6 +3,6 @@
 
     public class Conference
     {
-      ConferenceRecord record;
+        ConferenceRecord record;
     }
 }

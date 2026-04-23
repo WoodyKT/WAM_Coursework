@@ -1,10 +1,10 @@
 ﻿using CsvHelper;
+using CsvHelper.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using WAM_Coursework.Users;
 
 namespace WAM_Coursework.FileHandlers
 {
@@ -50,8 +50,12 @@ namespace WAM_Coursework.FileHandlers
 
         public static List<T> ReadRecords<T>(StorageFile file)
         {
+            CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                PrepareHeaderForMatch = args => args.Header.ToLower(),
+            };
             using (var reader = new StreamReader(GetDir(file)))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            using (var csv = new CsvReader(reader, config))
             {
                 return csv.GetRecords<T>().ToList();
             }
@@ -59,7 +63,7 @@ namespace WAM_Coursework.FileHandlers
         #endregion
 
         private void CreateFileIfNotExists()
-        {          
+        {
             foreach (var file in Enum.GetValues(typeof(StorageFile)).Cast<StorageFile>())
             {
                 if (!File.Exists(GetDir(file)))

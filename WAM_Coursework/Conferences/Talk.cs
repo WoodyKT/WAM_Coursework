@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WAM_Coursework.Conferences
 {
@@ -18,7 +14,7 @@ namespace WAM_Coursework.Conferences
 
             record.Id = new Random().Next(1, int.MaxValue);//make unique
             record.Datetime = DateTime.Now.ToString();
-            record.reviewPassed = false;
+            record.ReviewPassed = false;
         }
 
         public int Id { get => record.Id; set => record.Id = value; }
@@ -26,6 +22,6 @@ namespace WAM_Coursework.Conferences
         public string Description { get => record.Description; set => record.Description = value; }
         public string Datetime { get => record.Datetime; set => record.Datetime = value; }
         public string SpeakerEmail { get => record.SpeakerEmail; set => record.SpeakerEmail = value; }
-        public bool ReviewPassed { get => record.reviewPassed; set => record.reviewPassed = value; }
+        public bool ReviewPassed { get => record.ReviewPassed; set => record.ReviewPassed = value; }
     }
 }
