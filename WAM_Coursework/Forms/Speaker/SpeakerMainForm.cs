@@ -31,7 +31,7 @@ namespace WAM_Coursework.Forms
 
             foreach (var talk in speakerTalks)
             {
-                Label talkLabel = new Label() { Text = talk.Title + " - " + talk.Description };
+                Label talkLabel = new Label() { Text = talk.Title + "\t - " + talk.Description + "\t- " + (talk.ReviewPassed ? "Approved" : "Pending") };
                 talkLabel.Font = new System.Drawing.Font(talkLabel.Font.FontFamily, 20);
                 talkLabel.ForeColor = System.Drawing.Color.White;
                 talkLabel.AutoSize = true;
