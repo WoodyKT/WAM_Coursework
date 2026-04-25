@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WAM_Coursework.WelcomeForm">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQQSAACAgAAWAAQCCAAECAoAAgAgAAAAAAAABAgg=</HashCode>
+      <FileName>Forms\Start\WelcomeForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Program">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Conferences.Conference">
+    <Position X="1.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conferences\Conference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Conferences.ConferenceRecord">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEBAAgAAAAAAAAAAQAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Conferences\ConferenceRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Conferences.Review">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Conferences\Review.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Conferences.ReviewRecord">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Conferences\ReviewRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Conferences.Talk">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAgAEAABAAAAAAAAAAAAAAABAAAAABAAAA=</HashCode>
+      <FileName>Conferences\Talk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Conferences.TalkRecord">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAEAABAAAAAAAAAAAAAAABAAAAABAAAA=</HashCode>
+      <FileName>Conferences\TalkRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.FileHandlers.FileManager">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="WAM_Coursework.FileHandlers.FileManager.StorageFile" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>FileHandlers\FileManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABQAAAAEAAAAAAAAAAAAAAAAQAAAAAQgAAA=</HashCode>
+      <FileName>FileHandlers\FileManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Forms.ManagerMainForm">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\Manager\ManagerMainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Forms.ReviewerMainForm">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAABAACAAAAIAAgCAAIACAACAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Forms\Reviewer\ReviewerMainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Forms.SubmitReviewForm">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABCAAgAAAAACgAIIigACQQAAIAAAACAAIABA=</HashCode>
+      <FileName>Forms\Reviewer\SubmitReviewForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Forms.SpeakerMainForm">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAAABAAAgCAAIACAACCACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\Speaker\SpeakerMainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Forms.SubmitTalkForm">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACgAIICAACYAAAAAABAAQAAAAA=</HashCode>
+      <FileName>Forms\Speaker\SubmitTalkForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Forms.CreateAccountForm">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CICBQAYAACAEAABAAgCJIIIiEAKAIAAAAAAIAAAEAAA=</HashCode>
+      <FileName>Forms\Start\CreateAccountForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Forms.LoginForm">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAEAAAAAACAAIAiAAAAIAAAAAAAAAABIQA=</HashCode>
+      <FileName>Forms\Start\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Properties.Resources">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Properties.Settings">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Users.CurrentUser">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Users\CurrentUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Users.Manager">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Users\Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Users.Reviewer">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Users\Reviewer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Users.Speaker">
+    <Position X="4.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Users\Speaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Users.User">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAAAAAAAEgA=</HashCode>
+      <FileName>Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Users.UserConstants">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAEAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Users\UserConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Users.UserFactory">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Users\UserFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WAM_Coursework.Users.UserRecord">
+    <Position X="6.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAEAAACAAAAAAEAAAAAAAAAAAAAAAACAAAAAAAAg=</HashCode>
+      <FileName>Users\UserRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -9,10 +9,13 @@ namespace WAM_Coursework.Forms
 {
     public partial class SubmitReviewForm : Form
     {
+
+        private string talkID;
         public SubmitReviewForm(string talkID)
         {
             InitializeComponent();
-            SetTalkInfo(talkID);
+            this.talkID = talkID;
+            SetTalkInfo();
             for (int i = 0; i < ScoreComboBox.MaxDropDownItems; i++)
             {
                 ScoreComboBox.Items.Add(i);
@@ -23,13 +26,14 @@ namespace WAM_Coursework.Forms
         {
             Random rnd = new Random();
             CurrentUser.Instance.User.CreateAction($"{rnd.Next(0, int.MaxValue)},{ScoreComboBox.SelectedItem},{DescriptionTextBox.Text}");
+            Close();
         }
 
 
-        private void SetTalkInfo(string talkID)
+        private void SetTalkInfo()
         {
             TalkRecord talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks).Where(t => t.Id == int.Parse(talkID)).FirstOrDefault();
-            TitleLabel.Text = talks?.Title;
+            TalkTitleLabel.Text = talks?.Title;
             TalkDescriptionLabel.Text = talks?.Description;
         }
     }
