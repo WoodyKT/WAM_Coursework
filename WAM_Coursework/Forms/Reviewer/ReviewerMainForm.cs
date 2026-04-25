@@ -7,6 +7,7 @@ namespace WAM_Coursework.Forms
         public ReviewerMainForm()
         {
             InitializeComponent();
+
         }
     }
 }

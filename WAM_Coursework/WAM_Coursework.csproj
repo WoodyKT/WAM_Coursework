@@ -139,6 +139,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\UserRecord.cs" />
+    <EmbeddedResource Include="Forms\Reviewer\ReviewerMainForm.resx">
+      <DependentUpon>ReviewerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Start\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </EmbeddedResource>

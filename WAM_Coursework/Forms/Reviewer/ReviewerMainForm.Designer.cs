@@ -34,21 +34,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.SubtitleLabel = new System.Windows.Forms.Label();
             this.CountBadge = new System.Windows.Forms.Label();
             this.CardContainerPanel = new System.Windows.Forms.Panel();
             this.ReviewsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.CardContainerPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ReviewerMainForm
-            // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 700);
-            this.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
-            this.Name = "ReviewerMainForm";
-            this.Text = "Pending reviews";
             // 
             // TitleLabel
             // 
@@ -57,7 +49,7 @@
             this.TitleLabel.ForeColor = System.Drawing.Color.White;
             this.TitleLabel.Location = new System.Drawing.Point(32, 24);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(220, 51);
+            this.TitleLabel.Size = new System.Drawing.Size(191, 51);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "F@irView";
             // 
@@ -65,29 +57,31 @@
             // 
             this.SubtitleLabel.AutoSize = true;
             this.SubtitleLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SubtitleLabel.ForeColor = System.Drawing.Color.FromArgb(200, 200, 200);
+            this.SubtitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.SubtitleLabel.Location = new System.Drawing.Point(34, 84);
             this.SubtitleLabel.Name = "SubtitleLabel";
-            this.SubtitleLabel.Size = new System.Drawing.Size(120, 19);
+            this.SubtitleLabel.Size = new System.Drawing.Size(107, 19);
             this.SubtitleLabel.TabIndex = 1;
             this.SubtitleLabel.Text = "Pending reviews";
             // 
             // CountBadge
             // 
             this.CountBadge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CountBadge.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            this.CountBadge.ForeColor = System.Drawing.Color.White;
+            this.CountBadge.AutoSize = true;
+            this.CountBadge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CountBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CountBadge.ForeColor = System.Drawing.Color.White;
             this.CountBadge.Location = new System.Drawing.Point(700, 40);
             this.CountBadge.Name = "CountBadge";
             this.CountBadge.Padding = new System.Windows.Forms.Padding(12, 6, 12, 6);
-            this.CountBadge.AutoSize = true;
+            this.CountBadge.Size = new System.Drawing.Size(85, 25);
             this.CountBadge.TabIndex = 2;
-            this.CountBadge.Text = "0 applications";
+            this.CountBadge.Text = "0 remaining";
             // 
             // CardContainerPanel
             // 
             this.CardContainerPanel.BackColor = System.Drawing.Color.Transparent;
+            this.CardContainerPanel.Controls.Add(this.ReviewsFlowPanel);
             this.CardContainerPanel.Location = new System.Drawing.Point(32, 120);
             this.CardContainerPanel.Name = "CardContainerPanel";
             this.CardContainerPanel.Size = new System.Drawing.Size(828, 540);
@@ -102,16 +96,23 @@
             this.ReviewsFlowPanel.Size = new System.Drawing.Size(812, 524);
             this.ReviewsFlowPanel.TabIndex = 0;
             this.ReviewsFlowPanel.WrapContents = false;
-
-            // add controls
-            this.CardContainerPanel.Controls.Add(this.ReviewsFlowPanel);
+            // 
+            // ReviewerMainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.CountBadge);
             this.Controls.Add(this.CardContainerPanel);
-
+            this.Name = "ReviewerMainForm";
+            this.Text = "Pending reviews";
+            this.CardContainerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
