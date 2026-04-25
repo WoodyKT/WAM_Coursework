@@ -13,8 +13,32 @@ namespace WAM_Coursework.Forms
 
         private void LogInButton_Click(object sender, System.EventArgs e)
         {
-            SubmitReviewForm submitReviewForm = new SubmitReviewForm();
-            submitReviewForm.Show();
+            User.AttemptLogin(EmailTextBox.Text, PasswordTextBox.Text);
+            if (CurrentUser.Instance.User == null)
+            {
+                MessageBox.Show("Invalid email or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            switch (CurrentUser.Instance.User.record.Role)
+            {
+                case UserConstants.SpeakerRole:
+                    SpeakerMainForm SpeakerForm = new SpeakerMainForm();
+                    SpeakerForm.Show();
+                    Close();
+                    break;
+                case UserConstants.ReviewerRole:
+                    ReviewerMainForm ReviewerForm = new ReviewerMainForm();
+                    ReviewerForm.Show();
+                    Close();
+                    break;
+                case UserConstants.ManagerRole:
+                    ManagerMainForm ManagerForm = new ManagerMainForm();
+                    ManagerForm.Show();
+                    Close();
+                    break;
+                default:
+                    break;
+            }        
         }
     }
 }

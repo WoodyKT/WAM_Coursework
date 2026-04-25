@@ -1,12 +1,12 @@
 ﻿namespace WAM_Coursework.Conferences
 {
-    internal class ConferenceRecord
+    public class TalkRecord
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
         public string Datetime { get; set; }
-        public string Reviewers { get; set; }
-        public string Status { get; set; }
+        public string SpeakerEmail { get; set; }
+        public bool ReviewPassed { get; set; } = false;
     }
 }

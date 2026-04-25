@@ -1,6 +1,6 @@
 ﻿namespace WAM_Coursework.Forms
 {
-    partial class SubmitApplicationForm
+    partial class SubmitTalkForm
     {
         /// <summary>
         /// Required designer variable.
@@ -140,8 +140,9 @@
             this.SubmitButton.TabIndex = 4;
             this.SubmitButton.Text = "Submit application";
             this.SubmitButton.UseVisualStyleBackColor = false;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
-            // SubmitApplicationForm
+            // SubmitTalkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,7 +151,7 @@
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.CardPanel);
-            this.Name = "SubmitApplicationForm";
+            this.Name = "SubmitTalkForm";
             this.Text = "Submit application";
             this.CardPanel.ResumeLayout(false);
             this.CardPanel.PerformLayout();
