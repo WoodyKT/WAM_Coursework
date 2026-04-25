@@ -5,10 +5,5 @@
         public User User;
 
         public static readonly CurrentUser Instance = new CurrentUser();
-
-        public void setUser(User user)
-        {
-            User = user;
-        }
     }
 }

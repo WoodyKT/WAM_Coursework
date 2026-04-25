@@ -9,9 +9,9 @@
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Label SubtitleLabel;
         private System.Windows.Forms.Panel CardPanel;
-        private System.Windows.Forms.Label AppTitleLabel;
-        private System.Windows.Forms.Label AppDescriptionLabel;
-        private System.Windows.Forms.TextBox AppDescriptionTextBox;
+        private System.Windows.Forms.Label TalkTitleLabel;
+        private System.Windows.Forms.Label TalkDescriptionLabel;
+        private System.Windows.Forms.TextBox DescriptionTextBox;
         private System.Windows.Forms.Panel ReviewPanel;
         private System.Windows.Forms.Label ScoreLabel;
         private System.Windows.Forms.ComboBox ScoreComboBox;
@@ -43,9 +43,9 @@
             this.TitleLabel = new System.Windows.Forms.Label();
             this.SubtitleLabel = new System.Windows.Forms.Label();
             this.CardPanel = new System.Windows.Forms.Panel();
-            this.AppTitleLabel = new System.Windows.Forms.Label();
-            this.AppDescriptionLabel = new System.Windows.Forms.Label();
-            this.AppDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.TalkTitleLabel = new System.Windows.Forms.Label();
+            this.TalkDescriptionLabel = new System.Windows.Forms.Label();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.ReviewPanel = new System.Windows.Forms.Panel();
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.ScoreComboBox = new System.Windows.Forms.ComboBox();
@@ -82,46 +82,46 @@
             // 
             this.CardPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.CardPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CardPanel.Controls.Add(this.AppTitleLabel);
-            this.CardPanel.Controls.Add(this.AppDescriptionLabel);
-            this.CardPanel.Controls.Add(this.AppDescriptionTextBox);
+            this.CardPanel.Controls.Add(this.TalkTitleLabel);
+            this.CardPanel.Controls.Add(this.TalkDescriptionLabel);
+            this.CardPanel.Controls.Add(this.DescriptionTextBox);
             this.CardPanel.Location = new System.Drawing.Point(32, 120);
             this.CardPanel.Name = "CardPanel";
             this.CardPanel.Size = new System.Drawing.Size(828, 180);
             this.CardPanel.TabIndex = 2;
             // 
-            // AppTitleLabel
+            // TalkTitleLabel
             // 
-            this.AppTitleLabel.AutoSize = true;
-            this.AppTitleLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.AppTitleLabel.ForeColor = System.Drawing.Color.White;
-            this.AppTitleLabel.Location = new System.Drawing.Point(16, 16);
-            this.AppTitleLabel.Name = "AppTitleLabel";
-            this.AppTitleLabel.Size = new System.Drawing.Size(145, 25);
-            this.AppTitleLabel.TabIndex = 0;
-            this.AppTitleLabel.Text = "Title of the talk";
+            this.TalkTitleLabel.AutoSize = true;
+            this.TalkTitleLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.TalkTitleLabel.ForeColor = System.Drawing.Color.White;
+            this.TalkTitleLabel.Location = new System.Drawing.Point(16, 16);
+            this.TalkTitleLabel.Name = "TalkTitleLabel";
+            this.TalkTitleLabel.Size = new System.Drawing.Size(145, 25);
+            this.TalkTitleLabel.TabIndex = 0;
+            this.TalkTitleLabel.Text = "Title of the talk";
             // 
-            // AppDescriptionLabel
+            // TalkDescriptionLabel
             // 
-            this.AppDescriptionLabel.AutoSize = true;
-            this.AppDescriptionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.AppDescriptionLabel.Location = new System.Drawing.Point(16, 48);
-            this.AppDescriptionLabel.Name = "AppDescriptionLabel";
-            this.AppDescriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.AppDescriptionLabel.TabIndex = 1;
-            this.AppDescriptionLabel.Text = "Description";
+            this.TalkDescriptionLabel.AutoSize = true;
+            this.TalkDescriptionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.TalkDescriptionLabel.Location = new System.Drawing.Point(16, 48);
+            this.TalkDescriptionLabel.Name = "TalkDescriptionLabel";
+            this.TalkDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.TalkDescriptionLabel.TabIndex = 1;
+            this.TalkDescriptionLabel.Text = "Description";
             // 
-            // AppDescriptionTextBox
+            // DescriptionTextBox
             // 
-            this.AppDescriptionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.AppDescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.AppDescriptionTextBox.ForeColor = System.Drawing.Color.White;
-            this.AppDescriptionTextBox.Location = new System.Drawing.Point(16, 70);
-            this.AppDescriptionTextBox.Multiline = true;
-            this.AppDescriptionTextBox.Name = "AppDescriptionTextBox";
-            this.AppDescriptionTextBox.ReadOnly = true;
-            this.AppDescriptionTextBox.Size = new System.Drawing.Size(788, 90);
-            this.AppDescriptionTextBox.TabIndex = 2;
+            this.DescriptionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.DescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DescriptionTextBox.ForeColor = System.Drawing.Color.White;
+            this.DescriptionTextBox.Location = new System.Drawing.Point(16, 70);
+            this.DescriptionTextBox.Multiline = true;
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.ReadOnly = true;
+            this.DescriptionTextBox.Size = new System.Drawing.Size(788, 90);
+            this.DescriptionTextBox.TabIndex = 2;
             // 
             // ReviewPanel
             // 
