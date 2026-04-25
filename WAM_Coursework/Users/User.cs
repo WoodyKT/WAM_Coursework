@@ -41,6 +41,23 @@ namespace WAM_Coursework.Users
             FileManager.WriteRecords(new List<UserRecord> { record }, FileManager.StorageFile.users);
         }
 
+        /// <summary>
+        /// If the id exists, remove it, if not add it to the user
+        /// </summary>
+        /// <param name="id"></param>
+        private void UpdateAccount(int id)
+        {
+            UserRecord existing = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users).FirstOrDefault(u => u.Email == record.Email);
+            if (record.RelevantIds.Contains(id))
+            {
+                record.RelevantIds.Remove(id);
+            }
+            else
+            {
+                record.RelevantIds.Add(id);
+            }
+
+        }
         public abstract void CreateAction(string args);
     }
 }
