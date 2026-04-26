@@ -1,4 +1,5 @@
 ﻿using System;
+using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Conferences
 {
@@ -12,7 +13,7 @@ namespace WAM_Coursework.Conferences
             record.Description = description;
             record.SpeakerEmail = speakerEmail;
 
-            record.Id = new Random().Next(1, int.MaxValue);//make unique
+            record.Id = FileManager.CreateNewId<TalkRecord>(FileManager.StorageFile.talks);
             record.Datetime = DateTime.Now.ToString();
             record.ReviewPassed = false;
         }
