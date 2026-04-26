@@ -8,6 +8,9 @@ namespace WAM_Coursework.Forms
     {
         private string selectedRole = UserConstants.SpeakerRole;
 
+        /// <summary>
+        /// Initialises the object and sets button colours to match type of user.
+        /// </summary>
         public CreateAccountForm()
         {
             InitializeComponent();

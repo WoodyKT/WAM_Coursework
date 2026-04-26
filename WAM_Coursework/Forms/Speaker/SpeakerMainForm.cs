@@ -9,6 +9,9 @@ namespace WAM_Coursework.Forms
 {
     public partial class SpeakerMainForm : Form
     {
+        /// <summary>
+        /// Initialises the object and updates the list of applications submitted by the user.
+        /// </summary>
         public SpeakerMainForm()
         {
             InitializeComponent();
