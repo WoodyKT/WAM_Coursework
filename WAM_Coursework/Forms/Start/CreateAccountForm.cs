@@ -46,6 +46,12 @@ namespace WAM_Coursework.Forms
                 return;
             }
 
+            if (UserFactory.GetUser(EmailTextBox.Text) != null)
+            {
+                MessageBox.Show("Email is already in use.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             UserFactory.CreateUser(EmailTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text, PasswordTextBox.Text, selectedRole);
             MessageBox.Show($"Account created for {FirstNameTextBox.Text} {LastNameTextBox.Text} as {selectedRole}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
