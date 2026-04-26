@@ -11,6 +11,7 @@ namespace WAM_Coursework.Forms
     {
 
         private string talkID;
+        private int reviewID = FileManager.CreateNewId<ReviewRecord>(FileManager.StorageFile.reviews);
         public SubmitReviewForm(string talkID)
         {
             InitializeComponent();
@@ -24,8 +25,10 @@ namespace WAM_Coursework.Forms
 
         private void SubmitReviewButton_Click(object sender, System.EventArgs e)
         {
-            Random rnd = new Random();
-            CurrentUser.Instance.User.CreateAction($"{rnd.Next(0, int.MaxValue)},{ScoreComboBox.SelectedItem},{DescriptionTextBox.Text}");
+            CurrentUser.Instance.User.CreateAction($"{reviewID},{ScoreComboBox.SelectedItem},{ReasonTextBox.Text.Replace(",", "%")}");
+            TalkRecord record = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks).Where(t => t.Id == int.Parse(talkID)).FirstOrDefault();
+            record.ReviewIds.Add(reviewID);
+            FileManager.UpdateRecord(record,FileManager.StorageFile.talks);
             Close();
         }
 

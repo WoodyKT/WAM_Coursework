@@ -4,17 +4,17 @@
     {
        ReviewRecord record = new ReviewRecord();
 
-        public Review(int reviewId, int score, string comment)
+        public Review(int Id, int Score, string Comment)
         {
-            record.Score = score;
-            record.Comment = comment;
-            record.Id = reviewId;
+            this.Score = Score;
+            this.Comment = Comment;
+            this.Id = Id;
         }
 
         public int Id { get => record.Id; set => record.Id = value; }
 
-        public int score { get => record.Score; set => record.Score = value; }
-        public string comment { get => record.Comment; set => record.Comment = value; }
+        public int Score { get => record.Score; set => record.Score = value; }
+        public string Comment { get => record.Comment; set => record.Comment = value; }
 
     }
 }

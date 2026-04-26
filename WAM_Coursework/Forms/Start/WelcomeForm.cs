@@ -17,6 +17,7 @@ namespace WAM_Coursework
             Hide();
             LoginForm login = new LoginForm(UserConstants.ReviewerRole);
             login.ShowDialog();
+            Show();
         }
 
         private void SpeakerClick(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Conferences
@@ -24,5 +25,7 @@ namespace WAM_Coursework.Conferences
         public string Datetime { get => record.Datetime; set => record.Datetime = value; }
         public string SpeakerEmail { get => record.SpeakerEmail; set => record.SpeakerEmail = value; }
         public bool ReviewPassed { get => record.ReviewPassed; set => record.ReviewPassed = value; }
+
+        public List<int> ReviewIds { get => record.ReviewIds; set => record.ReviewIds = value; }
     }
 }
