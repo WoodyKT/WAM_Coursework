@@ -2,9 +2,12 @@
 using CsvHelper.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using WAM_Coursework.Conferences;
+using WAM_Coursework.Users;
 
 namespace WAM_Coursework.FileHandlers
 {
@@ -70,6 +73,50 @@ namespace WAM_Coursework.FileHandlers
                 {
                     File.Create(GetDir(file));
                 }
+            }
+        }
+
+        public static int CreateNewID(StorageFile file)
+        {
+            Random rnd = new Random();
+            List<T> recordList = new List<T>();
+            switch (file)
+            {  
+                case StorageFile.talks:
+                    recordList = ReadRecords<Talk>(file);
+                    break;
+                case StorageFile.reviews:
+                    recordList = ReadRecords<Review>(file);
+                    break;
+                default:
+                    break;
+            }
+            bool unique = false;
+            while (!unique)
+            {
+                int newId = rnd.Next();
+                if (recordList.All(record => record.Id != newId))
+                {
+                    unique = true;
+                    return newId;
+                }
+            }
+            return 0;
+        }
+
+        public static void UpdateRecord<T>(T updatedRecord, StorageFile file)
+        {
+            var existing = ReadRecords<T>(file);
+
+            int index = existing.FindIndex(r => r.Id == updatedRecord.Id);
+            if (index == -1) return;
+
+            existing[index] = updatedRecord;
+
+            using (var writer = new StreamWriter(GetDir(file), append: false))
+            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csv.WriteRecords(existing);
             }
         }
     }
