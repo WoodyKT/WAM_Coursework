@@ -8,10 +8,10 @@
         {
             record.Score = score;
             record.Comment = comment;
-            record.id = reviewId;
+            record.Id = reviewId;
         }
 
-        public int id { get => record.id; set => record.id = value; }
+        public int Id { get => record.Id; set => record.Id = value; }
 
         public int score { get => record.Score; set => record.Score = value; }
         public string comment { get => record.Comment; set => record.Comment = value; }

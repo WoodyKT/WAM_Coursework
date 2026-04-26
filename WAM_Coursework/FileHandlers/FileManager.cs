@@ -76,35 +76,22 @@ namespace WAM_Coursework.FileHandlers
             }
         }
 
-        public static int CreateNewID(StorageFile file)
+        public static int CreateNewId<T>(StorageFile file) where T : HasId
         {
             Random rnd = new Random();
-            List<T> recordList = new List<T>();
-            switch (file)
-            {  
-                case StorageFile.talks:
-                    recordList = ReadRecords<Talk>(file);
-                    break;
-                case StorageFile.reviews:
-                    recordList = ReadRecords<Review>(file);
-                    break;
-                default:
-                    break;
+            var existing = ReadRecords<T>(file).Select(r => r.Id).ToHashSet();
+
+            int newId;
+            do 
+            { 
+                newId = rnd.Next(1, int.MaxValue); 
             }
-            bool unique = false;
-            while (!unique)
-            {
-                int newId = rnd.Next();
-                if (recordList.All(record => record.Id != newId))
-                {
-                    unique = true;
-                    return newId;
-                }
-            }
-            return 0;
+            while (existing.Contains(newId));
+
+            return newId;
         }
 
-        public static void UpdateRecord<T>(T updatedRecord, StorageFile file)
+        public static void UpdateRecord<T>(T updatedRecord, StorageFile file) where T : HasId
         {
             var existing = ReadRecords<T>(file);
 

@@ -1,8 +1,7 @@
 ﻿namespace WAM_Coursework.Conferences
 {
-    internal class ConferenceRecord
+    internal class ConferenceRecord : HasId
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Datetime { get; set; }
