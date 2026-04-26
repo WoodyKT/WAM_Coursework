@@ -26,6 +26,5 @@ namespace WAM_Coursework.Conferences
         public string SpeakerEmail { get => record.SpeakerEmail; set => record.SpeakerEmail = value; }
         public bool ReviewPassed { get => record.ReviewPassed; set => record.ReviewPassed = value; }
 
-        public List<int> ReviewIds { get => record.ReviewIds; set => record.ReviewIds = value; }
     }
 }

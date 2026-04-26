@@ -12,12 +12,12 @@ namespace WAM_Coursework.Users
         /// <summary>
         /// Create review
         /// </summary>
-        /// <param name="args">talkid, score, description</param>
+        /// <param name="args">reviewid,talkid, score, comment</param>
         public override void CreateAction(string args)
         {
             string[] arguments = args.Split(',');
 
-            Review newReview = new Review(int.Parse(arguments[0]), int.Parse(arguments[1]), arguments[2]);
+            Review newReview = new Review(int.Parse(arguments[0]), int.Parse(arguments[1]), int.Parse(arguments[2]), arguments[3]);
             FileManager.WriteRecords(new List<Review> { newReview }, FileManager.StorageFile.reviews);
         }
     }

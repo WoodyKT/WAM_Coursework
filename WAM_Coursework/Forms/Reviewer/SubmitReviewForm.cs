@@ -25,10 +25,7 @@ namespace WAM_Coursework.Forms
 
         private void SubmitReviewButton_Click(object sender, System.EventArgs e)
         {
-            CurrentUser.Instance.User.CreateAction($"{reviewID},{ScoreComboBox.SelectedItem},{ReasonTextBox.Text.Replace(",", "%")}");
-            TalkRecord record = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks).Where(t => t.Id == int.Parse(talkID)).FirstOrDefault();
-            record.ReviewIds.Add(reviewID);
-            FileManager.UpdateRecord(record,FileManager.StorageFile.talks);
+            CurrentUser.Instance.User.CreateAction($"{reviewID}, {int.Parse(talkID)},{ScoreComboBox.SelectedItem},{ReasonTextBox.Text.Replace(",", "%")}");
             Close();
         }
 

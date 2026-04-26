@@ -10,6 +10,5 @@ namespace WAM_Coursework.Conferences
         public string SpeakerEmail { get; set; }
         public bool ReviewPassed { get; set; } = false;
 
-        public List<int> ReviewIds { get; set; } = new List<int>();
     }
 }
