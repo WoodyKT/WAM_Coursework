@@ -16,6 +16,7 @@ namespace WAM_Coursework.FileHandlers
         FileManager()
         {
             CreateFileIfNotExists();
+            CreateAdminIfNotExists();
         }
 
         public enum StorageFile
@@ -82,9 +83,9 @@ namespace WAM_Coursework.FileHandlers
             var existing = ReadRecords<T>(file).Select(r => r.Id).ToHashSet();
 
             int newId;
-            do 
-            { 
-                newId = rnd.Next(1, int.MaxValue); 
+            do
+            {
+                newId = rnd.Next(1, int.MaxValue);
             }
             while (existing.Contains(newId));
 
@@ -106,5 +107,14 @@ namespace WAM_Coursework.FileHandlers
                 csv.WriteRecords(existing);
             }
         }
-    }
+
+        private void CreateAdminIfNotExists()
+        {
+            var users = ReadRecords<UserRecord>(StorageFile.users);
+            if (!users.Any(u => u.Role == UserConstants.ManagerRole))
+            {
+                UserFactory.CreateUser("adminf@airview.com", "admin", "account", "admin", UserConstants.ManagerRole);
+            }
+        }
+    } 
 }

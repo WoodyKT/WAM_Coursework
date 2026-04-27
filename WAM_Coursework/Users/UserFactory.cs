@@ -17,6 +17,9 @@ namespace WAM_Coursework.Users
                 case UserConstants.SpeakerRole:
                     created = new Speaker(email, firstName, lastName, passwordHash);
                     break;
+                case UserConstants.ManagerRole:
+                    created = new Manager(email, firstName, lastName, passwordHash);
+                    break;
                 default:
                     break;
             }
@@ -35,6 +38,8 @@ namespace WAM_Coursework.Users
                     return new Reviewer(user.Email, user.FirstName, user.LastName, user.PasswordHash);
                 case UserConstants.SpeakerRole:
                     return new Speaker(user.Email, user.FirstName, user.LastName, user.PasswordHash);
+                case UserConstants.ManagerRole:
+                    return new Manager(user.Email, user.FirstName, user.LastName, user.PasswordHash);
                 default:
                     break;
             }

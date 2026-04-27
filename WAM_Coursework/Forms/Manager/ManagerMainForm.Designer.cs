@@ -220,9 +220,8 @@
             this.StartDateValue.ForeColor = System.Drawing.Color.White;
             this.StartDateValue.Location = new System.Drawing.Point(8, 24);
             this.StartDateValue.Name = "StartDateValue";
-            this.StartDateValue.Size = new System.Drawing.Size(87, 19);
+            this.StartDateValue.Size = new System.Drawing.Size(0, 19);
             this.StartDateValue.TabIndex = 1;
-            this.StartDateValue.Text = "12 Jun 2026";
             // 
             // EndDatePanel
             // 
@@ -252,9 +251,8 @@
             this.EndDateValue.ForeColor = System.Drawing.Color.White;
             this.EndDateValue.Location = new System.Drawing.Point(8, 24);
             this.EndDateValue.Name = "EndDateValue";
-            this.EndDateValue.Size = new System.Drawing.Size(87, 19);
+            this.EndDateValue.Size = new System.Drawing.Size(0, 19);
             this.EndDateValue.TabIndex = 1;
-            this.EndDateValue.Text = "14 Jun 2026";
             // 
             // DeadlinePanel
             // 
@@ -284,9 +282,8 @@
             this.DeadlineValue.ForeColor = System.Drawing.Color.White;
             this.DeadlineValue.Location = new System.Drawing.Point(8, 24);
             this.DeadlineValue.Name = "DeadlineValue";
-            this.DeadlineValue.Size = new System.Drawing.Size(94, 19);
+            this.DeadlineValue.Size = new System.Drawing.Size(0, 19);
             this.DeadlineValue.TabIndex = 1;
-            this.DeadlineValue.Text = "30 May 2026";
             // 
             // TotalSlotsPanel
             // 
@@ -316,9 +313,8 @@
             this.TotalSlotsValue.ForeColor = System.Drawing.Color.White;
             this.TotalSlotsValue.Location = new System.Drawing.Point(8, 24);
             this.TotalSlotsValue.Name = "TotalSlotsValue";
-            this.TotalSlotsValue.Size = new System.Drawing.Size(17, 19);
+            this.TotalSlotsValue.Size = new System.Drawing.Size(0, 19);
             this.TotalSlotsValue.TabIndex = 1;
-            this.TotalSlotsValue.Text = "5";
             // 
             // SpeakerSlotsLabel
             // 
