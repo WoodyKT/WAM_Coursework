@@ -1,4 +1,6 @@
-﻿namespace WAM_Coursework.Users
+﻿using System.Collections.Generic;
+
+namespace WAM_Coursework.Users
 {
     public class UserRecord
     {
@@ -7,6 +9,6 @@
         public string LastName { get; set; }
         public string PasswordHash { get; set; }
         public string Role { get; set; }
-        public int[] RelevantConferenceIds { get; set; }
+        public List<int> RelevantIds { get; set; }
     }
 }

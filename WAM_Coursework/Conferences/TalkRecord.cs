@@ -1,12 +1,14 @@
-﻿namespace WAM_Coursework.Conferences
+﻿using System.Collections.Generic;
+
+namespace WAM_Coursework.Conferences
 {
-    public class TalkRecord
+    public class TalkRecord : HasId
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Datetime { get; set; }
         public string SpeakerEmail { get; set; }
         public bool ReviewPassed { get; set; } = false;
+
     }
 }

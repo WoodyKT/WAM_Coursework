@@ -31,9 +31,9 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.LogInLabel = new System.Windows.Forms.Label();
             this.LoginLayoutTable = new System.Windows.Forms.TableLayoutPanel();
+            this.PasswordLabel = new System.Windows.Forms.Label();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.PasswordLabel = new System.Windows.Forms.Label();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.LogInButton = new System.Windows.Forms.Button();
             this.LoginLayoutTable.SuspendLayout();
@@ -92,6 +92,18 @@
             this.LoginLayoutTable.Size = new System.Drawing.Size(328, 214);
             this.LoginLayoutTable.TabIndex = 4;
             // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.PasswordLabel.Location = new System.Drawing.Point(10, 68);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(93, 28);
+            this.PasswordLabel.TabIndex = 2;
+            this.PasswordLabel.Text = "Password";
+            // 
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
@@ -116,18 +128,6 @@
             this.EmailTextBox.TabIndex = 1;
             this.EmailTextBox.Text = "Enter your email";
             // 
-            // PasswordLabel
-            // 
-            this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.PasswordLabel.Location = new System.Drawing.Point(10, 68);
-            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(93, 28);
-            this.PasswordLabel.TabIndex = 2;
-            this.PasswordLabel.Text = "Password";
-            // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
@@ -138,7 +138,7 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(277, 20);
             this.PasswordTextBox.TabIndex = 3;
-            this.PasswordTextBox.Text = "Enter your password";
+            this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
             // LogInButton
             // 

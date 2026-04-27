@@ -1,6 +1,11 @@
 ﻿namespace WAM_Coursework.Conferences
 {
-    internal class ReviewRecord
+    public class ReviewRecord : HasId
     {
+        public int Score { get; set; }
+        public string Comment { get; set; }
+
+
+        public int attatchedReviewId { get; set; }
     }
 }

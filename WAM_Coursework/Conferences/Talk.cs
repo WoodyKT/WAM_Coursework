@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Conferences
 {
@@ -12,7 +14,7 @@ namespace WAM_Coursework.Conferences
             record.Description = description;
             record.SpeakerEmail = speakerEmail;
 
-            record.Id = new Random().Next(1, int.MaxValue);//make unique
+            record.Id = FileManager.CreateNewId<TalkRecord>(FileManager.StorageFile.talks);
             record.Datetime = DateTime.Now.ToString();
             record.ReviewPassed = false;
         }
@@ -23,5 +25,6 @@ namespace WAM_Coursework.Conferences
         public string Datetime { get => record.Datetime; set => record.Datetime = value; }
         public string SpeakerEmail { get => record.SpeakerEmail; set => record.SpeakerEmail = value; }
         public bool ReviewPassed { get => record.ReviewPassed; set => record.ReviewPassed = value; }
+
     }
 }

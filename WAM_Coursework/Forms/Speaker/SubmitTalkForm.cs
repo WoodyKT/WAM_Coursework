@@ -17,6 +17,7 @@ namespace WAM_Coursework.Forms
 
             string args = $"{title},{description}";
             CurrentUser.Instance.User.CreateAction(args);
+            Close();
         }
     }
 }
