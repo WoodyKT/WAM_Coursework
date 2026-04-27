@@ -229,6 +229,7 @@ namespace WAM_Coursework.Forms
             this.AddSlotButton.TabIndex = 11;
             this.AddSlotButton.Text = "+ Add slot";
             this.AddSlotButton.UseVisualStyleBackColor = false;
+            this.AddSlotButton.Click += new System.EventHandler(this.AddSlotButton_Click);
             // 
             // SlotsFlowPanel
             // 
@@ -254,6 +255,7 @@ namespace WAM_Coursework.Forms
             this.CreateConferenceButton.TabIndex = 13;
             this.CreateConferenceButton.Text = "Create conference";
             this.CreateConferenceButton.UseVisualStyleBackColor = false;
+            this.CreateConferenceButton.Click += new System.EventHandler(this.CreateConferenceButton_Click);
             // 
             // NewConferenceForm
             // 

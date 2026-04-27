@@ -79,6 +79,8 @@
     <Compile Include="Conferences\HasId.cs" />
     <Compile Include="Conferences\Review.cs" />
     <Compile Include="Conferences\ReviewRecord.cs" />
+    <Compile Include="Conferences\SelectedTalks.cs" />
+    <Compile Include="Conferences\SelectedTalksRecord.cs" />
     <Compile Include="Conferences\Talk.cs" />
     <Compile Include="Conferences\TalkRecord.cs" />
     <Compile Include="FileHandlers\FileManager.cs" />

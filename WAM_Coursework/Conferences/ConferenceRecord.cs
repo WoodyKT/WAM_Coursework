@@ -2,7 +2,7 @@
 
 namespace WAM_Coursework.Conferences
 {
-    internal class ConferenceRecord : HasId
+    public class ConferenceRecord : HasId
     {
         public string Title { get; set; }
         public string Location { get; set; }
