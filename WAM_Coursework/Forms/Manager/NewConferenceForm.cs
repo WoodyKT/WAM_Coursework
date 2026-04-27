@@ -2,9 +2,9 @@
 
 namespace WAM_Coursework.Forms
 {
-    public partial class ManagerMainForm : Form
+    public partial class NewConferenceForm : Form
     {
-        public ManagerMainForm()
+        public NewConferenceForm()
         {
             InitializeComponent();
         }
