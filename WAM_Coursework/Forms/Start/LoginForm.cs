@@ -5,6 +5,10 @@ namespace WAM_Coursework.Forms
 {
     public partial class LoginForm : Form
     {
+        /// <summary>
+        /// Initialises object and sets login prompt text to match user account type.
+        /// </summary>
+        /// <param name="role"></param>
         public LoginForm(string role)
         {
             InitializeComponent();

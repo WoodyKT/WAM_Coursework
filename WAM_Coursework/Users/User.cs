@@ -36,6 +36,9 @@ namespace WAM_Coursework.Users
             return false;
         }
 
+        /// <summary>
+        /// Saves created user to CSV database as a list.
+        /// </summary>
         public void SaveAccount()
         {
             FileManager.WriteRecords(new List<UserRecord> { record }, FileManager.StorageFile.users);

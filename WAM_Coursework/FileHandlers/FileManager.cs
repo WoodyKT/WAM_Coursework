@@ -76,6 +76,13 @@ namespace WAM_Coursework.FileHandlers
             }
         }
 
+        /// <summary>
+        /// Generates a random new ID and checks for match in database. 
+        /// If it already exists in database, keep generating new IDs until one is unique. 
+        /// </summary>
+        /// <typeparam name="T">type parameter of generic class HasId.</typeparam>
+        /// <param name="file">the database file to be searched for matching record.</param>
+        /// <returns>The newly generated ID.</returns>
         public static int CreateNewId<T>(StorageFile file) where T : HasId
         {
             Random rnd = new Random();
@@ -91,6 +98,13 @@ namespace WAM_Coursework.FileHandlers
             return newId;
         }
 
+        /// <summary>
+        /// Overwrites a record in the database with a 
+        /// new version of that record which is passed in.
+        /// </summary>
+        /// <typeparam name="T">type parameter of generic class HasId.</typeparam>
+        /// <param name="updatedRecord">New version of a record, to be updated in database.</param>
+        /// <param name="file">the database file to be searched for matching record.</param>
         public static void UpdateRecord<T>(T updatedRecord, StorageFile file) where T : HasId
         {
             var existing = ReadRecords<T>(file);
