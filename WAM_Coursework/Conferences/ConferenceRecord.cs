@@ -1,5 +1,8 @@
 ﻿namespace WAM_Coursework.Conferences
 {
+    /// <summary>
+    /// Database record for a conference.
+    /// </summary>
     internal class ConferenceRecord : HasId
     {
         public string Name { get; set; }

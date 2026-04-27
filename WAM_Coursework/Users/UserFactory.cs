@@ -3,6 +3,9 @@ using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Users
 {
+    /// <summary>
+    /// Handles user creation and access from the database.
+    /// </summary>
     public static class UserFactory
     {
         /// <summary>

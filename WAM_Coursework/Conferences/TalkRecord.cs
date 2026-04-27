@@ -2,6 +2,9 @@
 
 namespace WAM_Coursework.Conferences
 {
+    /// <summary>
+    /// Database record for a talk.
+    /// </summary>
     public class TalkRecord : HasId
     {
         public string Title { get; set; }

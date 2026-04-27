@@ -11,13 +11,22 @@ using WAM_Coursework.Users;
 
 namespace WAM_Coursework.FileHandlers
 {
+    /// <summary>
+    /// Handles interaction with the database CSV files storing all application records.
+    /// </summary>
     public sealed class FileManager
     {
+        /// <summary>
+        /// FileManager class constructor. Immediately calls method to generate database files if one isn't present.
+        /// </summary>
         FileManager()
         {
             CreateFileIfNotExists();
         }
 
+        /// <summary>
+        /// An enumerator used to group all database files.
+        /// </summary>
         public enum StorageFile
         {
             users,
@@ -30,6 +39,11 @@ namespace WAM_Coursework.FileHandlers
 
         public static readonly FileManager Instance = new FileManager();
 
+        /// <summary>
+        /// Returns the windows path to the passed in database files.
+        /// </summary>
+        /// <param name="file">Files to find path to.</param>
+        /// <returns></returns>
         private static string GetDir(StorageFile file)
         {
             string fileName = file.ToString() + ".csv";
@@ -64,7 +78,10 @@ namespace WAM_Coursework.FileHandlers
             }
         }
         #endregion
-
+        /// <summary>
+        /// Uses the StorageFile enum to check if each database file exists. 
+        /// If any are missing, they are created.
+        /// </summary>
         private void CreateFileIfNotExists()
         {
             foreach (var file in Enum.GetValues(typeof(StorageFile)).Cast<StorageFile>())
