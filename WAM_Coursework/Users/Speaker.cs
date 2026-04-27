@@ -4,8 +4,18 @@ using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Users
 {
+    /// <summary>
+    /// A speaker account.
+    /// </summary>
     internal class Speaker : User
     {
+        /// <summary>
+        /// Speaker constructor.
+        /// </summary>
+        /// <param name="email">Speaker email address.</param>
+        /// <param name="firstName">Speaker first name.</param>
+        /// <param name="lastName">Speaker surname.</param>
+        /// <param name="passwordHash">Hashed speaker password.</param>
         public Speaker(string email, string firstName, string lastName, string passwordHash)
       : base(email, firstName, lastName, passwordHash, UserConstants.SpeakerRole) { }
 
