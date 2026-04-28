@@ -49,6 +49,7 @@ namespace WAM_Coursework.Forms
             this.TitleLabel = new System.Windows.Forms.Label();
             this.SubtitleLabel = new System.Windows.Forms.Label();
             this.CardPanel = new System.Windows.Forms.Panel();
+            this.SlotDatePicker = new System.Windows.Forms.DateTimePicker();
             this.ConferenceTitleLabel = new System.Windows.Forms.Label();
             this.ConferenceTitleTextBox = new System.Windows.Forms.TextBox();
             this.LocationLabel = new System.Windows.Forms.Label();
@@ -93,6 +94,7 @@ namespace WAM_Coursework.Forms
             // 
             this.CardPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.CardPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CardPanel.Controls.Add(this.SlotDatePicker);
             this.CardPanel.Controls.Add(this.ConferenceTitleLabel);
             this.CardPanel.Controls.Add(this.ConferenceTitleTextBox);
             this.CardPanel.Controls.Add(this.LocationLabel);
@@ -109,8 +111,16 @@ namespace WAM_Coursework.Forms
             this.CardPanel.Controls.Add(this.CreateConferenceButton);
             this.CardPanel.Location = new System.Drawing.Point(120, 140);
             this.CardPanel.Name = "CardPanel";
-            this.CardPanel.Size = new System.Drawing.Size(660, 480);
+            this.CardPanel.Size = new System.Drawing.Size(660, 668);
             this.CardPanel.TabIndex = 2;
+            // 
+            // SlotDatePicker
+            // 
+            this.SlotDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.SlotDatePicker.Location = new System.Drawing.Point(418, 238);
+            this.SlotDatePicker.Name = "SlotDatePicker";
+            this.SlotDatePicker.Size = new System.Drawing.Size(84, 20);
+            this.SlotDatePicker.TabIndex = 14;
             // 
             // ConferenceTitleLabel
             // 
@@ -169,6 +179,7 @@ namespace WAM_Coursework.Forms
             this.StartDatePicker.Name = "StartDatePicker";
             this.StartDatePicker.Size = new System.Drawing.Size(200, 20);
             this.StartDatePicker.TabIndex = 5;
+            this.StartDatePicker.ValueChanged += new System.EventHandler(this.StartDatePicker_ValueChanged);
             // 
             // EndDateLabel
             // 
@@ -187,6 +198,7 @@ namespace WAM_Coursework.Forms
             this.EndDatePicker.Name = "EndDatePicker";
             this.EndDatePicker.Size = new System.Drawing.Size(200, 20);
             this.EndDatePicker.TabIndex = 7;
+            this.EndDatePicker.ValueChanged += new System.EventHandler(this.EndDatePicker_ValueChanged);
             // 
             // ApplicationDeadlineLabel
             // 
@@ -205,17 +217,17 @@ namespace WAM_Coursework.Forms
             this.ApplicationDeadlinePicker.Name = "ApplicationDeadlinePicker";
             this.ApplicationDeadlinePicker.Size = new System.Drawing.Size(200, 20);
             this.ApplicationDeadlinePicker.TabIndex = 9;
+            this.ApplicationDeadlinePicker.ValueChanged += new System.EventHandler(this.ApplicationDeadlinePicker_ValueChanged);
             // 
             // SpeakerSlotsLabel
             // 
-            this.SpeakerSlotsLabel.AutoSize = true;
             this.SpeakerSlotsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.SpeakerSlotsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.SpeakerSlotsLabel.Location = new System.Drawing.Point(19, 231);
+            this.SpeakerSlotsLabel.Location = new System.Drawing.Point(19, 238);
             this.SpeakerSlotsLabel.Name = "SpeakerSlotsLabel";
-            this.SpeakerSlotsLabel.Size = new System.Drawing.Size(68, 38);
+            this.SpeakerSlotsLabel.Size = new System.Drawing.Size(258, 31);
             this.SpeakerSlotsLabel.TabIndex = 10;
-            this.SpeakerSlotsLabel.Text = "SPEAKER\r\nSLOTS";
+            this.SpeakerSlotsLabel.Text = "SPEAKER SLOTS";
             // 
             // AddSlotButton
             // 
@@ -237,7 +249,7 @@ namespace WAM_Coursework.Forms
             this.SlotsFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.SlotsFlowPanel.Location = new System.Drawing.Point(20, 272);
             this.SlotsFlowPanel.Name = "SlotsFlowPanel";
-            this.SlotsFlowPanel.Size = new System.Drawing.Size(620, 150);
+            this.SlotsFlowPanel.Size = new System.Drawing.Size(620, 324);
             this.SlotsFlowPanel.TabIndex = 12;
             this.SlotsFlowPanel.WrapContents = false;
             // 
@@ -249,7 +261,7 @@ namespace WAM_Coursework.Forms
             this.CreateConferenceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateConferenceButton.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.CreateConferenceButton.ForeColor = System.Drawing.Color.White;
-            this.CreateConferenceButton.Location = new System.Drawing.Point(20, 436);
+            this.CreateConferenceButton.Location = new System.Drawing.Point(20, 612);
             this.CreateConferenceButton.Name = "CreateConferenceButton";
             this.CreateConferenceButton.Size = new System.Drawing.Size(620, 36);
             this.CreateConferenceButton.TabIndex = 13;
@@ -262,7 +274,7 @@ namespace WAM_Coursework.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(900, 700);
+            this.ClientSize = new System.Drawing.Size(900, 860);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.CardPanel);
@@ -276,5 +288,7 @@ namespace WAM_Coursework.Forms
         }
 
         #endregion
+
+        private System.Windows.Forms.DateTimePicker SlotDatePicker;
     }
 }
