@@ -58,5 +58,10 @@ namespace WAM_Coursework.Forms
             submitForm.ShowDialog();
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CurrentUser.Instance.User = null;
+            Close();
+        }
     }
 }

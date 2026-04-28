@@ -18,6 +18,13 @@ namespace WAM_Coursework.Forms
             LogInLabel.Text = $"Log in to your {role} account";
         }
 
+        private WelcomeForm MainForm = null;
+        public LoginForm(Form CallingForm)
+        {
+            MainForm = CallingForm as WelcomeForm;
+            InitializeComponent();
+        }
+
         /// <summary>
         /// Validates login details against database. 
         /// Displays respective user homepage if validation passes and closes this form.
@@ -32,26 +39,7 @@ namespace WAM_Coursework.Forms
                 MessageBox.Show("Invalid email or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            switch (CurrentUser.Instance.User.record.Role)
-            {
-                case UserConstants.SpeakerRole:
-                    SpeakerMainForm SpeakerForm = new SpeakerMainForm();
-                    SpeakerForm.Show();
-                    Close();
-                    break;
-                case UserConstants.ReviewerRole:
-                    ReviewerMainForm ReviewerForm = new ReviewerMainForm();
-                    ReviewerForm.Show();
-                    Close();
-                    break;
-                case UserConstants.ManagerRole:
-                    ManagerMainForm ManagerForm = new ManagerMainForm();
-                    ManagerForm.Show();
-                    Close();
-                    break;
-                default:
-                    break;
-            }        
+            Close(); //successful login, welcome page handles redirecting.
         }
     }
 }

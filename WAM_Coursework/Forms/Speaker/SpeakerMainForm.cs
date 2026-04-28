@@ -54,5 +54,11 @@ namespace WAM_Coursework.Forms
                 ApplicationsFlowPanel.Controls.Add(talkbutton);
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CurrentUser.Instance.User = null;
+            Close();
+        }
     }
 }
