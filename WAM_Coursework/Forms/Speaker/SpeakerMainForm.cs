@@ -7,14 +7,25 @@ using WAM_Coursework.Users;
 
 namespace WAM_Coursework.Forms
 {
+    /// <summary>
+    /// Main homepage for speakers.
+    /// </summary>
     public partial class SpeakerMainForm : Form
     {
+        /// <summary>
+        /// Initialises the object and updates the list of applications submitted by the user.
+        /// </summary>
         public SpeakerMainForm()
         {
             InitializeComponent();
             UpdateTalkList();
         }
 
+        /// <summary>
+        /// Submits the application and closes the form when submit button pressed.
+        /// </summary>
+        /// <param name="sender">submit button that was pressed.</param>
+        /// <param name="e">additional event info.</param>
         private void NewTalkButton_Click(object sender, System.EventArgs e)
         {
             SubmitTalkForm submitForm = new SubmitTalkForm();
@@ -22,6 +33,10 @@ namespace WAM_Coursework.Forms
             UpdateTalkList();
         }
 
+        /// <summary>
+        /// Fetches all applications previously submitted by the user from the database files
+        /// and displays them as a list of buttons on the homepage including the status of each.
+        /// </summary>
         private void UpdateTalkList()
         {
             ApplicationsFlowPanel.Controls.Clear();

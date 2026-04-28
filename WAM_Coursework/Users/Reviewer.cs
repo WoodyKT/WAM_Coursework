@@ -4,8 +4,18 @@ using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Users
 {
+    /// <summary>
+    /// A reviewer account.
+    /// </summary>
     internal class Reviewer : User
     {
+        /// <summary>
+        /// Reviewer constructor.
+        /// </summary>
+        /// <param name="email">Reviewer email address.</param>
+        /// <param name="firstName">Reviewer first name.</param>
+        /// <param name="lastName">Reviewer surname.</param>
+        /// <param name="passwordHash">Hashed reviewer password.</param>
         public Reviewer(string email, string firstName, string lastName, string passwordHash)
    : base(email, firstName, lastName, passwordHash, UserConstants.ReviewerRole) { }
 
