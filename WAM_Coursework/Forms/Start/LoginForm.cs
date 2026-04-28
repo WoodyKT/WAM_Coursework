@@ -18,13 +18,6 @@ namespace WAM_Coursework.Forms
             LogInLabel.Text = $"Log in to your {role} account";
         }
 
-        private WelcomeForm MainForm = null;
-        public LoginForm(Form CallingForm)
-        {
-            MainForm = CallingForm as WelcomeForm;
-            InitializeComponent();
-        }
-
         /// <summary>
         /// Validates login details against database. 
         /// Displays respective user homepage if validation passes and closes this form.
