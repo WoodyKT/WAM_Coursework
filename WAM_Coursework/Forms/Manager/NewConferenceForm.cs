@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
+using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Forms
 {
@@ -17,10 +18,42 @@ namespace WAM_Coursework.Forms
 
         private void CreateConferenceButton_Click(object sender, System.EventArgs e)
         {
-            Conference conference = new Conference(ConferenceTitleTextBox.Text, LocationTextBox.Text, StartDatePicker.Value, EndDatePicker.Value, ApplicationDeadlinePicker.Value);
+
+            Conference conference = new Conference(
+            ConferenceTitleTextBox.Text,
+            LocationTextBox.Text,
+            StartDatePicker.Value,
+            EndDatePicker.Value,
+            ApplicationDeadlinePicker.Value);
+
+            List<TalkRecord> eligibleTalks = GetTalksWithTwoReviews();
+
+            List<SelectedTalksRecord> selectedTalks = new List<SelectedTalksRecord>();
+            int maxTalks;
+            if (slotTimes.Count<eligibleTalks.Count)
+            {
+                maxTalks = slotTimes.Count;
+            }
+            else
+            {
+                maxTalks=eligibleTalks.Count;
+            }
+
+            for (int i = 0; i < maxTalks; i++)
+            {
+                selectedTalks.Add(new SelectedTalksRecord
+                {
+                    talkId = eligibleTalks[i].Id,
+                    startTime = slotTimes.ElementAt(i)
+                });
+            }
+
+            FileManager.WriteRecords(new List<ConferenceRecord>{ conference.record }, FileManager.StorageFile.conferences);
+            FileManager.WriteRecords(selectedTalks, FileManager.StorageFile.selectedTalks);
+            Close();
         }
 
-        private void AddSlotButton_Click(object sender, System.EventArgs e)
+        private void AddSlotButton_Click(object sender, EventArgs e)
         {
             if (SlotDatePicker.Value < StartDatePicker.Value || SlotDatePicker.Value > EndDatePicker.Value)
             {
@@ -30,6 +63,25 @@ namespace WAM_Coursework.Forms
             slotTimes.Add(SlotDatePicker.Value);
             SlotDatePicker.Value = ApplicationDeadlinePicker.Value;
             UpdateSlotList();
+        }
+
+    
+        private List<TalkRecord> GetTalksWithTwoReviews()
+        {
+            var reviews = FileManager.ReadRecords<ReviewRecord>(FileManager.StorageFile.reviews);
+            var talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
+
+            var talkAverages = reviews
+            .GroupBy(r => r.attatchedReviewId)
+            .Where(g => g.Count() >= 2)
+            .Select(g => new { TalkId = g.Key, AvgScore = g.Average(r => r.Score) })
+            .OrderByDescending(g => g.AvgScore)
+            .ToList();
+
+            return talkAverages
+                .Select(g => talks.Find(t => t.Id == g.TalkId))
+                .Where(t => t != null)
+                .ToList();
         }
 
         private void UpdateSlotList()

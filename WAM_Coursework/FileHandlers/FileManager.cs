@@ -24,7 +24,8 @@ namespace WAM_Coursework.FileHandlers
             users,
             conferences,
             talks,
-            reviews
+            reviews,
+            selectedTalks
         };
 
         private static readonly string basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "FairView");
