@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
 
@@ -22,7 +15,7 @@ namespace WAM_Coursework.Forms.Manager
         private void StartNewButton_Click(object sender, EventArgs e)
         {
             NewConferenceForm newConferenceForm = new NewConferenceForm();
-
+            newConferenceForm.ShowDialog();
         }
 
         private void CheckForSavedConference()
@@ -35,7 +28,7 @@ namespace WAM_Coursework.Forms.Manager
             }
             else
             {
-                CardPanel.Visible = false;  
+                CardPanel.Visible = false;
             }
         }
 
@@ -44,7 +37,7 @@ namespace WAM_Coursework.Forms.Manager
         /// </summary>
         private void SetActiveConference(Conference conference)
         {
-            
+
         }
     }
 }

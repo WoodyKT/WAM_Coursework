@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
 using WAM_Coursework.FileHandlers;
 using WAM_Coursework.Users;
-using System;
 
 namespace WAM_Coursework.Forms
 {
@@ -30,13 +30,13 @@ namespace WAM_Coursework.Forms
                 talkbutton.BackColor = System.Drawing.Color.FromArgb(54, 54, 54);
                 talkbutton.ForeColor = System.Drawing.Color.White;
                 talkbutton.AutoSize = true;
-                talkbutton.Click += (sender, e) => OpenReview(sender,e,talk.Id);
+                talkbutton.Click += (sender, e) => OpenReview(sender, e, talk.Id);
                 ReviewsFlowPanel.Controls.Add(talkbutton);
             }
             CountBadge.Text = Unreviewed.Count.ToString() + " remaining";
         }
 
-        private void OpenReview(object sender, EventArgs e, int talkId) 
+        private void OpenReview(object sender, EventArgs e, int talkId)
         {
             SubmitReviewForm submitForm = new SubmitReviewForm(talkId.ToString());
             submitForm.ShowDialog();

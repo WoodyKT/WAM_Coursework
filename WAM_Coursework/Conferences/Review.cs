@@ -2,7 +2,7 @@
 {
     public class Review
     {
-       ReviewRecord record = new ReviewRecord();
+        ReviewRecord record = new ReviewRecord();
 
         public Review(int Id, int TalkId, int Score, string Comment)
         {

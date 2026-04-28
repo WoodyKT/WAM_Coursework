@@ -10,7 +10,7 @@ namespace WAM_Coursework.Conferences
         public Conference()
         {
         }
-         public Conference(string title, string location, DateTime startDate, DateTime endDate, DateTime applicationDeadline)
+        public Conference(string title, string location, DateTime startDate, DateTime endDate, DateTime applicationDeadline)
         {
             record.Title = title;
             record.Location = location;

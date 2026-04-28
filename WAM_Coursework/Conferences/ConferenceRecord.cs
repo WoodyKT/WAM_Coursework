@@ -10,6 +10,6 @@ namespace WAM_Coursework.Conferences
         public DateTime EndDate { get; set; }
         public DateTime ApplicationDeadline { get; set; }
 
-        
+
     }
 }

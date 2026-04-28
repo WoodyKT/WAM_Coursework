@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace WAM_Coursework.Conferences
+﻿namespace WAM_Coursework.Conferences
 {
     public class TalkRecord : HasId
     {

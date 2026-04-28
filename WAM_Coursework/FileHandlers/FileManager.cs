@@ -116,5 +116,5 @@ namespace WAM_Coursework.FileHandlers
                 UserFactory.CreateUser("adminf@airview.com", "admin", "account", "admin", UserConstants.ManagerRole);
             }
         }
-    } 
+    }
 }

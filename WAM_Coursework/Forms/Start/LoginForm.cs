@@ -39,7 +39,7 @@ namespace WAM_Coursework.Forms
                     break;
                 default:
                     break;
-            }        
+            }
         }
     }
 }
