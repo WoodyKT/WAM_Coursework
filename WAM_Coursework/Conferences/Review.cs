@@ -13,7 +13,7 @@
         /// <param name="TalkId">ID of talk associated with review.</param>
         /// <param name="Score">Rating out of 10 given to talk.</param>
         /// <param name="Comment">String of feedback on talk provided by reviewer.</param>
- public Review(int Id, int attachedTalkId, int Score, string Comment)>>>>>>> master
+ public Review(int Id, int attachedTalkId, int Score, string Comment)
         {
             this.Score = Score;
             this.Comment = Comment;
