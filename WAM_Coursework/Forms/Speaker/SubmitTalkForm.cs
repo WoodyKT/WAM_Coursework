@@ -32,7 +32,7 @@ namespace WAM_Coursework.Forms
             string affiliation = CurrentUser.Instance.User.record.Affiliation;
             string[] reviewerEmails = AssignApplication(affiliation);
             
-            string args = $"{title},{description}, {affiliation}, {reviewerEmails[0]}, {reviewerEmails[1]}";
+            string args = $"{title},{description},{affiliation},{reviewerEmails[0]},{reviewerEmails[1]}";
             CurrentUser.Instance.User.CreateAction(args);
             
             Close();
@@ -48,7 +48,7 @@ namespace WAM_Coursework.Forms
             string reviewer2email = "";
             int index = -1;
             Random random = new Random();
-
+            //TODO: infinite loop possible here with not enough reviewers! address this somehow
             while (reviewer1email == "" || reviewer2email == "")
             {
                 index = random.Next(Reviewers.Count);

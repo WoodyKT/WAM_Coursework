@@ -31,10 +31,11 @@ namespace WAM_Coursework.Forms
             ReviewsFlowPanel.Controls.Clear();
             string userEmail = CurrentUser.Instance.User.record.Email;
             List<TalkRecord> Talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
-            List<TalkRecord> Unreviewed = Talks.FindAll(t => t.ReviewPassed == false);
+            List<TalkRecord> Assigned = Talks.FindAll(t => t.Reviewer1Email == userEmail || t.Reviewer2Email == userEmail);
 
-            foreach (var talk in Unreviewed)
+            foreach (var talk in Assigned)
             {
+                //add application to reviewer homepage list as a button.
                 Button talkbutton = new Button() { Text = talk.Title + "\t - " + talk.Description + "\t- " + (talk.ReviewPassed ? "Approved" : "Pending") };
                 talkbutton.Font = new System.Drawing.Font(talkbutton.Font.FontFamily, 20);
                 talkbutton.BackColor = System.Drawing.Color.FromArgb(54, 54, 54);
@@ -43,7 +44,7 @@ namespace WAM_Coursework.Forms
                 talkbutton.Click += (sender, e) => OpenReview(sender, e, talk.Id);
                 ReviewsFlowPanel.Controls.Add(talkbutton);
             }
-            CountBadge.Text = Unreviewed.Count.ToString() + " remaining";
+            CountBadge.Text = Assigned.Count.ToString() + " remaining";
         }
 
         /// <summary>

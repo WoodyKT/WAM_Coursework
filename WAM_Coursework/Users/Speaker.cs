@@ -28,7 +28,7 @@ namespace WAM_Coursework.Users
         {
             string[] arguments = args.Split(',');
 
-            Talk newTalk = new Talk(arguments[0], arguments[1], CurrentUser.Instance.User.record.Email);
+            Talk newTalk = new Talk(arguments[0], arguments[1], CurrentUser.Instance.User.record.Email, arguments[2], arguments[3], arguments[4]);
             FileManager.WriteRecords(new List<Talk> { newTalk }, FileManager.StorageFile.talks);
         }
 
