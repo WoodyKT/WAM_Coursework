@@ -18,7 +18,7 @@ namespace WAM_Coursework.Users
         /// <param name="firstName">User first name.</param>
         /// <param name="lastName">User surname.</param>
         /// <param name="passwordHash">hashed User password.</param>
-        /// <param name="role"></param>
+        /// <param name="role">User role (speaker, reviewer, or conference manager).</param>
         public User(string email, string firstName, string lastName, string passwordHash, string role)
         {
             record.Email = email;

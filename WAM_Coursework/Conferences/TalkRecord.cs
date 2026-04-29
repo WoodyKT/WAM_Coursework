@@ -9,6 +9,8 @@
         public string Description { get; set; }
         public string Datetime { get; set; }
         public string SpeakerEmail { get; set; }
+        public string Reviewer1Email { get; set; }
+        public string Reviewer2Email { get; set; }
         public bool ReviewPassed { get; set; } = false;
 
     }

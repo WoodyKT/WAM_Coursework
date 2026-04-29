@@ -24,6 +24,8 @@ namespace WAM_Coursework.Conferences
 
             record.Id = FileManager.CreateNewId<TalkRecord>(FileManager.StorageFile.talks);
             record.Datetime = DateTime.Now.ToString();
+            record.Reviewer1Email = "";
+            record.Reviewer2Email = "";
             record.ReviewPassed = false;
         }
 
@@ -32,6 +34,8 @@ namespace WAM_Coursework.Conferences
         public string Description { get => record.Description; set => record.Description = value; }
         public string Datetime { get => record.Datetime; set => record.Datetime = value; }
         public string SpeakerEmail { get => record.SpeakerEmail; set => record.SpeakerEmail = value; }
+        public string Reviewer1Email { get => record.Reviewer1Email; set => record.Reviewer1Email = value; }
+        public string Reviewer2Email { get => record.Reviewer2Email; set => record.Reviewer2Email = value; }
         public bool ReviewPassed { get => record.ReviewPassed; set => record.ReviewPassed = value; }
 
     }
