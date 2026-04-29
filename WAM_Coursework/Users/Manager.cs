@@ -12,8 +12,8 @@
         /// <param name="firstName">CM first name.</param>
         /// <param name="lastName">CM surname.</param>
         /// <param name="passwordHash">hashed CM password.</param>
-        public Manager(string email, string firstName, string lastName, string passwordHash)
-   : base(email, firstName, lastName, passwordHash, UserConstants.ManagerRole) { }
+        public Manager(string email, string firstName, string lastName, string passwordHash, string affiliation)
+   : base(email, firstName, lastName, passwordHash, UserConstants.ManagerRole, affiliation) { }
 
         /// <summary>
         /// Not yet implemented.

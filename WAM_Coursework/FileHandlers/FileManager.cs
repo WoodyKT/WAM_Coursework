@@ -153,7 +153,7 @@ namespace WAM_Coursework.FileHandlers
             var users = ReadRecords<UserRecord>(StorageFile.users);
             if (!users.Any(u => u.Role == UserConstants.ManagerRole))
             {
-                UserFactory.CreateUser("adminf@irview.com", "admin", "account", "admin", UserConstants.ManagerRole);
+                UserFactory.CreateUser("adminf@irview.com", "admin", "account", "admin", UserConstants.ManagerRole, "F@irview");
             }
         }
     }

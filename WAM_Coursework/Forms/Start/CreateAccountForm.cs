@@ -79,7 +79,7 @@ namespace WAM_Coursework.Forms
                 return;
             }
 
-            UserFactory.CreateUser(EmailTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text, PasswordTextBox.Text, selectedRole);
+            UserFactory.CreateUser(EmailTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text, PasswordTextBox.Text, selectedRole, AffiliationTextBox.Text);
             MessageBox.Show($"Account created for {FirstNameTextBox.Text} {LastNameTextBox.Text} as {selectedRole}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }

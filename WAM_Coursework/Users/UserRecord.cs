@@ -12,6 +12,7 @@ namespace WAM_Coursework.Users
         public string LastName { get; set; }
         public string PasswordHash { get; set; }
         public string Role { get; set; }
+        public string Affiliation { get; set; }
         public List<int> RelevantIds { get; set; }
     }
 }
