@@ -11,14 +11,23 @@ using WAM_Coursework.Users;
 
 namespace WAM_Coursework.FileHandlers
 {
+    /// <summary>
+    /// Handles interaction with the database CSV files storing all application records.
+    /// </summary>
     public sealed class FileManager
     {
+        /// <summary>
+        /// FileManager class constructor. Immediately calls method to generate database files if one isn't present.
+        /// </summary>
         FileManager()
         {
             CreateFileIfNotExists();
             CreateAdminIfNotExists();
         }
 
+        /// <summary>
+        /// An enumerator used to group all database files.
+        /// </summary>
         public enum StorageFile
         {
             users,
@@ -32,6 +41,11 @@ namespace WAM_Coursework.FileHandlers
 
         public static readonly FileManager Instance = new FileManager();
 
+        /// <summary>
+        /// Returns the windows path to the passed in database files.
+        /// </summary>
+        /// <param name="file">Files to find path to.</param>
+        /// <returns></returns>
         private static string GetDir(StorageFile file)
         {
             string fileName = file.ToString() + ".csv";
@@ -74,7 +88,10 @@ namespace WAM_Coursework.FileHandlers
             }
         }
         #endregion
-
+        /// <summary>
+        /// Uses the StorageFile enum to check if each database file exists. 
+        /// If any are missing, they are created.
+        /// </summary>
         private void CreateFileIfNotExists()
         {
             foreach (var file in Enum.GetValues(typeof(StorageFile)).Cast<StorageFile>())
@@ -86,6 +103,13 @@ namespace WAM_Coursework.FileHandlers
             }
         }
 
+        /// <summary>
+        /// Generates a random new ID and checks for match in database. 
+        /// If it already exists in database, keep generating new IDs until one is unique. 
+        /// </summary>
+        /// <typeparam name="T">type parameter of generic class HasId.</typeparam>
+        /// <param name="file">the database file to be searched for matching record.</param>
+        /// <returns>The newly generated ID.</returns>
         public static int CreateNewId<T>(StorageFile file) where T : HasId
         {
             Random rnd = new Random();
@@ -101,6 +125,13 @@ namespace WAM_Coursework.FileHandlers
             return newId;
         }
 
+        /// <summary>
+        /// Overwrites a record in the database with a 
+        /// new version of that record which is passed in.
+        /// </summary>
+        /// <typeparam name="T">type parameter of generic class HasId.</typeparam>
+        /// <param name="updatedRecord">New version of a record, to be updated in database.</param>
+        /// <param name="file">the database file to be searched for matching record.</param>
         public static void UpdateRecord<T>(T updatedRecord, StorageFile file) where T : HasId
         {
             var existing = ReadRecords<T>(file);

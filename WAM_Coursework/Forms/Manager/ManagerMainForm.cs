@@ -6,8 +6,14 @@ using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Forms.Manager
 {
+    /// <summary>
+    /// Form for the homepage of the conference manager.
+    /// </summary>
     public partial class ManagerMainForm : Form
     {
+        /// <summary>
+        /// ManagerMainForm constructor.
+        /// </summary>
         public ManagerMainForm()
         {
             InitializeComponent();

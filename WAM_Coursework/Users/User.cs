@@ -4,10 +4,21 @@ using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Users
 {
+    /// <summary>
+    /// Abstract class for a user which the user types derive from.
+    /// </summary>
     public abstract class User
     {
         public UserRecord record = new UserRecord();
 
+        /// <summary>
+        /// User constructor.
+        /// </summary>
+        /// <param name="email">User email.</param>
+        /// <param name="firstName">User first name.</param>
+        /// <param name="lastName">User surname.</param>
+        /// <param name="passwordHash">hashed User password.</param>
+        /// <param name="role"></param>
         public User(string email, string firstName, string lastName, string passwordHash, string role)
         {
             record.Email = email;
@@ -36,6 +47,9 @@ namespace WAM_Coursework.Users
             return false;
         }
 
+        /// <summary>
+        /// Saves created user to CSV database as a list.
+        /// </summary>
         public void SaveAccount()
         {
             FileManager.WriteRecords(new List<UserRecord> { record }, FileManager.StorageFile.users);

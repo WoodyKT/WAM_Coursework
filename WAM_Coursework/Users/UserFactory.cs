@@ -3,8 +3,21 @@ using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Users
 {
+    /// <summary>
+    /// Handles user creation and access from the database.
+    /// </summary>
     public static class UserFactory
     {
+        /// <summary>
+        /// Takes in user-submitted details for a new account, including flag for speaker or reviewer account.
+        /// Hashes password and creates Speaker or Reviewer object as required to be returned.
+        /// </summary>
+        /// <param name="email">User's email address.</param>
+        /// <param name="firstName">User's first name.</param>
+        /// <param name="lastName">User's last name.</param>
+        /// <param name="password">Plaintext password entered by user (to be hashed).</param>
+        /// <param name="role">Defines whether account to be created should be a speaker or reviewer account.</param>
+        /// <returns>Created user object.</returns>
         public static User CreateUser(string email, string firstName, string lastName, string password, string role)
         {
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
@@ -27,6 +40,11 @@ namespace WAM_Coursework.Users
             return created;
         }
 
+        /// <summary>
+        /// Searches CSV database for a user by email address.
+        /// </summary>
+        /// <param name="email">the email address to be searched for.</param>
+        /// <returns>A copy of the matching user object if match found.</returns>
         public static User GetUser(string email)
         {
             var users = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users);

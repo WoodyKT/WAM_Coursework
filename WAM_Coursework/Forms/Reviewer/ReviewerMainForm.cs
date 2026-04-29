@@ -7,8 +7,14 @@ using WAM_Coursework.Users;
 
 namespace WAM_Coursework.Forms
 {
+    /// <summary>
+    /// Form for the reviewer homepage.
+    /// </summary>
     public partial class ReviewerMainForm : Form
     {
+        /// <summary>
+        /// ReviewerMainForm constructor. Immediately updates list of applications to review.
+        /// </summary>
         public ReviewerMainForm()
         {
             InitializeComponent();
@@ -16,6 +22,10 @@ namespace WAM_Coursework.Forms
 
         }
 
+        /// <summary>
+        /// Fetches all unreviewed applications from the database file
+        /// and displays them as a list of buttons on the reviwer's homepage including the status of each.
+        /// </summary>
         private void UpdateReadyToReviewList()
         {
             ReviewsFlowPanel.Controls.Clear();
@@ -36,11 +46,28 @@ namespace WAM_Coursework.Forms
             CountBadge.Text = Unreviewed.Count.ToString() + " remaining";
         }
 
-        private void OpenReview(object sender, EventArgs e, int talkId)
+        /// <summary>
+        /// Opens a dialog window allowing the reviwer to review the selected application.
+        /// </summary>
+        /// <param name="sender">application list button which was pressed.</param>
+        /// <param name="e">additional event info</param>
+        /// <param name="talkId">ID of the talk to review.</param>
+        private void OpenReview(object sender, EventArgs e, int talkId) 
         {
             SubmitReviewForm submitForm = new SubmitReviewForm(talkId.ToString());
             submitForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Clears logged in user and returns to welcome page
+        /// when logout link clicked.
+        /// </summary>
+        /// <param name="sender">logout link clicked.</param>
+        /// <param name="e">additional event info.</param>
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CurrentUser.Instance.User = null;
+            Close();
+        }
     }
 }

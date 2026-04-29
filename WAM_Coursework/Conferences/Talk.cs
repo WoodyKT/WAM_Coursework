@@ -3,10 +3,19 @@ using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Conferences
 {
+    /// <summary>
+    /// An application for a conference talk submitted by a speaker.
+    /// </summary>
     public class Talk
     {
         private TalkRecord record = new TalkRecord();
 
+        /// <summary>
+        /// Talk class constructor.
+        /// </summary>
+        /// <param name="title">Title of talk.</param>
+        /// <param name="description">Description of the talk's content.</param>
+        /// <param name="speakerEmail">Email address of speaker proposing the talk.</param>
         public Talk(string title, string description, string speakerEmail)
         {
             record.Title = title;

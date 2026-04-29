@@ -2,6 +2,9 @@
 
 namespace WAM_Coursework.Users
 {
+    /// <summary>
+    /// A database record for a user.
+    /// </summary>
     public class UserRecord
     {
         public string Email { get; set; }
