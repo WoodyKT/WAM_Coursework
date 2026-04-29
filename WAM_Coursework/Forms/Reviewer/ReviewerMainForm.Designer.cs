@@ -39,6 +39,7 @@
             this.CountBadge = new System.Windows.Forms.Label();
             this.CardContainerPanel = new System.Windows.Forms.Panel();
             this.ReviewsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.CardContainerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,9 +48,10 @@
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
             this.TitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TitleLabel.Location = new System.Drawing.Point(32, 24);
+            this.TitleLabel.Location = new System.Drawing.Point(43, 30);
+            this.TitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(191, 51);
+            this.TitleLabel.Size = new System.Drawing.Size(234, 62);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "F@irView";
             // 
@@ -58,9 +60,10 @@
             this.SubtitleLabel.AutoSize = true;
             this.SubtitleLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.SubtitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.SubtitleLabel.Location = new System.Drawing.Point(34, 84);
+            this.SubtitleLabel.Location = new System.Drawing.Point(45, 103);
+            this.SubtitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SubtitleLabel.Name = "SubtitleLabel";
-            this.SubtitleLabel.Size = new System.Drawing.Size(107, 19);
+            this.SubtitleLabel.Size = new System.Drawing.Size(132, 23);
             this.SubtitleLabel.TabIndex = 1;
             this.SubtitleLabel.Text = "Pending reviews";
             // 
@@ -71,10 +74,11 @@
             this.CountBadge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CountBadge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CountBadge.ForeColor = System.Drawing.Color.White;
-            this.CountBadge.Location = new System.Drawing.Point(700, 40);
+            this.CountBadge.Location = new System.Drawing.Point(933, 49);
+            this.CountBadge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CountBadge.Name = "CountBadge";
-            this.CountBadge.Padding = new System.Windows.Forms.Padding(12, 6, 12, 6);
-            this.CountBadge.Size = new System.Drawing.Size(85, 25);
+            this.CountBadge.Padding = new System.Windows.Forms.Padding(16, 7, 16, 7);
+            this.CountBadge.Size = new System.Drawing.Size(108, 30);
             this.CountBadge.TabIndex = 2;
             this.CountBadge.Text = "0 remaining";
             // 
@@ -82,31 +86,49 @@
             // 
             this.CardContainerPanel.BackColor = System.Drawing.Color.Transparent;
             this.CardContainerPanel.Controls.Add(this.ReviewsFlowPanel);
-            this.CardContainerPanel.Location = new System.Drawing.Point(32, 120);
+            this.CardContainerPanel.Location = new System.Drawing.Point(43, 148);
+            this.CardContainerPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CardContainerPanel.Name = "CardContainerPanel";
-            this.CardContainerPanel.Size = new System.Drawing.Size(828, 540);
+            this.CardContainerPanel.Size = new System.Drawing.Size(1104, 665);
             this.CardContainerPanel.TabIndex = 3;
             // 
             // ReviewsFlowPanel
             // 
             this.ReviewsFlowPanel.AutoScroll = true;
             this.ReviewsFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.ReviewsFlowPanel.Location = new System.Drawing.Point(8, 8);
+            this.ReviewsFlowPanel.Location = new System.Drawing.Point(11, 10);
+            this.ReviewsFlowPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ReviewsFlowPanel.Name = "ReviewsFlowPanel";
-            this.ReviewsFlowPanel.Size = new System.Drawing.Size(812, 524);
+            this.ReviewsFlowPanel.Size = new System.Drawing.Size(1083, 645);
             this.ReviewsFlowPanel.TabIndex = 0;
             this.ReviewsFlowPanel.WrapContents = false;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.linkLabel1.Location = new System.Drawing.Point(1087, 105);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(60, 20);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Logout";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // ReviewerMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(900, 700);
+            this.ClientSize = new System.Drawing.Size(1200, 862);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.CountBadge);
             this.Controls.Add(this.CardContainerPanel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReviewerMainForm";
             this.Text = "Pending reviews";
             this.CardContainerPanel.ResumeLayout(false);
@@ -116,5 +138,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

@@ -26,10 +26,13 @@ namespace WAM_Coursework
         /// <param name="e">additional event info.</param>
         private void ReviewerClick(object sender, EventArgs e)
         {
-            Hide();
             LoginForm login = new LoginForm(UserConstants.ReviewerRole);
             login.ShowDialog();
-            Show();
+            if (CurrentUser.Instance.User != null)
+            {
+                Hide();
+                LoginUser();
+            }
         }
 
         /// <summary>
@@ -39,10 +42,13 @@ namespace WAM_Coursework
         /// <param name="e">additional event info.</param>
         private void SpeakerClick(object sender, EventArgs e)
         {
-            Hide();
             LoginForm login = new LoginForm(UserConstants.SpeakerRole);
             login.ShowDialog();
-            Show();
+            if (CurrentUser.Instance.User != null)
+            {
+                Hide();
+                LoginUser();
+            }
         }
 
         /// <summary>
@@ -52,9 +58,38 @@ namespace WAM_Coursework
         /// <param name="e">additional event info.</param>
         private void ManagerClick(object sender, EventArgs e)
         {
-            Hide();
             LoginForm login = new LoginForm(UserConstants.ManagerRole);
             login.ShowDialog();
+            if (CurrentUser.Instance.User != null)
+            {
+                Hide();
+                LoginUser();
+            }
+        }
+
+        /// <summary>
+        /// Opens the relevant user type homepage and hides this form.
+        /// This form reappears when the homepage is closed.
+        /// </summary>
+        private void LoginUser()
+        {
+            switch (CurrentUser.Instance.User.record.Role)
+            {
+                case UserConstants.SpeakerRole:
+                    SpeakerMainForm SpeakerForm = new SpeakerMainForm();
+                    SpeakerForm.ShowDialog();
+                    break;
+                case UserConstants.ReviewerRole:
+                    ReviewerMainForm ReviewerForm = new ReviewerMainForm();
+                    ReviewerForm.ShowDialog();
+                    break;
+                case UserConstants.ManagerRole:
+                    ManagerMainForm ManagerForm = new ManagerMainForm();
+                    ManagerForm.ShowDialog();
+                    break;
+                default:
+                    break;
+            }
             Show();
         }
 
@@ -68,5 +103,6 @@ namespace WAM_Coursework
             CreateAccountForm createAccountForm = new CreateAccountForm();
             createAccountForm.Show();
         }
+ 
     }
 }

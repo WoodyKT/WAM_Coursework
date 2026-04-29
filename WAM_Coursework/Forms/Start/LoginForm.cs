@@ -32,26 +32,7 @@ namespace WAM_Coursework.Forms
                 MessageBox.Show("Invalid email or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            switch (CurrentUser.Instance.User.record.Role)
-            {
-                case UserConstants.SpeakerRole:
-                    SpeakerMainForm SpeakerForm = new SpeakerMainForm();
-                    SpeakerForm.Show();
-                    Close();
-                    break;
-                case UserConstants.ReviewerRole:
-                    ReviewerMainForm ReviewerForm = new ReviewerMainForm();
-                    ReviewerForm.Show();
-                    Close();
-                    break;
-                case UserConstants.ManagerRole:
-                    ManagerMainForm ManagerForm = new ManagerMainForm();
-                    ManagerForm.Show();
-                    Close();
-                    break;
-                default:
-                    break;
-            }        
+            Close(); //successful login, welcome page handles redirecting.
         }
     }
 }
