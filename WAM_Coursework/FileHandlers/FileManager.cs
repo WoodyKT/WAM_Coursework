@@ -65,6 +65,14 @@ namespace WAM_Coursework.FileHandlers
                 return csv.GetRecords<T>().ToList();
             }
         }
+
+        public static void ClearFile(StorageFile file)
+        {
+            using (var writer = new StreamWriter(GetDir(file), append: false))
+            {
+                writer.Write(string.Empty);
+            }
+        }
         #endregion
 
         private void CreateFileIfNotExists()

@@ -55,6 +55,7 @@ namespace WAM_Coursework.Forms
             }
 
             FileManager.WriteRecords(new List<ConferenceRecord>{ conference.record }, FileManager.StorageFile.conferences);
+            FileManager.ClearFile(FileManager.StorageFile.selectedTalks);
             FileManager.WriteRecords(selectedTalks, FileManager.StorageFile.selectedTalks);
             Close();
         }
