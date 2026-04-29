@@ -73,7 +73,7 @@ namespace WAM_Coursework.FileHandlers
             {
                 if (!File.Exists(GetDir(file)))
                 {
-                    File.Create(GetDir(file));
+                    File.Create(GetDir(file)).Close();
                 }
             }
         }

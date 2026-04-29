@@ -48,6 +48,12 @@ namespace WAM_Coursework.Forms
                 });
             }
 
+            foreach (var talk in eligibleTalks)
+            {
+                talk.ReviewPassed = true;
+                FileManager.UpdateRecord(talk, FileManager.StorageFile.talks);
+            }
+
             FileManager.WriteRecords(new List<ConferenceRecord>{ conference.record }, FileManager.StorageFile.conferences);
             FileManager.WriteRecords(selectedTalks, FileManager.StorageFile.selectedTalks);
             Close();
@@ -72,7 +78,7 @@ namespace WAM_Coursework.Forms
             var talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
 
             var talkAverages = reviews
-            .GroupBy(r => r.attatchedReviewId)
+            .GroupBy(r => r.attachedTalkId)
             .Where(g => g.Count() >= 2)
             .Select(g => new { TalkId = g.Key, AvgScore = g.Average(r => r.Score) })
             .OrderByDescending(g => g.AvgScore)

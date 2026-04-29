@@ -26,7 +26,7 @@ namespace WAM_Coursework.Forms.Manager
             List<ConferenceRecord> conferences = FileManager.ReadRecords<ConferenceRecord>(FileManager.StorageFile.conferences);
             if (conferences.Count > 0)
             {
-                SetActiveConference(conferences[0]);
+                SetActiveConference(conferences[conferences.Count - 1]);
             }
             else
             {
@@ -42,13 +42,14 @@ namespace WAM_Coursework.Forms.Manager
             CardPanel.Visible = true;
 
             TitleLabel.Text = conference.Title;
-            LocationLabel.Text = conference.Location;
-            StartDateLabel.Text = $"{conference.StartDate:dd/MM/yyyy}";
-            EndDateLabel.Text = $"{conference.EndDate:dd/MM/yyyy}";
+            LocationValueLabel.Text = conference.Location;
+            StartDateValue.Text = $"{conference.StartDate:dd/MM/yyyy}";
+            EndDateValue.Text = $"{conference.EndDate:dd/MM/yyyy}";
+            DeadlineValue.Text = $"{conference.ApplicationDeadline:dd/MM/yyyy}";
 
             List<SelectedTalksRecord> selectedTalks = FileManager.ReadRecords<SelectedTalksRecord>(FileManager.StorageFile.selectedTalks);
             List<TalkRecord> allTalks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
-            TotalSlotsLabel.Text = $"Total Slots: {selectedTalks.Count}";
+            TotalSlotsValue.Text = $"Total Slots: {selectedTalks.Count}";
 
             SlotsFlowPanel.Controls.Clear();
             foreach (var selected in selectedTalks)
