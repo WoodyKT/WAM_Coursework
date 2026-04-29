@@ -1,5 +1,4 @@
-﻿using CsvHelper.Configuration.Attributes;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
 using WAM_Coursework.FileHandlers;
@@ -42,7 +41,7 @@ namespace WAM_Coursework.Forms
             ApplicationsFlowPanel.Controls.Clear();
             string userEmail = CurrentUser.Instance.User.record.Email;
             List<TalkRecord> talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
-            List<TalkRecord> speakerTalks = talks.FindAll(t => t.SpeakerEmail ==userEmail);
+            List<TalkRecord> speakerTalks = talks.FindAll(t => t.SpeakerEmail == userEmail);
 
             foreach (var talk in speakerTalks)
             {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using WAM_Coursework.FileHandlers;
 
 namespace WAM_Coursework.Conferences

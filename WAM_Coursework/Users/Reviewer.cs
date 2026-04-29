@@ -31,6 +31,6 @@ namespace WAM_Coursework.Users
             FileManager.WriteRecords(new List<Review> { newReview }, FileManager.StorageFile.reviews);
         }
     }
-    
+
 }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using WAM_Coursework.Forms;
+using WAM_Coursework.Forms.Manager;
 using WAM_Coursework.Users;
 
 namespace WAM_Coursework

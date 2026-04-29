@@ -22,6 +22,7 @@ namespace WAM_Coursework.FileHandlers
         FileManager()
         {
             CreateFileIfNotExists();
+            CreateAdminIfNotExists();
         }
 
         /// <summary>
@@ -32,7 +33,8 @@ namespace WAM_Coursework.FileHandlers
             users,
             conferences,
             talks,
-            reviews
+            reviews,
+            selectedTalks
         };
 
         private static readonly string basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "FairView");
@@ -77,6 +79,14 @@ namespace WAM_Coursework.FileHandlers
                 return csv.GetRecords<T>().ToList();
             }
         }
+
+        public static void ClearFile(StorageFile file)
+        {
+            using (var writer = new StreamWriter(GetDir(file), append: false))
+            {
+                writer.Write(string.Empty);
+            }
+        }
         #endregion
         /// <summary>
         /// Uses the StorageFile enum to check if each database file exists. 
@@ -88,7 +98,7 @@ namespace WAM_Coursework.FileHandlers
             {
                 if (!File.Exists(GetDir(file)))
                 {
-                    File.Create(GetDir(file));
+                    File.Create(GetDir(file)).Close();
                 }
             }
         }
@@ -106,9 +116,9 @@ namespace WAM_Coursework.FileHandlers
             var existing = ReadRecords<T>(file).Select(r => r.Id).ToHashSet();
 
             int newId;
-            do 
-            { 
-                newId = rnd.Next(1, int.MaxValue); 
+            do
+            {
+                newId = rnd.Next(1, int.MaxValue);
             }
             while (existing.Contains(newId));
 
@@ -135,6 +145,15 @@ namespace WAM_Coursework.FileHandlers
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
                 csv.WriteRecords(existing);
+            }
+        }
+
+        private void CreateAdminIfNotExists()
+        {
+            var users = ReadRecords<UserRecord>(StorageFile.users);
+            if (!users.Any(u => u.Role == UserConstants.ManagerRole))
+            {
+                UserFactory.CreateUser("adminf@irview.com", "admin", "account", "admin", UserConstants.ManagerRole);
             }
         }
     }
