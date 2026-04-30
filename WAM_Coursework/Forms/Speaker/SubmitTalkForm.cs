@@ -31,7 +31,11 @@ namespace WAM_Coursework.Forms
             string description = TalkDescriptionTextBox.Text;
             string affiliation = CurrentUser.Instance.User.record.Affiliation;
             string[] reviewerEmails = AssignApplication(affiliation);
-            
+            if (reviewerEmails.IsNullOrEmpty)
+            {
+                Close();
+                return;
+            }
             string args = $"{title},{description},{affiliation},{reviewerEmails[0]},{reviewerEmails[1]}";
             CurrentUser.Instance.User.CreateAction(args);
             
@@ -49,6 +53,11 @@ namespace WAM_Coursework.Forms
             int index = -1;
             Random random = new Random();
             //TODO: infinite loop possible here with not enough reviewers! address this somehow
+            if (Reviewers.Count < 2)
+            {
+                MessageBox.Show("Your application cannot be submitted for review at this time, please try again later.", "Cannot Submit Application", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
             while (reviewer1email == "" || reviewer2email == "")
             {
                 index = random.Next(Reviewers.Count);

@@ -26,8 +26,6 @@ namespace WAM_Coursework.Conferences
             record.SpeakerAffiliation = speakerAffiliation;
             record.Id = FileManager.CreateNewId<TalkRecord>(FileManager.StorageFile.talks);
             record.Datetime = DateTime.Now.ToString();
-            record.Reviewer1Email = reviewer1email;
-            record.Reviewer2Email = reviewer2email;
             record.ReviewPassed = false;
         }
 
