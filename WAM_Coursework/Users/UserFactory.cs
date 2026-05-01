@@ -18,20 +18,20 @@ namespace WAM_Coursework.Users
         /// <param name="password">Plaintext password entered by user (to be hashed).</param>
         /// <param name="role">Defines whether account to be created should be a speaker or reviewer account.</param>
         /// <returns>Created user object.</returns>
-        public static User CreateUser(string email, string firstName, string lastName, string password, string role)
+        public static User CreateUser(string email, string firstName, string lastName, string password, string role, string affiliation)
         {
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
             User created = null;
             switch (role)
             {
                 case UserConstants.ReviewerRole:
-                    created = new Reviewer(email, firstName, lastName, passwordHash);
+                    created = new Reviewer(email, firstName, lastName, passwordHash, affiliation);
                     break;
                 case UserConstants.SpeakerRole:
-                    created = new Speaker(email, firstName, lastName, passwordHash);
+                    created = new Speaker(email, firstName, lastName, passwordHash, affiliation);
                     break;
                 case UserConstants.ManagerRole:
-                    created = new Manager(email, firstName, lastName, passwordHash);
+                    created = new Manager(email, firstName, lastName, passwordHash, affiliation);
                     break;
                 default:
                     break;
@@ -53,11 +53,11 @@ namespace WAM_Coursework.Users
             switch (user.Role)
             {
                 case UserConstants.ReviewerRole:
-                    return new Reviewer(user.Email, user.FirstName, user.LastName, user.PasswordHash);
+                    return new Reviewer(user.Email, user.FirstName, user.LastName, user.PasswordHash, user.Affiliation);
                 case UserConstants.SpeakerRole:
-                    return new Speaker(user.Email, user.FirstName, user.LastName, user.PasswordHash);
+                    return new Speaker(user.Email, user.FirstName, user.LastName, user.PasswordHash, user.Affiliation);
                 case UserConstants.ManagerRole:
-                    return new Manager(user.Email, user.FirstName, user.LastName, user.PasswordHash);
+                    return new Manager(user.Email, user.FirstName, user.LastName, user.PasswordHash, user.Affiliation);
                 default:
                     break;
             }

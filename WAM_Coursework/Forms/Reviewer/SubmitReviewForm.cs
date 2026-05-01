@@ -38,7 +38,7 @@ namespace WAM_Coursework.Forms
         /// <param name="e">additional event info.</param>
         private void SubmitReviewButton_Click(object sender, System.EventArgs e)
         {
-            CurrentUser.Instance.User.CreateAction($"{reviewID}, {int.Parse(talkID)},{ScoreComboBox.SelectedItem},{ReasonTextBox.Text.Replace(",", "%")}");
+            CurrentUser.Instance.User.CreateAction($"{reviewID},{int.Parse(talkID)},{ScoreComboBox.SelectedItem},{ReasonTextBox.Text.Replace(",", "%")}");
             Close();
         }
 

@@ -18,14 +18,15 @@ namespace WAM_Coursework.Users
         /// <param name="firstName">User first name.</param>
         /// <param name="lastName">User surname.</param>
         /// <param name="passwordHash">hashed User password.</param>
-        /// <param name="role"></param>
-        public User(string email, string firstName, string lastName, string passwordHash, string role)
+        /// <param name="role">User role (speaker, reviewer, or conference manager).</param>
+        public User(string email, string firstName, string lastName, string passwordHash, string role, string affiliation)
         {
             record.Email = email;
             record.FirstName = firstName;
             record.LastName = lastName;
             record.PasswordHash = passwordHash;
             record.Role = role;
+            record.Affiliation = affiliation;
         }
 
         /// <summary>
