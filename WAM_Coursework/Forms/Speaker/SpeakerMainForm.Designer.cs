@@ -38,7 +38,7 @@
             this.NewTalkButton = new System.Windows.Forms.Button();
             this.CardContainerPanel = new System.Windows.Forms.Panel();
             this.ApplicationsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.LogoutLabel = new System.Windows.Forms.LinkLabel();
             this.CardContainerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +76,7 @@
             this.NewTalkButton.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.NewTalkButton.ForeColor = System.Drawing.Color.White;
             this.NewTalkButton.Location = new System.Drawing.Point(880, 49);
-            this.NewTalkButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NewTalkButton.Margin = new System.Windows.Forms.Padding(4);
             this.NewTalkButton.Name = "NewTalkButton";
             this.NewTalkButton.Size = new System.Drawing.Size(267, 44);
             this.NewTalkButton.TabIndex = 2;
@@ -89,7 +89,7 @@
             this.CardContainerPanel.BackColor = System.Drawing.Color.Transparent;
             this.CardContainerPanel.Controls.Add(this.ApplicationsFlowPanel);
             this.CardContainerPanel.Location = new System.Drawing.Point(43, 148);
-            this.CardContainerPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CardContainerPanel.Margin = new System.Windows.Forms.Padding(4);
             this.CardContainerPanel.Name = "CardContainerPanel";
             this.CardContainerPanel.Size = new System.Drawing.Size(1104, 665);
             this.CardContainerPanel.TabIndex = 3;
@@ -99,25 +99,25 @@
             this.ApplicationsFlowPanel.AutoScroll = true;
             this.ApplicationsFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.ApplicationsFlowPanel.Location = new System.Drawing.Point(11, 10);
-            this.ApplicationsFlowPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ApplicationsFlowPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ApplicationsFlowPanel.Name = "ApplicationsFlowPanel";
             this.ApplicationsFlowPanel.Size = new System.Drawing.Size(1083, 645);
             this.ApplicationsFlowPanel.TabIndex = 0;
             this.ApplicationsFlowPanel.WrapContents = false;
             // 
-            // linkLabel1
+            // LogoutLabel
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.linkLabel1.Location = new System.Drawing.Point(1087, 106);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(60, 20);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Logout";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.LogoutLabel.AutoSize = true;
+            this.LogoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.LogoutLabel.Location = new System.Drawing.Point(1087, 817);
+            this.LogoutLabel.Name = "LogoutLabel";
+            this.LogoutLabel.Size = new System.Drawing.Size(60, 20);
+            this.LogoutLabel.TabIndex = 4;
+            this.LogoutLabel.TabStop = true;
+            this.LogoutLabel.Text = "Logout";
+            this.LogoutLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.LogoutLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLabel_LinkClicked);
             // 
             // SpeakerMainForm
             // 
@@ -125,14 +125,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1200, 862);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.LogoutLabel);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.NewTalkButton);
             this.Controls.Add(this.CardContainerPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SpeakerMainForm";
             this.Text = "My applications";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SpeakerMainForm_FormClosed);
+            this.Load += new System.EventHandler(this.SpeakerMainForm_Load);
             this.CardContainerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,6 +143,6 @@
 
         #endregion
 
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel LogoutLabel;
     }
 }

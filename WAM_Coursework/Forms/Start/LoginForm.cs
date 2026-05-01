@@ -27,13 +27,15 @@ namespace WAM_Coursework.Forms
         /// <param name="e"></param>
         private void LogInButton_Click(object sender, System.EventArgs e)
         {
-            User.AttemptLogin(EmailTextBox.Text, PasswordTextBox.Text);
-            if (CurrentUser.Instance.User == null)
+            if (User.AttemptLogin(EmailTextBox.Text, PasswordTextBox.Text))
             {
-                MessageBox.Show("Invalid email or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //successful login, welcome page handles redirecting.
+                this.DialogResult = DialogResult.OK;
+                Close();
                 return;
+                
             }
-            Close(); //successful login, welcome page handles redirecting.
+            MessageBox.Show("Invalid email or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

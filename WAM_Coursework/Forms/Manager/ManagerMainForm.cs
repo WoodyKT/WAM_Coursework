@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
 using WAM_Coursework.FileHandlers;
+using WAM_Coursework.Users;
 
 namespace WAM_Coursework.Forms.Manager
 {
@@ -73,6 +74,24 @@ namespace WAM_Coursework.Forms.Manager
                 talkButton.FlatAppearance.BorderSize = 0;
                 SlotsFlowPanel.Controls.Add(talkButton);
             }
+        }
+
+        /// <summary>
+        /// Clears logged in user and returns to welcome page
+        /// when logout link clicked.
+        /// </summary>
+        /// <param name="sender">logout link clicked.</param>
+        /// <param name="e">additional event info.</param>
+        private void LogoutLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CurrentUser.Instance.User = null;
+            Close();
+        }
+
+        private void ManagerMainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CurrentUser.Instance.User = null;
+            Close();
         }
     }
 }
