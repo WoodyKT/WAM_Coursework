@@ -70,5 +70,23 @@ namespace WAM_Coursework.Forms
             CurrentUser.Instance.User = null;
             Close();
         }
+
+        /// <summary>
+        /// Clears logged in user and returns to welcome page
+        /// when logout link clicked.
+        /// </summary>
+        /// <param name="sender">logout link clicked.</param>
+        /// <param name="e">additional event info.</param>
+        private void LogoutLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CurrentUser.Instance.User = null;
+            Close();
+        }
+
+        private void ReviewerMainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CurrentUser.Instance.User = null;
+            Close();
+        }
     }
 }
