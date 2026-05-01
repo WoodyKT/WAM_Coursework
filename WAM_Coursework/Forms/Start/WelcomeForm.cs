@@ -29,8 +29,9 @@ namespace WAM_Coursework
         {
             LoginForm login = new LoginForm(UserConstants.ReviewerRole);
             login.ShowDialog();
-            if (CurrentUser.Instance.User != null)
+            if (login.DialogResult == DialogResult.OK)
             {
+                //Successful login
                 Hide();
                 LoginUser();
             }
@@ -45,8 +46,9 @@ namespace WAM_Coursework
         {
             LoginForm login = new LoginForm(UserConstants.SpeakerRole);
             login.ShowDialog();
-            if (CurrentUser.Instance.User != null)
+            if (login.DialogResult == DialogResult.OK)
             {
+                //Successful login
                 Hide();
                 LoginUser();
             }
@@ -61,8 +63,9 @@ namespace WAM_Coursework
         {
             LoginForm login = new LoginForm(UserConstants.ManagerRole);
             login.ShowDialog();
-            if (CurrentUser.Instance.User != null)
+            if (login.DialogResult == DialogResult.OK)
             {
+                //Successful login
                 Hide();
                 LoginUser();
             }
