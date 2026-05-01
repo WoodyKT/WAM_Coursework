@@ -62,19 +62,15 @@ namespace WAM_Coursework.Forms
         /// <param name = "e" > additional event info.</param>
         private void BtnSignUp_Click(object sender, EventArgs e)
         {
-            string firstname = FirstNameTextBox.Text;
-            string lastname = LastNameTextBox.Text;
-            string password = PasswordTextBox.Text;
-            string confirm = ConfirmTextBox.Text;
-            string affiliation = AffiliationTextBox.Text;
-            string email = EmailTextBox.Text;
 
             //input validation
-            if (!NameValidation(firstname, lastname) || !EmailValidation(email) || !PasswordValidation(password, confirm) || !AffiliationValidation(affiliation))
+            if (!NameValidation(FirstNameTextBox.Text, LastNameTextBox.Text) || !EmailValidation(EmailTextBox.Text) ||
+                !PasswordValidation(PasswordTextBox.Text, ConfirmTextBox.Text) || !AffiliationValidation(AffiliationTextBox.Text))
             {
                 return;
             }
 
+            //inputs valid, create user
             UserFactory.CreateUser(EmailTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text, PasswordTextBox.Text, selectedRole, AffiliationTextBox.Text);
             MessageBox.Show($"Account created for {FirstNameTextBox.Text} {LastNameTextBox.Text} as {selectedRole}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();

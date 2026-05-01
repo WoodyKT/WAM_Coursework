@@ -30,9 +30,11 @@ namespace WAM_Coursework.Forms
             string title = TalkTitleTextBox.Text;
             string description = TalkDescriptionTextBox.Text;
             string affiliation = CurrentUser.Instance.User.record.Affiliation;
+
+
             string[] reviewerEmails = AssignApplication(affiliation);
 
-            //empty checks
+            //not enough reveiewers checks
             if (reviewerEmails == null)
             {
                 MessageBox.Show("Your application cannot be submitted for review at this time, please try again later.", "Cannot Submit Application", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -54,7 +56,7 @@ namespace WAM_Coursework.Forms
 
         private string[] AssignApplication(string spkrAffiliation)
         {
-            //allocate the application to reviewers here!
+            //allocate the application to reviewers
             //use filemanager to read list of reviewers
             List<UserRecord> Users = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users);
             List<UserRecord> Reviewers = Users.FindAll(t => t.Role == "Reviewer");
