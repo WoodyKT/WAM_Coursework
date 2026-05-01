@@ -54,11 +54,6 @@ namespace WAM_Coursework.Forms
             }
         }
 
-        private void SpeakerMainForm_Load(object sender, System.EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Clears logged in user and returns to welcome page
         /// when logout link clicked.
