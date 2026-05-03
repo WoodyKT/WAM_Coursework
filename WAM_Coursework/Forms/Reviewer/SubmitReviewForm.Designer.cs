@@ -61,9 +61,10 @@
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
             this.TitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TitleLabel.Location = new System.Drawing.Point(32, 24);
+            this.TitleLabel.Location = new System.Drawing.Point(59, 44);
+            this.TitleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(191, 51);
+            this.TitleLabel.Size = new System.Drawing.Size(331, 88);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "F@irView";
             // 
@@ -72,9 +73,10 @@
             this.SubtitleLabel.AutoSize = true;
             this.SubtitleLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.SubtitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.SubtitleLabel.Location = new System.Drawing.Point(34, 84);
+            this.SubtitleLabel.Location = new System.Drawing.Point(62, 155);
+            this.SubtitleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.SubtitleLabel.Name = "SubtitleLabel";
-            this.SubtitleLabel.Size = new System.Drawing.Size(121, 19);
+            this.SubtitleLabel.Size = new System.Drawing.Size(212, 32);
             this.SubtitleLabel.TabIndex = 1;
             this.SubtitleLabel.Text = "Review application";
             // 
@@ -85,9 +87,10 @@
             this.CardPanel.Controls.Add(this.TalkTitleLabel);
             this.CardPanel.Controls.Add(this.TalkDescriptionLabel);
             this.CardPanel.Controls.Add(this.DescriptionTextBox);
-            this.CardPanel.Location = new System.Drawing.Point(32, 120);
+            this.CardPanel.Location = new System.Drawing.Point(59, 222);
+            this.CardPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CardPanel.Name = "CardPanel";
-            this.CardPanel.Size = new System.Drawing.Size(828, 180);
+            this.CardPanel.Size = new System.Drawing.Size(1516, 331);
             this.CardPanel.TabIndex = 2;
             // 
             // TalkTitleLabel
@@ -95,9 +98,10 @@
             this.TalkTitleLabel.AutoSize = true;
             this.TalkTitleLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.TalkTitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TalkTitleLabel.Location = new System.Drawing.Point(16, 16);
+            this.TalkTitleLabel.Location = new System.Drawing.Point(29, 30);
+            this.TalkTitleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TalkTitleLabel.Name = "TalkTitleLabel";
-            this.TalkTitleLabel.Size = new System.Drawing.Size(145, 25);
+            this.TalkTitleLabel.Size = new System.Drawing.Size(257, 45);
             this.TalkTitleLabel.TabIndex = 0;
             this.TalkTitleLabel.Text = "Title of the talk";
             // 
@@ -105,9 +109,10 @@
             // 
             this.TalkDescriptionLabel.AutoSize = true;
             this.TalkDescriptionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.TalkDescriptionLabel.Location = new System.Drawing.Point(16, 48);
+            this.TalkDescriptionLabel.Location = new System.Drawing.Point(29, 89);
+            this.TalkDescriptionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TalkDescriptionLabel.Name = "TalkDescriptionLabel";
-            this.TalkDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.TalkDescriptionLabel.Size = new System.Drawing.Size(109, 25);
             this.TalkDescriptionLabel.TabIndex = 1;
             this.TalkDescriptionLabel.Text = "Description";
             // 
@@ -116,12 +121,14 @@
             this.DescriptionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.DescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescriptionTextBox.ForeColor = System.Drawing.Color.White;
-            this.DescriptionTextBox.Location = new System.Drawing.Point(16, 70);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(29, 129);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.ReadOnly = true;
-            this.DescriptionTextBox.Size = new System.Drawing.Size(788, 90);
+            this.DescriptionTextBox.Size = new System.Drawing.Size(1445, 166);
             this.DescriptionTextBox.TabIndex = 2;
+            this.DescriptionTextBox.TabStop = false;
             // 
             // ReviewPanel
             // 
@@ -132,18 +139,20 @@
             this.ReviewPanel.Controls.Add(this.ReasonLabel);
             this.ReviewPanel.Controls.Add(this.ReasonTextBox);
             this.ReviewPanel.Controls.Add(this.SubmitReviewButton);
-            this.ReviewPanel.Location = new System.Drawing.Point(32, 320);
+            this.ReviewPanel.Location = new System.Drawing.Point(59, 591);
+            this.ReviewPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ReviewPanel.Name = "ReviewPanel";
-            this.ReviewPanel.Size = new System.Drawing.Size(828, 300);
+            this.ReviewPanel.Size = new System.Drawing.Size(1516, 552);
             this.ReviewPanel.TabIndex = 3;
             // 
             // ScoreLabel
             // 
             this.ScoreLabel.AutoSize = true;
             this.ScoreLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.ScoreLabel.Location = new System.Drawing.Point(16, 16);
+            this.ScoreLabel.Location = new System.Drawing.Point(29, 30);
+            this.ScoreLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(65, 13);
+            this.ScoreLabel.Size = new System.Drawing.Size(123, 25);
             this.ScoreLabel.TabIndex = 0;
             this.ScoreLabel.Text = "Score (1-10)";
             // 
@@ -153,19 +162,21 @@
             this.ScoreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ScoreComboBox.ForeColor = System.Drawing.Color.White;
             this.ScoreComboBox.FormattingEnabled = true;
-            this.ScoreComboBox.Location = new System.Drawing.Point(16, 36);
+            this.ScoreComboBox.Location = new System.Drawing.Point(29, 66);
+            this.ScoreComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ScoreComboBox.MaxDropDownItems = 11;
             this.ScoreComboBox.Name = "ScoreComboBox";
-            this.ScoreComboBox.Size = new System.Drawing.Size(200, 21);
-            this.ScoreComboBox.TabIndex = 1;
+            this.ScoreComboBox.Size = new System.Drawing.Size(363, 32);
+            this.ScoreComboBox.TabIndex = 0;
             // 
             // ReasonLabel
             // 
             this.ReasonLabel.AutoSize = true;
             this.ReasonLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.ReasonLabel.Location = new System.Drawing.Point(16, 72);
+            this.ReasonLabel.Location = new System.Drawing.Point(29, 133);
+            this.ReasonLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.ReasonLabel.Name = "ReasonLabel";
-            this.ReasonLabel.Size = new System.Drawing.Size(58, 13);
+            this.ReasonLabel.Size = new System.Drawing.Size(105, 25);
             this.ReasonLabel.TabIndex = 2;
             this.ReasonLabel.Text = "Reasoning";
             // 
@@ -174,11 +185,12 @@
             this.ReasonTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ReasonTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ReasonTextBox.ForeColor = System.Drawing.Color.White;
-            this.ReasonTextBox.Location = new System.Drawing.Point(16, 92);
+            this.ReasonTextBox.Location = new System.Drawing.Point(29, 170);
+            this.ReasonTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ReasonTextBox.Multiline = true;
             this.ReasonTextBox.Name = "ReasonTextBox";
-            this.ReasonTextBox.Size = new System.Drawing.Size(788, 160);
-            this.ReasonTextBox.TabIndex = 3;
+            this.ReasonTextBox.Size = new System.Drawing.Size(1443, 294);
+            this.ReasonTextBox.TabIndex = 1;
             // 
             // SubmitReviewButton
             // 
@@ -188,24 +200,26 @@
             this.SubmitReviewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SubmitReviewButton.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.SubmitReviewButton.ForeColor = System.Drawing.Color.White;
-            this.SubmitReviewButton.Location = new System.Drawing.Point(16, 260);
+            this.SubmitReviewButton.Location = new System.Drawing.Point(29, 480);
+            this.SubmitReviewButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.SubmitReviewButton.Name = "SubmitReviewButton";
-            this.SubmitReviewButton.Size = new System.Drawing.Size(788, 36);
-            this.SubmitReviewButton.TabIndex = 4;
+            this.SubmitReviewButton.Size = new System.Drawing.Size(1445, 66);
+            this.SubmitReviewButton.TabIndex = 2;
             this.SubmitReviewButton.Text = "Submit review";
             this.SubmitReviewButton.UseVisualStyleBackColor = false;
             this.SubmitReviewButton.Click += new System.EventHandler(this.SubmitReviewButton_Click);
             // 
             // SubmitReviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(900, 700);
+            this.ClientSize = new System.Drawing.Size(1650, 1292);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.CardPanel);
             this.Controls.Add(this.ReviewPanel);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "SubmitReviewForm";
             this.Text = "Review application";
             this.CardPanel.ResumeLayout(false);

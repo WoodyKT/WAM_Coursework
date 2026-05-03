@@ -38,8 +38,37 @@ namespace WAM_Coursework.Forms
         /// <param name="e">additional event info.</param>
         private void SubmitReviewButton_Click(object sender, System.EventArgs e)
         {
+
+            if (!ValidateReview(ScoreComboBox.SelectedItem, ReasonTextBox.Text))
+            {
+                //validation failed, do not submit review
+                return;
+            }
+
             CurrentUser.Instance.User.CreateAction($"{reviewID},{int.Parse(talkID)},{ScoreComboBox.SelectedItem},{ReasonTextBox.Text.Replace(",", "%")}");
             Close();
+        }
+
+        private bool ValidateReview(object score, string reason)
+        {
+            if (score == null)
+            {
+                MessageBox.Show("Please select a score for the talk.", "Invalid Review", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (string.IsNullOrEmpty(reason))
+            {
+                MessageBox.Show("Please provide feedback justifying your score.", "Invalid Review", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (reason.Length > 1000)
+            {
+                MessageBox.Show("The feedback cannot exceed 1000 characters.", "Invalid Review", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
 
         /// <summary>
