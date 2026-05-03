@@ -11,6 +11,11 @@ namespace WAM_Coursework.Conferences
         private TalkRecord record = new TalkRecord();
 
         /// <summary>
+        /// Parameterless constructor for deserialization (e.g., from CSV).
+        /// </summary>
+        public Talk() { }
+
+        /// <summary>
         /// Talk class constructor.
         /// </summary>
         /// <param name="title">Title of talk.</param>
@@ -27,6 +32,7 @@ namespace WAM_Coursework.Conferences
             record.Id = FileManager.CreateNewId<TalkRecord>(FileManager.StorageFile.talks);
             record.Datetime = DateTime.Now.ToString();
             record.ReviewPassed = false;
+            record.SubmittedToConference = false;
         }
 
         public int Id { get => record.Id; set => record.Id = value; }
@@ -39,5 +45,6 @@ namespace WAM_Coursework.Conferences
         public string Reviewer2Email { get => record.Reviewer2Email; set => record.Reviewer2Email = value; }
         public bool ReviewPassed { get => record.ReviewPassed; set => record.ReviewPassed = value; }
 
+        public bool SubmittedToConference { get => record.SubmittedToConference; set => record.SubmittedToConference = value; }
     }
 }

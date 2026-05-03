@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
 using WAM_Coursework.FileHandlers;
@@ -39,6 +40,10 @@ namespace WAM_Coursework.Forms
         private void SubmitReviewButton_Click(object sender, System.EventArgs e)
         {
             CurrentUser.Instance.User.CreateAction($"{reviewID},{int.Parse(talkID)},{ScoreComboBox.SelectedItem},{ReasonTextBox.Text.Replace(",", "%")}");
+            TalkRecord talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks).Where(t => t.Id == int.Parse(talkID)).FirstOrDefault();
+            talks.ReviewPassed = true;
+            FileManager.UpdateRecord(talks, FileManager.StorageFile.talks);
+            this.DialogResult = DialogResult.OK;
             Close();
         }
 
