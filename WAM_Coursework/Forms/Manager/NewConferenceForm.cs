@@ -50,7 +50,7 @@ namespace WAM_Coursework.Forms
 
             foreach (var talk in eligibleTalks)
             {
-                talk.ReviewPassed = true;
+                talk.SubmittedToConference = true;
                 FileManager.UpdateRecord(talk, FileManager.StorageFile.talks);
             }
 
