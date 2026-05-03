@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
 using WAM_Coursework.FileHandlers;
@@ -31,19 +32,24 @@ namespace WAM_Coursework.Forms
             string description = TalkDescriptionTextBox.Text;
             string affiliation = CurrentUser.Instance.User.record.Affiliation;
 
+            if (!ValidateApplication(title, description))
+            {
+                //validation failed, do not submit application
+                return;
+            }
 
             string[] reviewerEmails = AssignApplication(affiliation);
 
             //not enough reveiewers checks
             if (reviewerEmails == null)
             {
-                MessageBox.Show("Your application cannot be submitted for review at this time, please try again later.", "Cannot Submit Application", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There are not enough reviewers available to review your application at this time, please try again later.", "Cannot Submit Application", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
                 return;
             }
             else if (String.IsNullOrEmpty(reviewerEmails[0]) || String.IsNullOrEmpty(reviewerEmails[1]))
             {
-                MessageBox.Show("Your application cannot be submitted for review at this time, please try again later.", "Cannot Submit Application", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There are not enough reviewers available to review your application at this time, please try again later.", "Cannot Submit Application", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
                 return;
             }
@@ -52,6 +58,29 @@ namespace WAM_Coursework.Forms
             CurrentUser.Instance.User.CreateAction(args);
             
             Close();
+        }
+
+        private bool ValidateApplication(string title, string description)
+        {
+            if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description))
+            {
+                MessageBox.Show("Please fill in all fields before submitting your application.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (title.Count() > 100)
+            {
+                MessageBox.Show("The title cannot exceed 100 characters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (description.Count() > 3000)
+            {
+                MessageBox.Show("The description cannot exceed 3000 characters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
 
         private string[] AssignApplication(string spkrAffiliation)
@@ -64,7 +93,7 @@ namespace WAM_Coursework.Forms
             string reviewer2email = "";
             int index = -1;
             Random random = new Random();
-            //TODO: infinite loop possible here with not enough reviewers! address this somehow
+
             if (Reviewers.Count < 2)
             {
                 return null;

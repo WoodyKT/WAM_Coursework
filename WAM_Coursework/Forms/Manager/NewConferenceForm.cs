@@ -14,6 +14,10 @@ namespace WAM_Coursework.Forms
         public NewConferenceForm()
         {
             InitializeComponent();
+            //DateTime currentDateTime = DateTime.Now;
+            //StartDatePicker.MinDate = currentDateTime;
+            //EndDatePicker.MinDate = currentDateTime;
+            //SlotDatePicker.MinDate = currentDateTime;
         }
 
         private void CreateConferenceButton_Click(object sender, System.EventArgs e)

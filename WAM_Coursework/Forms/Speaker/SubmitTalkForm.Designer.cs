@@ -52,9 +52,10 @@
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold);
             this.TitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TitleLabel.Location = new System.Drawing.Point(360, 24);
+            this.TitleLabel.Location = new System.Drawing.Point(660, 44);
+            this.TitleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(242, 65);
+            this.TitleLabel.Size = new System.Drawing.Size(420, 112);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "F@irView";
             this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -64,9 +65,10 @@
             this.SubtitleLabel.AutoSize = true;
             this.SubtitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.SubtitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.SubtitleLabel.Location = new System.Drawing.Point(380, 100);
+            this.SubtitleLabel.Location = new System.Drawing.Point(697, 185);
+            this.SubtitleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.SubtitleLabel.Name = "SubtitleLabel";
-            this.SubtitleLabel.Size = new System.Drawing.Size(146, 21);
+            this.SubtitleLabel.Size = new System.Drawing.Size(259, 38);
             this.SubtitleLabel.TabIndex = 1;
             this.SubtitleLabel.Text = "Speaker application";
             this.SubtitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,18 +82,20 @@
             this.CardPanel.Controls.Add(this.TalkDescriptionLabel);
             this.CardPanel.Controls.Add(this.TalkDescriptionTextBox);
             this.CardPanel.Controls.Add(this.SubmitButton);
-            this.CardPanel.Location = new System.Drawing.Point(180, 140);
+            this.CardPanel.Location = new System.Drawing.Point(330, 258);
+            this.CardPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CardPanel.Name = "CardPanel";
-            this.CardPanel.Size = new System.Drawing.Size(540, 420);
+            this.CardPanel.Size = new System.Drawing.Size(988, 774);
             this.CardPanel.TabIndex = 2;
             // 
             // TalkTitleLabel
             // 
             this.TalkTitleLabel.AutoSize = true;
             this.TalkTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.TalkTitleLabel.Location = new System.Drawing.Point(24, 24);
+            this.TalkTitleLabel.Location = new System.Drawing.Point(44, 44);
+            this.TalkTitleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TalkTitleLabel.Name = "TalkTitleLabel";
-            this.TalkTitleLabel.Size = new System.Drawing.Size(77, 13);
+            this.TalkTitleLabel.Size = new System.Drawing.Size(137, 25);
             this.TalkTitleLabel.TabIndex = 0;
             this.TalkTitleLabel.Text = "Title of the talk";
             // 
@@ -100,18 +104,20 @@
             this.TalkTitleTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.TalkTitleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TalkTitleTextBox.ForeColor = System.Drawing.Color.White;
-            this.TalkTitleTextBox.Location = new System.Drawing.Point(24, 44);
+            this.TalkTitleTextBox.Location = new System.Drawing.Point(44, 81);
+            this.TalkTitleTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TalkTitleTextBox.Name = "TalkTitleTextBox";
-            this.TalkTitleTextBox.Size = new System.Drawing.Size(488, 20);
+            this.TalkTitleTextBox.Size = new System.Drawing.Size(893, 29);
             this.TalkTitleTextBox.TabIndex = 1;
             // 
             // TalkDescriptionLabel
             // 
             this.TalkDescriptionLabel.AutoSize = true;
             this.TalkDescriptionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.TalkDescriptionLabel.Location = new System.Drawing.Point(24, 84);
+            this.TalkDescriptionLabel.Location = new System.Drawing.Point(44, 155);
+            this.TalkDescriptionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TalkDescriptionLabel.Name = "TalkDescriptionLabel";
-            this.TalkDescriptionLabel.Size = new System.Drawing.Size(82, 13);
+            this.TalkDescriptionLabel.Size = new System.Drawing.Size(149, 25);
             this.TalkDescriptionLabel.TabIndex = 2;
             this.TalkDescriptionLabel.Text = "Talk description";
             // 
@@ -120,11 +126,12 @@
             this.TalkDescriptionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.TalkDescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TalkDescriptionTextBox.ForeColor = System.Drawing.Color.White;
-            this.TalkDescriptionTextBox.Location = new System.Drawing.Point(24, 104);
+            this.TalkDescriptionTextBox.Location = new System.Drawing.Point(44, 192);
+            this.TalkDescriptionTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TalkDescriptionTextBox.Multiline = true;
             this.TalkDescriptionTextBox.Name = "TalkDescriptionTextBox";
-            this.TalkDescriptionTextBox.Size = new System.Drawing.Size(488, 160);
-            this.TalkDescriptionTextBox.TabIndex = 3;
+            this.TalkDescriptionTextBox.Size = new System.Drawing.Size(893, 294);
+            this.TalkDescriptionTextBox.TabIndex = 2;
             // 
             // SubmitButton
             // 
@@ -134,23 +141,25 @@
             this.SubmitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SubmitButton.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.SubmitButton.ForeColor = System.Drawing.Color.White;
-            this.SubmitButton.Location = new System.Drawing.Point(24, 280);
+            this.SubmitButton.Location = new System.Drawing.Point(44, 517);
+            this.SubmitButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(488, 36);
-            this.SubmitButton.TabIndex = 4;
+            this.SubmitButton.Size = new System.Drawing.Size(895, 66);
+            this.SubmitButton.TabIndex = 3;
             this.SubmitButton.Text = "Submit application";
             this.SubmitButton.UseVisualStyleBackColor = false;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // SubmitTalkForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(900, 700);
+            this.ClientSize = new System.Drawing.Size(1650, 1292);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.CardPanel);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "SubmitTalkForm";
             this.Text = "Submit application";
             this.CardPanel.ResumeLayout(false);
