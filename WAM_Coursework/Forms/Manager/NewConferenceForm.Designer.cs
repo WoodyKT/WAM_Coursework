@@ -112,18 +112,18 @@ namespace WAM_Coursework.Forms
             this.CardPanel.Controls.Add(this.SlotsFlowPanel);
             this.CardPanel.Controls.Add(this.CreateConferenceButton);
             this.CardPanel.Location = new System.Drawing.Point(220, 258);
-            this.CardPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CardPanel.Margin = new System.Windows.Forms.Padding(6);
             this.CardPanel.Name = "CardPanel";
             this.CardPanel.Size = new System.Drawing.Size(1208, 1232);
             this.CardPanel.TabIndex = 2;
             // 
             // SlotDatePicker
             // 
-            this.SlotDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.SlotDatePicker.Location = new System.Drawing.Point(766, 439);
-            this.SlotDatePicker.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SlotDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.SlotDatePicker.Location = new System.Drawing.Point(664, 439);
+            this.SlotDatePicker.Margin = new System.Windows.Forms.Padding(6);
             this.SlotDatePicker.Name = "SlotDatePicker";
-            this.SlotDatePicker.Size = new System.Drawing.Size(151, 29);
+            this.SlotDatePicker.Size = new System.Drawing.Size(253, 29);
             this.SlotDatePicker.TabIndex = 5;
             // 
             // ConferenceTitleLabel
@@ -143,7 +143,7 @@ namespace WAM_Coursework.Forms
             this.ConferenceTitleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ConferenceTitleTextBox.ForeColor = System.Drawing.Color.White;
             this.ConferenceTitleTextBox.Location = new System.Drawing.Point(37, 70);
-            this.ConferenceTitleTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ConferenceTitleTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ConferenceTitleTextBox.Name = "ConferenceTitleTextBox";
             this.ConferenceTitleTextBox.Size = new System.Drawing.Size(1135, 29);
             this.ConferenceTitleTextBox.TabIndex = 0;
@@ -165,7 +165,7 @@ namespace WAM_Coursework.Forms
             this.LocationTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LocationTextBox.ForeColor = System.Drawing.Color.White;
             this.LocationTextBox.Location = new System.Drawing.Point(37, 166);
-            this.LocationTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.LocationTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.LocationTextBox.Name = "LocationTextBox";
             this.LocationTextBox.Size = new System.Drawing.Size(1135, 29);
             this.LocationTextBox.TabIndex = 1;
@@ -183,9 +183,9 @@ namespace WAM_Coursework.Forms
             // 
             // StartDatePicker
             // 
-            this.StartDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.StartDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.StartDatePicker.Location = new System.Drawing.Point(37, 262);
-            this.StartDatePicker.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.StartDatePicker.Margin = new System.Windows.Forms.Padding(6);
             this.StartDatePicker.Name = "StartDatePicker";
             this.StartDatePicker.Size = new System.Drawing.Size(363, 29);
             this.StartDatePicker.TabIndex = 2;
@@ -204,9 +204,9 @@ namespace WAM_Coursework.Forms
             // 
             // EndDatePicker
             // 
-            this.EndDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.EndDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.EndDatePicker.Location = new System.Drawing.Point(440, 262);
-            this.EndDatePicker.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.EndDatePicker.Margin = new System.Windows.Forms.Padding(6);
             this.EndDatePicker.Name = "EndDatePicker";
             this.EndDatePicker.Size = new System.Drawing.Size(363, 29);
             this.EndDatePicker.TabIndex = 3;
@@ -225,9 +225,9 @@ namespace WAM_Coursework.Forms
             // 
             // ApplicationDeadlinePicker
             // 
-            this.ApplicationDeadlinePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ApplicationDeadlinePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ApplicationDeadlinePicker.Location = new System.Drawing.Point(37, 362);
-            this.ApplicationDeadlinePicker.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ApplicationDeadlinePicker.Margin = new System.Windows.Forms.Padding(6);
             this.ApplicationDeadlinePicker.Name = "ApplicationDeadlinePicker";
             this.ApplicationDeadlinePicker.Size = new System.Drawing.Size(363, 29);
             this.ApplicationDeadlinePicker.TabIndex = 4;
@@ -251,7 +251,7 @@ namespace WAM_Coursework.Forms
             this.AddSlotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddSlotButton.ForeColor = System.Drawing.Color.White;
             this.AddSlotButton.Location = new System.Drawing.Point(953, 436);
-            this.AddSlotButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.AddSlotButton.Margin = new System.Windows.Forms.Padding(6);
             this.AddSlotButton.Name = "AddSlotButton";
             this.AddSlotButton.Size = new System.Drawing.Size(220, 52);
             this.AddSlotButton.TabIndex = 6;
@@ -264,7 +264,7 @@ namespace WAM_Coursework.Forms
             this.SlotsFlowPanel.AutoScroll = true;
             this.SlotsFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.SlotsFlowPanel.Location = new System.Drawing.Point(37, 502);
-            this.SlotsFlowPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SlotsFlowPanel.Margin = new System.Windows.Forms.Padding(6);
             this.SlotsFlowPanel.Name = "SlotsFlowPanel";
             this.SlotsFlowPanel.Size = new System.Drawing.Size(1137, 598);
             this.SlotsFlowPanel.TabIndex = 12;
@@ -279,7 +279,7 @@ namespace WAM_Coursework.Forms
             this.CreateConferenceButton.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.CreateConferenceButton.ForeColor = System.Drawing.Color.White;
             this.CreateConferenceButton.Location = new System.Drawing.Point(36, 1130);
-            this.CreateConferenceButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CreateConferenceButton.Margin = new System.Windows.Forms.Padding(6);
             this.CreateConferenceButton.Name = "CreateConferenceButton";
             this.CreateConferenceButton.Size = new System.Drawing.Size(1137, 66);
             this.CreateConferenceButton.TabIndex = 7;
@@ -291,12 +291,13 @@ namespace WAM_Coursework.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1650, 1588);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.CardPanel);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "NewConferenceForm";
             this.Text = "Create new conference";
             this.CardPanel.ResumeLayout(false);

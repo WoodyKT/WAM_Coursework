@@ -83,7 +83,7 @@
             this.CardPanel.Controls.Add(this.TalkDescriptionTextBox);
             this.CardPanel.Controls.Add(this.SubmitButton);
             this.CardPanel.Location = new System.Drawing.Point(330, 258);
-            this.CardPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CardPanel.Margin = new System.Windows.Forms.Padding(6);
             this.CardPanel.Name = "CardPanel";
             this.CardPanel.Size = new System.Drawing.Size(988, 774);
             this.CardPanel.TabIndex = 2;
@@ -103,9 +103,9 @@
             // 
             this.TalkTitleTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.TalkTitleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TalkTitleTextBox.ForeColor = System.Drawing.Color.White;
+            this.TalkTitleTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.TalkTitleTextBox.Location = new System.Drawing.Point(44, 81);
-            this.TalkTitleTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TalkTitleTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.TalkTitleTextBox.Name = "TalkTitleTextBox";
             this.TalkTitleTextBox.Size = new System.Drawing.Size(893, 29);
             this.TalkTitleTextBox.TabIndex = 1;
@@ -127,7 +127,7 @@
             this.TalkDescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TalkDescriptionTextBox.ForeColor = System.Drawing.Color.White;
             this.TalkDescriptionTextBox.Location = new System.Drawing.Point(44, 192);
-            this.TalkDescriptionTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TalkDescriptionTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.TalkDescriptionTextBox.Multiline = true;
             this.TalkDescriptionTextBox.Name = "TalkDescriptionTextBox";
             this.TalkDescriptionTextBox.Size = new System.Drawing.Size(893, 294);
@@ -142,7 +142,7 @@
             this.SubmitButton.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.SubmitButton.ForeColor = System.Drawing.Color.White;
             this.SubmitButton.Location = new System.Drawing.Point(44, 517);
-            this.SubmitButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SubmitButton.Margin = new System.Windows.Forms.Padding(6);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(895, 66);
             this.SubmitButton.TabIndex = 3;
@@ -159,7 +159,7 @@
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.CardPanel);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "SubmitTalkForm";
             this.Text = "Submit application";
             this.CardPanel.ResumeLayout(false);
