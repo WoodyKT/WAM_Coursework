@@ -138,7 +138,7 @@
             this.AffiliationTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.AffiliationTextBox.Name = "AffiliationTextBox";
             this.AffiliationTextBox.Size = new System.Drawing.Size(842, 29);
-            this.AffiliationTextBox.TabIndex = 10;
+            this.AffiliationTextBox.TabIndex = 7;
             // 
             // SpeakerButton
             // 
@@ -294,7 +294,7 @@
             this.SignUpButton.Margin = new System.Windows.Forms.Padding(6);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(843, 66);
-            this.SignUpButton.TabIndex = 7;
+            this.SignUpButton.TabIndex = 8;
             this.SignUpButton.Text = "Sign up";
             this.SignUpButton.UseVisualStyleBackColor = false;
             this.SignUpButton.Click += new System.EventHandler(this.BtnSignUp_Click);
@@ -307,7 +307,7 @@
             this.SignInLinkLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.SignInLinkLabel.Name = "SignInLinkLabel";
             this.SignInLinkLabel.Size = new System.Drawing.Size(304, 25);
-            this.SignInLinkLabel.TabIndex = 8;
+            this.SignInLinkLabel.TabIndex = 9;
             this.SignInLinkLabel.TabStop = true;
             this.SignInLinkLabel.Text = "Already have an account? Sign in";
             this.SignInLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkSignIn_LinkClicked);
