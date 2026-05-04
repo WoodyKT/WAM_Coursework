@@ -62,9 +62,9 @@ namespace WAM_Coursework.Forms
                 return false;
             }
 
-            if (reason.Length > 1000)
+            if (reason.Length > 250)
             {
-                MessageBox.Show("The feedback cannot exceed 1000 characters.", "Invalid Review", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The feedback cannot exceed 250 characters.", "Invalid Review", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
