@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
 using WAM_Coursework.FileHandlers;
@@ -55,10 +56,26 @@ namespace WAM_Coursework.Forms
             string userEmail = CurrentUser.Instance.User.record.Email;
             List<TalkRecord> talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
             List<TalkRecord> speakerTalks = talks.FindAll(t => t.SpeakerEmail == userEmail);
+            List<SelectedTalksRecord> selectedTalks = FileManager.ReadRecords<SelectedTalksRecord>(FileManager.StorageFile.selectedTalks);
 
             foreach (var talk in speakerTalks)
             {
-                Button talkbutton = new Button() { Text = talk.Title + "\t - " + talk.Description + "\t- " + (talk.ReviewPassed ? "Approved" : "Pending") };
+                
+                SelectedTalksRecord selectedTalk = selectedTalks.Find(s => s.talkId == talk.Id);
+                string status = "";
+                if (selectedTalk != null)
+                {
+                    status = "Approved - Slot: " + selectedTalk.startTime;
+                }
+                else if (talk.ReviewPassed)
+                {
+                    status = "Reviewed";
+                }
+                else
+                {
+                    status = "Pending";
+                }
+                    Button talkbutton = new Button() { Text = talk.Title + "\t - " + (status) };
                 talkbutton.Font = new System.Drawing.Font(talkbutton.Font.FontFamily, 20);
                 talkbutton.BackColor = System.Drawing.Color.FromArgb(54, 54, 54);
                 talkbutton.ForeColor = System.Drawing.Color.White;
