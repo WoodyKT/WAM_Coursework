@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
 using WAM_Coursework.FileHandlers;
@@ -27,6 +28,18 @@ namespace WAM_Coursework.Forms
         /// <param name="e">additional event info.</param>
         private void NewTalkButton_Click(object sender, System.EventArgs e)
         {
+            List<ConferenceRecord> conferences = FileManager.ReadRecords<ConferenceRecord>(FileManager.StorageFile.conferences);
+            if (conferences.Count == 0)
+            {
+                MessageBox.Show("There are no active conferences to submit an application to.", "Cannot Start Application", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DateTime deadline = conferences[conferences.Count - 1].ApplicationDeadline;
+            if (DateTime.Now > deadline)
+            {
+                MessageBox.Show("The application deadline for this conference has passed.", "Cannot Start Application", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             SubmitTalkForm submitForm = new SubmitTalkForm();
             submitForm.ShowDialog();
             UpdateTalkList();
