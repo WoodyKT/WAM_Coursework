@@ -68,6 +68,10 @@ namespace WAM_Coursework.Forms.Manager
                 {
                     talkButton.Text = $"{talk.Title}  —  {talk.Description}  —  {selected.startTime:dd/MM/yyyy HH:mm}";
                 }
+                else
+                {
+                    talkButton.Text = $"{selected.startTime:dd/MM/yyyy HH:mm} - No talk";
+                }
                 talkButton.Font = new System.Drawing.Font(talkButton.Font.FontFamily, 11);
                 talkButton.BackColor = System.Drawing.Color.FromArgb(54, 54, 54);
                 talkButton.ForeColor = System.Drawing.Color.White;
