@@ -72,10 +72,9 @@ namespace WAM_Coursework.Forms
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
             this.TitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TitleLabel.Location = new System.Drawing.Point(660, 44);
-            this.TitleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.TitleLabel.Location = new System.Drawing.Point(360, 24);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(331, 88);
+            this.TitleLabel.Size = new System.Drawing.Size(191, 51);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "F@irView";
             // 
@@ -84,10 +83,9 @@ namespace WAM_Coursework.Forms
             this.SubtitleLabel.AutoSize = true;
             this.SubtitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.SubtitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.SubtitleLabel.Location = new System.Drawing.Point(697, 155);
-            this.SubtitleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.SubtitleLabel.Location = new System.Drawing.Point(380, 84);
             this.SubtitleLabel.Name = "SubtitleLabel";
-            this.SubtitleLabel.Size = new System.Drawing.Size(302, 38);
+            this.SubtitleLabel.Size = new System.Drawing.Size(168, 21);
             this.SubtitleLabel.TabIndex = 1;
             this.SubtitleLabel.Text = "Create new conference";
             this.SubtitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,29 +109,26 @@ namespace WAM_Coursework.Forms
             this.CardPanel.Controls.Add(this.AddSlotButton);
             this.CardPanel.Controls.Add(this.SlotsFlowPanel);
             this.CardPanel.Controls.Add(this.CreateConferenceButton);
-            this.CardPanel.Location = new System.Drawing.Point(220, 258);
-            this.CardPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.CardPanel.Location = new System.Drawing.Point(120, 140);
             this.CardPanel.Name = "CardPanel";
-            this.CardPanel.Size = new System.Drawing.Size(1208, 1232);
+            this.CardPanel.Size = new System.Drawing.Size(660, 668);
             this.CardPanel.TabIndex = 2;
             // 
             // SlotDatePicker
             // 
             this.SlotDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.SlotDatePicker.Location = new System.Drawing.Point(664, 439);
-            this.SlotDatePicker.Margin = new System.Windows.Forms.Padding(6);
+            this.SlotDatePicker.Location = new System.Drawing.Point(362, 238);
             this.SlotDatePicker.Name = "SlotDatePicker";
-            this.SlotDatePicker.Size = new System.Drawing.Size(253, 29);
+            this.SlotDatePicker.Size = new System.Drawing.Size(140, 20);
             this.SlotDatePicker.TabIndex = 5;
             // 
             // ConferenceTitleLabel
             // 
             this.ConferenceTitleLabel.AutoSize = true;
             this.ConferenceTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.ConferenceTitleLabel.Location = new System.Drawing.Point(37, 33);
-            this.ConferenceTitleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.ConferenceTitleLabel.Location = new System.Drawing.Point(20, 18);
             this.ConferenceTitleLabel.Name = "ConferenceTitleLabel";
-            this.ConferenceTitleLabel.Size = new System.Drawing.Size(148, 25);
+            this.ConferenceTitleLabel.Size = new System.Drawing.Size(81, 13);
             this.ConferenceTitleLabel.TabIndex = 0;
             this.ConferenceTitleLabel.Text = "Conference title";
             // 
@@ -142,20 +137,18 @@ namespace WAM_Coursework.Forms
             this.ConferenceTitleTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ConferenceTitleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ConferenceTitleTextBox.ForeColor = System.Drawing.Color.White;
-            this.ConferenceTitleTextBox.Location = new System.Drawing.Point(37, 70);
-            this.ConferenceTitleTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.ConferenceTitleTextBox.Location = new System.Drawing.Point(20, 38);
             this.ConferenceTitleTextBox.Name = "ConferenceTitleTextBox";
-            this.ConferenceTitleTextBox.Size = new System.Drawing.Size(1135, 29);
+            this.ConferenceTitleTextBox.Size = new System.Drawing.Size(620, 20);
             this.ConferenceTitleTextBox.TabIndex = 0;
             // 
             // LocationLabel
             // 
             this.LocationLabel.AutoSize = true;
             this.LocationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.LocationLabel.Location = new System.Drawing.Point(37, 129);
-            this.LocationLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LocationLabel.Location = new System.Drawing.Point(20, 70);
             this.LocationLabel.Name = "LocationLabel";
-            this.LocationLabel.Size = new System.Drawing.Size(86, 25);
+            this.LocationLabel.Size = new System.Drawing.Size(48, 13);
             this.LocationLabel.TabIndex = 2;
             this.LocationLabel.Text = "Location";
             // 
@@ -164,30 +157,27 @@ namespace WAM_Coursework.Forms
             this.LocationTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.LocationTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LocationTextBox.ForeColor = System.Drawing.Color.White;
-            this.LocationTextBox.Location = new System.Drawing.Point(37, 166);
-            this.LocationTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.LocationTextBox.Location = new System.Drawing.Point(20, 90);
             this.LocationTextBox.Name = "LocationTextBox";
-            this.LocationTextBox.Size = new System.Drawing.Size(1135, 29);
+            this.LocationTextBox.Size = new System.Drawing.Size(620, 20);
             this.LocationTextBox.TabIndex = 1;
             // 
             // StartDateLabel
             // 
             this.StartDateLabel.AutoSize = true;
             this.StartDateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.StartDateLabel.Location = new System.Drawing.Point(37, 225);
-            this.StartDateLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.StartDateLabel.Location = new System.Drawing.Point(20, 122);
             this.StartDateLabel.Name = "StartDateLabel";
-            this.StartDateLabel.Size = new System.Drawing.Size(96, 25);
+            this.StartDateLabel.Size = new System.Drawing.Size(53, 13);
             this.StartDateLabel.TabIndex = 4;
             this.StartDateLabel.Text = "Start date";
             // 
             // StartDatePicker
             // 
             this.StartDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDatePicker.Location = new System.Drawing.Point(37, 262);
-            this.StartDatePicker.Margin = new System.Windows.Forms.Padding(6);
+            this.StartDatePicker.Location = new System.Drawing.Point(20, 142);
             this.StartDatePicker.Name = "StartDatePicker";
-            this.StartDatePicker.Size = new System.Drawing.Size(363, 29);
+            this.StartDatePicker.Size = new System.Drawing.Size(200, 20);
             this.StartDatePicker.TabIndex = 2;
             this.StartDatePicker.ValueChanged += new System.EventHandler(this.StartDatePicker_ValueChanged);
             // 
@@ -195,20 +185,18 @@ namespace WAM_Coursework.Forms
             // 
             this.EndDateLabel.AutoSize = true;
             this.EndDateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.EndDateLabel.Location = new System.Drawing.Point(440, 225);
-            this.EndDateLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.EndDateLabel.Location = new System.Drawing.Point(240, 122);
             this.EndDateLabel.Name = "EndDateLabel";
-            this.EndDateLabel.Size = new System.Drawing.Size(90, 25);
+            this.EndDateLabel.Size = new System.Drawing.Size(50, 13);
             this.EndDateLabel.TabIndex = 6;
             this.EndDateLabel.Text = "End date";
             // 
             // EndDatePicker
             // 
             this.EndDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDatePicker.Location = new System.Drawing.Point(440, 262);
-            this.EndDatePicker.Margin = new System.Windows.Forms.Padding(6);
+            this.EndDatePicker.Location = new System.Drawing.Point(240, 142);
             this.EndDatePicker.Name = "EndDatePicker";
-            this.EndDatePicker.Size = new System.Drawing.Size(363, 29);
+            this.EndDatePicker.Size = new System.Drawing.Size(200, 20);
             this.EndDatePicker.TabIndex = 3;
             this.EndDatePicker.ValueChanged += new System.EventHandler(this.EndDatePicker_ValueChanged);
             // 
@@ -216,20 +204,18 @@ namespace WAM_Coursework.Forms
             // 
             this.ApplicationDeadlineLabel.AutoSize = true;
             this.ApplicationDeadlineLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.ApplicationDeadlineLabel.Location = new System.Drawing.Point(37, 325);
-            this.ApplicationDeadlineLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.ApplicationDeadlineLabel.Location = new System.Drawing.Point(20, 176);
             this.ApplicationDeadlineLabel.Name = "ApplicationDeadlineLabel";
-            this.ApplicationDeadlineLabel.Size = new System.Drawing.Size(187, 25);
+            this.ApplicationDeadlineLabel.Size = new System.Drawing.Size(102, 13);
             this.ApplicationDeadlineLabel.TabIndex = 8;
             this.ApplicationDeadlineLabel.Text = "Application deadline";
             // 
             // ApplicationDeadlinePicker
             // 
             this.ApplicationDeadlinePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ApplicationDeadlinePicker.Location = new System.Drawing.Point(37, 362);
-            this.ApplicationDeadlinePicker.Margin = new System.Windows.Forms.Padding(6);
+            this.ApplicationDeadlinePicker.Location = new System.Drawing.Point(20, 196);
             this.ApplicationDeadlinePicker.Name = "ApplicationDeadlinePicker";
-            this.ApplicationDeadlinePicker.Size = new System.Drawing.Size(363, 29);
+            this.ApplicationDeadlinePicker.Size = new System.Drawing.Size(200, 20);
             this.ApplicationDeadlinePicker.TabIndex = 4;
             this.ApplicationDeadlinePicker.ValueChanged += new System.EventHandler(this.ApplicationDeadlinePicker_ValueChanged);
             // 
@@ -237,10 +223,9 @@ namespace WAM_Coursework.Forms
             // 
             this.SpeakerSlotsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.SpeakerSlotsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.SpeakerSlotsLabel.Location = new System.Drawing.Point(35, 439);
-            this.SpeakerSlotsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.SpeakerSlotsLabel.Location = new System.Drawing.Point(19, 238);
             this.SpeakerSlotsLabel.Name = "SpeakerSlotsLabel";
-            this.SpeakerSlotsLabel.Size = new System.Drawing.Size(473, 57);
+            this.SpeakerSlotsLabel.Size = new System.Drawing.Size(258, 31);
             this.SpeakerSlotsLabel.TabIndex = 10;
             this.SpeakerSlotsLabel.Text = "SPEAKER SLOTS";
             // 
@@ -250,10 +235,9 @@ namespace WAM_Coursework.Forms
             this.AddSlotButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.AddSlotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddSlotButton.ForeColor = System.Drawing.Color.White;
-            this.AddSlotButton.Location = new System.Drawing.Point(953, 436);
-            this.AddSlotButton.Margin = new System.Windows.Forms.Padding(6);
+            this.AddSlotButton.Location = new System.Drawing.Point(520, 236);
             this.AddSlotButton.Name = "AddSlotButton";
-            this.AddSlotButton.Size = new System.Drawing.Size(220, 52);
+            this.AddSlotButton.Size = new System.Drawing.Size(120, 28);
             this.AddSlotButton.TabIndex = 6;
             this.AddSlotButton.Text = "+ Add slot";
             this.AddSlotButton.UseVisualStyleBackColor = false;
@@ -263,10 +247,9 @@ namespace WAM_Coursework.Forms
             // 
             this.SlotsFlowPanel.AutoScroll = true;
             this.SlotsFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.SlotsFlowPanel.Location = new System.Drawing.Point(37, 502);
-            this.SlotsFlowPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.SlotsFlowPanel.Location = new System.Drawing.Point(20, 272);
             this.SlotsFlowPanel.Name = "SlotsFlowPanel";
-            this.SlotsFlowPanel.Size = new System.Drawing.Size(1137, 598);
+            this.SlotsFlowPanel.Size = new System.Drawing.Size(620, 324);
             this.SlotsFlowPanel.TabIndex = 12;
             this.SlotsFlowPanel.WrapContents = false;
             // 
@@ -278,10 +261,9 @@ namespace WAM_Coursework.Forms
             this.CreateConferenceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateConferenceButton.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.CreateConferenceButton.ForeColor = System.Drawing.Color.White;
-            this.CreateConferenceButton.Location = new System.Drawing.Point(36, 1130);
-            this.CreateConferenceButton.Margin = new System.Windows.Forms.Padding(6);
+            this.CreateConferenceButton.Location = new System.Drawing.Point(20, 612);
             this.CreateConferenceButton.Name = "CreateConferenceButton";
-            this.CreateConferenceButton.Size = new System.Drawing.Size(1137, 66);
+            this.CreateConferenceButton.Size = new System.Drawing.Size(620, 36);
             this.CreateConferenceButton.TabIndex = 7;
             this.CreateConferenceButton.Text = "Create conference";
             this.CreateConferenceButton.UseVisualStyleBackColor = false;
@@ -289,15 +271,14 @@ namespace WAM_Coursework.Forms
             // 
             // NewConferenceForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1650, 1588);
+            this.ClientSize = new System.Drawing.Size(900, 844);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.CardPanel);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "NewConferenceForm";
             this.Text = "Create new conference";
             this.CardPanel.ResumeLayout(false);
