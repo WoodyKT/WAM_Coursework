@@ -29,6 +29,8 @@ namespace WAM_Coursework.Forms
                 return;
             }
 
+            List<SelectedTalksRecord> selectedTalks = new List<SelectedTalksRecord>();
+
             Conference conference = new Conference(
             ConferenceTitleTextBox.Text,
             LocationTextBox.Text,
@@ -36,29 +38,6 @@ namespace WAM_Coursework.Forms
             EndDatePicker.Value,
             ApplicationDeadlinePicker.Value);
 
-            List<TalkRecord> eligibleTalks = GetTalksWithTwoReviews();
-
-            List<SelectedTalksRecord> selectedTalks = new List<SelectedTalksRecord>();
-            int maxTalks;
-            if (slotTimes.Count < eligibleTalks.Count)
-            {
-                maxTalks = slotTimes.Count;
-            }
-            else
-            {
-                maxTalks = eligibleTalks.Count;
-            }
-
-            for (int i = 0; i < maxTalks; i++)
-            {
-                selectedTalks.Add(new SelectedTalksRecord
-                {
-                    talkId = eligibleTalks[i].Id,
-                    startTime = slotTimes.ElementAt(i)
-                });
-            }
-
-            //this part to stay here
             for (int i = 0; i < slotTimes.Count; i++)
             {
                 selectedTalks.Add(new SelectedTalksRecord
@@ -68,9 +47,10 @@ namespace WAM_Coursework.Forms
                 });
             }
 
-            FileManager.WriteRecords(new List<ConferenceRecord> { conference.record }, FileManager.StorageFile.conferences);
+
             FileManager.ClearFile(FileManager.StorageFile.selectedTalks);
             FileManager.WriteRecords(selectedTalks, FileManager.StorageFile.selectedTalks);
+            FileManager.WriteRecords(new List<ConferenceRecord> { conference.record }, FileManager.StorageFile.conferences);
             Close();
         }
 
@@ -87,23 +67,7 @@ namespace WAM_Coursework.Forms
         }
 
 
-        private List<TalkRecord> GetTalksWithTwoReviews()
-        {
-            var reviews = FileManager.ReadRecords<ReviewRecord>(FileManager.StorageFile.reviews);
-            var talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
-
-            var talkAverages = reviews
-            .GroupBy(r => r.attachedTalkId)
-            .Where(g => g.Count() >= 2)
-            .Select(g => new { TalkId = g.Key, AvgScore = g.Average(r => r.Score) })
-            .OrderByDescending(g => g.AvgScore)
-            .ToList();
-
-            return talkAverages
-                .Select(g => talks.Find(t => t.Id == g.TalkId))
-                .Where(t => t != null)
-                .ToList();
-        }
+   
 
         private void UpdateSlotList()
         {

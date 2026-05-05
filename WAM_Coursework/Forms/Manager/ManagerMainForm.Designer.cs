@@ -80,6 +80,7 @@
             this.SpeakerSlotsLabel = new System.Windows.Forms.Label();
             this.SlotsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.LogoutLabel = new System.Windows.Forms.LinkLabel();
+            this.RefreshTalkSelection = new System.Windows.Forms.Button();
             this.CardPanel.SuspendLayout();
             this.OverviewPanel.SuspendLayout();
             this.LocationPanel.SuspendLayout();
@@ -95,10 +96,9 @@
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.TitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TitleLabel.Location = new System.Drawing.Point(43, 30);
-            this.TitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TitleLabel.Location = new System.Drawing.Point(32, 24);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(400, 50);
+            this.TitleLabel.Size = new System.Drawing.Size(323, 41);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "No Conference Active";
             // 
@@ -107,10 +107,9 @@
             this.SubtitleLabel.AutoSize = true;
             this.SubtitleLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.SubtitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.SubtitleLabel.Location = new System.Drawing.Point(43, 86);
-            this.SubtitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SubtitleLabel.Location = new System.Drawing.Point(32, 70);
             this.SubtitleLabel.Name = "SubtitleLabel";
-            this.SubtitleLabel.Size = new System.Drawing.Size(151, 23);
+            this.SubtitleLabel.Size = new System.Drawing.Size(121, 19);
             this.SubtitleLabel.TabIndex = 1;
             this.SubtitleLabel.Text = "Conference details";
             // 
@@ -123,10 +122,9 @@
             this.StartNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartNewButton.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.StartNewButton.ForeColor = System.Drawing.Color.White;
-            this.StartNewButton.Location = new System.Drawing.Point(1067, 42);
-            this.StartNewButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StartNewButton.Location = new System.Drawing.Point(800, 34);
             this.StartNewButton.Name = "StartNewButton";
-            this.StartNewButton.Size = new System.Drawing.Size(187, 44);
+            this.StartNewButton.Size = new System.Drawing.Size(140, 36);
             this.StartNewButton.TabIndex = 2;
             this.StartNewButton.Text = "Start new";
             this.StartNewButton.UseVisualStyleBackColor = false;
@@ -136,13 +134,13 @@
             // 
             this.CardPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.CardPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CardPanel.Controls.Add(this.RefreshTalkSelection);
             this.CardPanel.Controls.Add(this.OverviewPanel);
             this.CardPanel.Controls.Add(this.SpeakerSlotsLabel);
             this.CardPanel.Controls.Add(this.SlotsFlowPanel);
-            this.CardPanel.Location = new System.Drawing.Point(43, 135);
-            this.CardPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CardPanel.Location = new System.Drawing.Point(32, 110);
             this.CardPanel.Name = "CardPanel";
-            this.CardPanel.Size = new System.Drawing.Size(1226, 738);
+            this.CardPanel.Size = new System.Drawing.Size(920, 600);
             this.CardPanel.TabIndex = 3;
             // 
             // OverviewPanel
@@ -150,10 +148,9 @@
             this.OverviewPanel.BackColor = System.Drawing.Color.Transparent;
             this.OverviewPanel.Controls.Add(this.LocationPanel);
             this.OverviewPanel.Controls.Add(this.StatsPanel);
-            this.OverviewPanel.Location = new System.Drawing.Point(21, 20);
-            this.OverviewPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OverviewPanel.Location = new System.Drawing.Point(16, 16);
             this.OverviewPanel.Name = "OverviewPanel";
-            this.OverviewPanel.Size = new System.Drawing.Size(1184, 222);
+            this.OverviewPanel.Size = new System.Drawing.Size(888, 180);
             this.OverviewPanel.TabIndex = 0;
             // 
             // LocationPanel
@@ -162,20 +159,18 @@
             this.LocationPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LocationPanel.Controls.Add(this.LocationLabel);
             this.LocationPanel.Controls.Add(this.LocationValueLabel);
-            this.LocationPanel.Location = new System.Drawing.Point(11, 10);
-            this.LocationPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LocationPanel.Location = new System.Drawing.Point(8, 8);
             this.LocationPanel.Name = "LocationPanel";
-            this.LocationPanel.Size = new System.Drawing.Size(1157, 59);
+            this.LocationPanel.Size = new System.Drawing.Size(868, 48);
             this.LocationPanel.TabIndex = 0;
             // 
             // LocationLabel
             // 
             this.LocationLabel.AutoSize = true;
             this.LocationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.LocationLabel.Location = new System.Drawing.Point(11, 10);
-            this.LocationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LocationLabel.Location = new System.Drawing.Point(8, 8);
             this.LocationLabel.Name = "LocationLabel";
-            this.LocationLabel.Size = new System.Drawing.Size(58, 16);
+            this.LocationLabel.Size = new System.Drawing.Size(48, 13);
             this.LocationLabel.TabIndex = 0;
             this.LocationLabel.Text = "Location";
             // 
@@ -184,10 +179,9 @@
             this.LocationValueLabel.AutoSize = true;
             this.LocationValueLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.LocationValueLabel.ForeColor = System.Drawing.Color.White;
-            this.LocationValueLabel.Location = new System.Drawing.Point(11, 30);
-            this.LocationValueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LocationValueLabel.Location = new System.Drawing.Point(8, 24);
             this.LocationValueLabel.Name = "LocationValueLabel";
-            this.LocationValueLabel.Size = new System.Drawing.Size(0, 23);
+            this.LocationValueLabel.Size = new System.Drawing.Size(0, 19);
             this.LocationValueLabel.TabIndex = 1;
             // 
             // StatsPanel
@@ -196,10 +190,9 @@
             this.StatsPanel.Controls.Add(this.EndDatePanel);
             this.StatsPanel.Controls.Add(this.DeadlinePanel);
             this.StatsPanel.Controls.Add(this.TotalSlotsPanel);
-            this.StatsPanel.Location = new System.Drawing.Point(11, 79);
-            this.StatsPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StatsPanel.Location = new System.Drawing.Point(8, 64);
             this.StatsPanel.Name = "StatsPanel";
-            this.StatsPanel.Size = new System.Drawing.Size(1157, 123);
+            this.StatsPanel.Size = new System.Drawing.Size(868, 100);
             this.StatsPanel.TabIndex = 1;
             // 
             // StartDatePanel
@@ -209,19 +202,17 @@
             this.StartDatePanel.Controls.Add(this.StartDateLabel);
             this.StartDatePanel.Controls.Add(this.StartDateValue);
             this.StartDatePanel.Location = new System.Drawing.Point(0, 0);
-            this.StartDatePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StartDatePanel.Name = "StartDatePanel";
-            this.StartDatePanel.Size = new System.Drawing.Size(559, 54);
+            this.StartDatePanel.Size = new System.Drawing.Size(420, 44);
             this.StartDatePanel.TabIndex = 0;
             // 
             // StartDateLabel
             // 
             this.StartDateLabel.AutoSize = true;
             this.StartDateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.StartDateLabel.Location = new System.Drawing.Point(11, 10);
-            this.StartDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StartDateLabel.Location = new System.Drawing.Point(8, 8);
             this.StartDateLabel.Name = "StartDateLabel";
-            this.StartDateLabel.Size = new System.Drawing.Size(64, 16);
+            this.StartDateLabel.Size = new System.Drawing.Size(53, 13);
             this.StartDateLabel.TabIndex = 0;
             this.StartDateLabel.Text = "Start date";
             // 
@@ -230,10 +221,9 @@
             this.StartDateValue.AutoSize = true;
             this.StartDateValue.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.StartDateValue.ForeColor = System.Drawing.Color.White;
-            this.StartDateValue.Location = new System.Drawing.Point(11, 30);
-            this.StartDateValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StartDateValue.Location = new System.Drawing.Point(8, 24);
             this.StartDateValue.Name = "StartDateValue";
-            this.StartDateValue.Size = new System.Drawing.Size(0, 23);
+            this.StartDateValue.Size = new System.Drawing.Size(0, 19);
             this.StartDateValue.TabIndex = 1;
             // 
             // EndDatePanel
@@ -242,20 +232,18 @@
             this.EndDatePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EndDatePanel.Controls.Add(this.EndDateLabel);
             this.EndDatePanel.Controls.Add(this.EndDateValue);
-            this.EndDatePanel.Location = new System.Drawing.Point(597, 0);
-            this.EndDatePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EndDatePanel.Location = new System.Drawing.Point(448, 0);
             this.EndDatePanel.Name = "EndDatePanel";
-            this.EndDatePanel.Size = new System.Drawing.Size(559, 54);
+            this.EndDatePanel.Size = new System.Drawing.Size(420, 44);
             this.EndDatePanel.TabIndex = 1;
             // 
             // EndDateLabel
             // 
             this.EndDateLabel.AutoSize = true;
             this.EndDateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.EndDateLabel.Location = new System.Drawing.Point(11, 10);
-            this.EndDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EndDateLabel.Location = new System.Drawing.Point(8, 8);
             this.EndDateLabel.Name = "EndDateLabel";
-            this.EndDateLabel.Size = new System.Drawing.Size(61, 16);
+            this.EndDateLabel.Size = new System.Drawing.Size(50, 13);
             this.EndDateLabel.TabIndex = 0;
             this.EndDateLabel.Text = "End date";
             // 
@@ -264,10 +252,9 @@
             this.EndDateValue.AutoSize = true;
             this.EndDateValue.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.EndDateValue.ForeColor = System.Drawing.Color.White;
-            this.EndDateValue.Location = new System.Drawing.Point(11, 30);
-            this.EndDateValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EndDateValue.Location = new System.Drawing.Point(8, 24);
             this.EndDateValue.Name = "EndDateValue";
-            this.EndDateValue.Size = new System.Drawing.Size(0, 23);
+            this.EndDateValue.Size = new System.Drawing.Size(0, 19);
             this.EndDateValue.TabIndex = 1;
             // 
             // DeadlinePanel
@@ -276,20 +263,18 @@
             this.DeadlinePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DeadlinePanel.Controls.Add(this.DeadlineLabel);
             this.DeadlinePanel.Controls.Add(this.DeadlineValue);
-            this.DeadlinePanel.Location = new System.Drawing.Point(0, 69);
-            this.DeadlinePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeadlinePanel.Location = new System.Drawing.Point(0, 56);
             this.DeadlinePanel.Name = "DeadlinePanel";
-            this.DeadlinePanel.Size = new System.Drawing.Size(559, 54);
+            this.DeadlinePanel.Size = new System.Drawing.Size(420, 44);
             this.DeadlinePanel.TabIndex = 2;
             // 
             // DeadlineLabel
             // 
             this.DeadlineLabel.AutoSize = true;
             this.DeadlineLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.DeadlineLabel.Location = new System.Drawing.Point(11, 10);
-            this.DeadlineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DeadlineLabel.Location = new System.Drawing.Point(8, 8);
             this.DeadlineLabel.Name = "DeadlineLabel";
-            this.DeadlineLabel.Size = new System.Drawing.Size(130, 16);
+            this.DeadlineLabel.Size = new System.Drawing.Size(102, 13);
             this.DeadlineLabel.TabIndex = 0;
             this.DeadlineLabel.Text = "Application deadline";
             // 
@@ -298,10 +283,9 @@
             this.DeadlineValue.AutoSize = true;
             this.DeadlineValue.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.DeadlineValue.ForeColor = System.Drawing.Color.White;
-            this.DeadlineValue.Location = new System.Drawing.Point(11, 30);
-            this.DeadlineValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DeadlineValue.Location = new System.Drawing.Point(8, 24);
             this.DeadlineValue.Name = "DeadlineValue";
-            this.DeadlineValue.Size = new System.Drawing.Size(0, 23);
+            this.DeadlineValue.Size = new System.Drawing.Size(0, 19);
             this.DeadlineValue.TabIndex = 1;
             // 
             // TotalSlotsPanel
@@ -310,20 +294,18 @@
             this.TotalSlotsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TotalSlotsPanel.Controls.Add(this.TotalSlotsLabel);
             this.TotalSlotsPanel.Controls.Add(this.TotalSlotsValue);
-            this.TotalSlotsPanel.Location = new System.Drawing.Point(597, 69);
-            this.TotalSlotsPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TotalSlotsPanel.Location = new System.Drawing.Point(448, 56);
             this.TotalSlotsPanel.Name = "TotalSlotsPanel";
-            this.TotalSlotsPanel.Size = new System.Drawing.Size(559, 54);
+            this.TotalSlotsPanel.Size = new System.Drawing.Size(420, 44);
             this.TotalSlotsPanel.TabIndex = 3;
             // 
             // TotalSlotsLabel
             // 
             this.TotalSlotsLabel.AutoSize = true;
             this.TotalSlotsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.TotalSlotsLabel.Location = new System.Drawing.Point(11, 10);
-            this.TotalSlotsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TotalSlotsLabel.Location = new System.Drawing.Point(8, 8);
             this.TotalSlotsLabel.Name = "TotalSlotsLabel";
-            this.TotalSlotsLabel.Size = new System.Drawing.Size(122, 16);
+            this.TotalSlotsLabel.Size = new System.Drawing.Size(96, 13);
             this.TotalSlotsLabel.TabIndex = 0;
             this.TotalSlotsLabel.Text = "Total speaker slots";
             // 
@@ -332,10 +314,9 @@
             this.TotalSlotsValue.AutoSize = true;
             this.TotalSlotsValue.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalSlotsValue.ForeColor = System.Drawing.Color.White;
-            this.TotalSlotsValue.Location = new System.Drawing.Point(11, 30);
-            this.TotalSlotsValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TotalSlotsValue.Location = new System.Drawing.Point(8, 24);
             this.TotalSlotsValue.Name = "TotalSlotsValue";
-            this.TotalSlotsValue.Size = new System.Drawing.Size(0, 23);
+            this.TotalSlotsValue.Size = new System.Drawing.Size(0, 19);
             this.TotalSlotsValue.TabIndex = 1;
             // 
             // SpeakerSlotsLabel
@@ -343,10 +324,9 @@
             this.SpeakerSlotsLabel.AutoSize = true;
             this.SpeakerSlotsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.SpeakerSlotsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.SpeakerSlotsLabel.Location = new System.Drawing.Point(21, 261);
-            this.SpeakerSlotsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SpeakerSlotsLabel.Location = new System.Drawing.Point(16, 212);
             this.SpeakerSlotsLabel.Name = "SpeakerSlotsLabel";
-            this.SpeakerSlotsLabel.Size = new System.Drawing.Size(138, 23);
+            this.SpeakerSlotsLabel.Size = new System.Drawing.Size(113, 19);
             this.SpeakerSlotsLabel.TabIndex = 4;
             this.SpeakerSlotsLabel.Text = "SPEAKER SLOTS";
             // 
@@ -354,10 +334,9 @@
             // 
             this.SlotsFlowPanel.AutoScroll = true;
             this.SlotsFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.SlotsFlowPanel.Location = new System.Drawing.Point(21, 290);
-            this.SlotsFlowPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SlotsFlowPanel.Location = new System.Drawing.Point(16, 236);
             this.SlotsFlowPanel.Name = "SlotsFlowPanel";
-            this.SlotsFlowPanel.Size = new System.Drawing.Size(1184, 394);
+            this.SlotsFlowPanel.Size = new System.Drawing.Size(888, 320);
             this.SlotsFlowPanel.TabIndex = 5;
             this.SlotsFlowPanel.WrapContents = false;
             // 
@@ -366,27 +345,43 @@
             this.LogoutLabel.AutoSize = true;
             this.LogoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.LogoutLabel.Location = new System.Drawing.Point(1209, 886);
+            this.LogoutLabel.Location = new System.Drawing.Point(907, 720);
+            this.LogoutLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LogoutLabel.Name = "LogoutLabel";
-            this.LogoutLabel.Size = new System.Drawing.Size(60, 20);
+            this.LogoutLabel.Size = new System.Drawing.Size(52, 17);
             this.LogoutLabel.TabIndex = 5;
             this.LogoutLabel.TabStop = true;
             this.LogoutLabel.Text = "Logout";
             this.LogoutLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.LogoutLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLabel_LinkClicked);
             // 
+            // RefreshTalkSelection
+            // 
+            this.RefreshTalkSelection.BackColor = System.Drawing.Color.SteelBlue;
+            this.RefreshTalkSelection.FlatAppearance.BorderSize = 0;
+            this.RefreshTalkSelection.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.RefreshTalkSelection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RefreshTalkSelection.Font = new System.Drawing.Font("Wingdings 3", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.RefreshTalkSelection.ForeColor = System.Drawing.Color.White;
+            this.RefreshTalkSelection.Location = new System.Drawing.Point(864, 558);
+            this.RefreshTalkSelection.Name = "RefreshTalkSelection";
+            this.RefreshTalkSelection.Size = new System.Drawing.Size(40, 37);
+            this.RefreshTalkSelection.TabIndex = 6;
+            this.RefreshTalkSelection.Text = "Q";
+            this.RefreshTalkSelection.UseVisualStyleBackColor = false;
+            this.RefreshTalkSelection.Click += new System.EventHandler(this.RefreshTalkSelection_Click);
+            // 
             // ManagerMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1333, 935);
+            this.ClientSize = new System.Drawing.Size(1000, 760);
             this.Controls.Add(this.LogoutLabel);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SubtitleLabel);
             this.Controls.Add(this.StartNewButton);
             this.Controls.Add(this.CardPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ManagerMainForm";
             this.Text = "Conference";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManagerMainForm_FormClosed);
@@ -412,5 +407,6 @@
         #endregion
 
         private System.Windows.Forms.LinkLabel LogoutLabel;
+        private System.Windows.Forms.Button RefreshTalkSelection;
     }
 }

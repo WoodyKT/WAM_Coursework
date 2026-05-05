@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
 using WAM_Coursework.FileHandlers;
@@ -95,5 +96,61 @@ namespace WAM_Coursework.Forms.Manager
             CurrentUser.Instance.User = null;
             Close();
         }
+
+        private void RefreshTalkSelection_Click(object sender, EventArgs e)
+        {
+
+            List<TalkRecord> eligibleTalks = GetTalksWithTwoReviews();
+            List<SelectedTalksRecord> currentSelectedTalks = FileManager.ReadRecords<SelectedTalksRecord>(FileManager.StorageFile.selectedTalks);
+            foreach (SelectedTalksRecord talk in currentSelectedTalks)
+            {
+                talk.talkId = -1;
+            }
+
+            int slotCount = currentSelectedTalks.Count;
+            int maxTalks;
+            if (slotCount < eligibleTalks.Count)
+            {
+                maxTalks = slotCount;
+            }
+            else
+            {
+                maxTalks = eligibleTalks.Count;
+            }
+
+            for (int i = 0; i < maxTalks; i++)
+            {
+                currentSelectedTalks[i].talkId = eligibleTalks[i].Id;
+            }
+
+            foreach (var talk in eligibleTalks)
+            {
+                talk.SubmittedToConference = true;
+                FileManager.UpdateRecord(talk, FileManager.StorageFile.talks);
+            }
+
+            FileManager.ClearFile(FileManager.StorageFile.selectedTalks);
+            FileManager.WriteRecords(currentSelectedTalks, FileManager.StorageFile.selectedTalks);
+            CheckForSavedConference();
+        }
+
+        private List<TalkRecord> GetTalksWithTwoReviews()
+        {
+            var reviews = FileManager.ReadRecords<ReviewRecord>(FileManager.StorageFile.reviews);
+            var talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
+
+            var talkAverages = reviews
+            .GroupBy(r => r.attachedTalkId)
+            .Where(g => g.Count() >= 2)
+            .Select(g => new { TalkId = g.Key, AvgScore = g.Average(r => r.Score) })
+            .OrderByDescending(g => g.AvgScore)
+            .ToList();
+
+            return talkAverages
+                .Select(g => talks.Find(t => t.Id == g.TalkId))
+                .Where(t => t != null)
+                .ToList();
+        }
     }
+    
 }
