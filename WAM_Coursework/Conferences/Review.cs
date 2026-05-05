@@ -13,20 +13,20 @@
         /// <param name="TalkId">ID of talk associated with review.</param>
         /// <param name="Score">Rating out of 10 given to talk.</param>
         /// <param name="Comment">String of feedback on talk provided by reviewer.</param>
- public Review(int Id, int attachedTalkId, int Score, string Comment)
+ public Review(int Id, int attachedTalkId, int Score, string Comment, string reviewerEmail)
         {
             this.Score = Score;
             this.Comment = Comment;
             this.Id = Id;
             this.attachedTalkId = attachedTalkId;
+            this.ReviewerEmail = reviewerEmail;
         }
 
         public int Id { get => record.Id; set => record.Id = value; }
-
         public int Score { get => record.Score; set => record.Score = value; }
         public string Comment { get => record.Comment; set => record.Comment = value; }
-
         public int attachedTalkId { get => record.attachedTalkId; set => record.attachedTalkId = value; }
+        public string ReviewerEmail { get => record.reviewerEmail; set => record.reviewerEmail = value; }
 
     }
 }

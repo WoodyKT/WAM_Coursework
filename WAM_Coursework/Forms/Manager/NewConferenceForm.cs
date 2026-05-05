@@ -47,6 +47,7 @@ namespace WAM_Coursework.Forms
                 });
             }
 
+
             FileManager.ClearFile(FileManager.StorageFile.selectedTalks);
             FileManager.WriteRecords(selectedTalks, FileManager.StorageFile.selectedTalks);
             FileManager.WriteRecords(new List<ConferenceRecord> { conference.record }, FileManager.StorageFile.conferences);

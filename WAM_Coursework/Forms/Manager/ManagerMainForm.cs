@@ -63,10 +63,12 @@ namespace WAM_Coursework.Forms.Manager
             foreach (var selected in selectedTalks)
             {
                 TalkRecord talk = allTalks.Find(t => t.Id == selected.talkId);
-                if (talk == null) continue;
 
                 Button talkButton = new Button();
-                talkButton.Text = $"{talk.Title}  —  {talk.Description}  —  {selected.startTime:dd/MM/yyyy HH:mm}";
+                if (talk != null)
+                {
+                    talkButton.Text = $"{talk.Title}  —  {talk.Description}  —  {selected.startTime:dd/MM/yyyy HH:mm}";
+                }
                 talkButton.Font = new System.Drawing.Font(talkButton.Font.FontFamily, 11);
                 talkButton.BackColor = System.Drawing.Color.FromArgb(54, 54, 54);
                 talkButton.ForeColor = System.Drawing.Color.White;

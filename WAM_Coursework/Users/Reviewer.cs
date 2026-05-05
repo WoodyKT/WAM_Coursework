@@ -27,7 +27,7 @@ namespace WAM_Coursework.Users
         {
             string[] arguments = args.Split(',');
 
-            Review newReview = new Review(int.Parse(arguments[0]), int.Parse(arguments[1]), int.Parse(arguments[2]), arguments[3]);
+            Review newReview = new Review(int.Parse(arguments[0]), int.Parse(arguments[1]), int.Parse(arguments[2]), arguments[3], arguments[4]);
             FileManager.WriteRecords(new List<Review> { newReview }, FileManager.StorageFile.reviews);
         }
     }
