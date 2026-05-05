@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
 using WAM_Coursework.FileHandlers;
@@ -31,20 +32,30 @@ namespace WAM_Coursework.Forms
             ReviewsFlowPanel.Controls.Clear();
             string userEmail = CurrentUser.Instance.User.record.Email;
             List<TalkRecord> Talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
+            List<ReviewRecord> Reviews = FileManager.ReadRecords<ReviewRecord>(FileManager.StorageFile.reviews);
+            List<UserRecord> Users = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users);
             List<TalkRecord> Assigned = Talks.FindAll(t => t.Reviewer1Email == userEmail || t.Reviewer2Email == userEmail);
 
-            foreach (var talk in Assigned) if (!talk.ReviewPassed)
+            foreach (var talk in Assigned) 
             {
-                int talkId = talk.Id;
-                //add application to reviewer homepage list as a button.
-                Button talkbutton = new Button() { Text = talk.Title + "\t - " + talk.Description };
-                talkbutton.Font = new System.Drawing.Font(talkbutton.Font.FontFamily, 20);
-                talkbutton.BackColor = System.Drawing.Color.FromArgb(54, 54, 54);
-                talkbutton.ForeColor = System.Drawing.Color.White;
-                talkbutton.AutoSize = true;
-                talkbutton.Tag = talkId;
-                talkbutton.Click += (sender, e) => OpenReview(sender, e, (int)((Button)sender).Tag);
-                ReviewsFlowPanel.Controls.Add(talkbutton);
+                //check to see if current user has already reviewed this talk.
+                bool currentUserReviewed = Reviews.Any(r =>
+                    r.attachedTalkId == talk.Id &&
+                    r.reviewerEmail == userEmail);
+
+                if (!currentUserReviewed)
+                {
+                    int talkId = talk.Id;
+                    //add application to reviewer homepage list as a button.
+                    Button talkbutton = new Button() { Text = talk.Title + "\t - " + talk.Description };
+                    talkbutton.Font = new System.Drawing.Font(talkbutton.Font.FontFamily, 20);
+                    talkbutton.BackColor = System.Drawing.Color.FromArgb(54, 54, 54);
+                    talkbutton.ForeColor = System.Drawing.Color.White;
+                    talkbutton.AutoSize = true;
+                    talkbutton.Tag = talkId;
+                    talkbutton.Click += (sender, e) => OpenReview(sender, e, (int)((Button)sender).Tag);
+                    ReviewsFlowPanel.Controls.Add(talkbutton);
+                }
             }
             CountBadge.Text = Assigned.Count.ToString() + " remaining";
         }
@@ -93,6 +104,27 @@ namespace WAM_Coursework.Forms
         {
             CurrentUser.Instance.User = null;
             Close();
+        }
+
+        /// <summary>
+        /// I apologise for reusing code :(
+        /// </summary>
+        private List<TalkRecord> GetTalksWithTwoReviews()
+        {
+            var reviews = FileManager.ReadRecords<ReviewRecord>(FileManager.StorageFile.reviews);
+            var talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
+
+            var talkAverages = reviews
+            .GroupBy(r => r.attachedTalkId)
+            .Where(g => g.Count() >= 2)
+            .Select(g => new { TalkId = g.Key, AvgScore = g.Average(r => r.Score) })
+            .OrderByDescending(g => g.AvgScore)
+            .ToList();
+
+            return talkAverages
+                .Select(g => talks.Find(t => t.Id == g.TalkId))
+                .Where(t => t != null)
+                .ToList();
         }
     }
 }

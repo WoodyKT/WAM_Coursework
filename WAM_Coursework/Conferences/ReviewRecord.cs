@@ -8,5 +8,6 @@
         public int Score { get; set; }
         public string Comment { get; set; }
         public int attachedTalkId { get; set; }
+        public string reviewerEmail { get; set; }
     }
 }
