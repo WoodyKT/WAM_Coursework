@@ -35,6 +35,7 @@ namespace WAM_Coursework.Forms
             List<ReviewRecord> Reviews = FileManager.ReadRecords<ReviewRecord>(FileManager.StorageFile.reviews);
             List<UserRecord> Users = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users);
             List<TalkRecord> Assigned = Talks.FindAll(t => t.Reviewer1Email == userEmail || t.Reviewer2Email == userEmail);
+            int pendingReviewCount = 0;
 
             foreach (var talk in Assigned) 
             {
@@ -45,6 +46,7 @@ namespace WAM_Coursework.Forms
 
                 if (!currentUserReviewed)
                 {
+                    pendingReviewCount++;
                     int talkId = talk.Id;
                     //add application to reviewer homepage list as a button.
                     Button talkbutton = new Button() { Text = talk.Title + "\t - " + talk.Description };
@@ -57,7 +59,7 @@ namespace WAM_Coursework.Forms
                     ReviewsFlowPanel.Controls.Add(talkbutton);
                 }
             }
-            CountBadge.Text = Assigned.Count.ToString() + " remaining";
+            CountBadge.Text = pendingReviewCount + " remaining";
         }
 
         /// <summary>
@@ -104,27 +106,6 @@ namespace WAM_Coursework.Forms
         {
             CurrentUser.Instance.User = null;
             Close();
-        }
-
-        /// <summary>
-        /// I apologise for reusing code :(
-        /// </summary>
-        private List<TalkRecord> GetTalksWithTwoReviews()
-        {
-            var reviews = FileManager.ReadRecords<ReviewRecord>(FileManager.StorageFile.reviews);
-            var talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
-
-            var talkAverages = reviews
-            .GroupBy(r => r.attachedTalkId)
-            .Where(g => g.Count() >= 2)
-            .Select(g => new { TalkId = g.Key, AvgScore = g.Average(r => r.Score) })
-            .OrderByDescending(g => g.AvgScore)
-            .ToList();
-
-            return talkAverages
-                .Select(g => talks.Find(t => t.Id == g.TalkId))
-                .Where(t => t != null)
-                .ToList();
         }
     }
 }

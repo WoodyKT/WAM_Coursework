@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WAM_Coursework.Conferences;
@@ -47,9 +48,12 @@ namespace WAM_Coursework.Forms
             }
 
             CurrentUser.Instance.User.CreateAction($"{reviewID},{int.Parse(talkID)},{ScoreComboBox.SelectedItem},{ReasonTextBox.Text.Replace(",", "%")},{CurrentUser.Instance.User.record.Email}");
-            TalkRecord talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks).Where(t => t.Id == int.Parse(talkID)).FirstOrDefault();
-            talks.ReviewPassed = true;
-            FileManager.UpdateRecord(talks, FileManager.StorageFile.talks);
+            if (GetTalksWithTwoReviews().Any(t => t.Id == int.Parse(talkID)))
+            {
+                TalkRecord talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks).Where(t => t.Id == int.Parse(talkID)).FirstOrDefault();
+                talks.ReviewPassed = true;
+                FileManager.UpdateRecord(talks, FileManager.StorageFile.talks);
+            }
             this.DialogResult = DialogResult.OK;
             Close();
         }
@@ -84,6 +88,24 @@ namespace WAM_Coursework.Forms
             TalkRecord talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks).Where(t => t.Id == int.Parse(talkID)).FirstOrDefault();
             TalkTitleLabel.Text = talks?.Title;
             TalkDescriptionLabel.Text = talks?.Description;
+        }
+
+
+        private List<TalkRecord> GetTalksWithTwoReviews()
+        {
+            var reviews = FileManager.ReadRecords<ReviewRecord>(FileManager.StorageFile.reviews);
+            var talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
+
+            var talkAverages = reviews
+            .GroupBy(r => r.attachedTalkId)
+            .Where(g => g.Count() >= 2)
+            .Select(g => new { TalkId = g.Key })
+            .ToList();
+
+            return talkAverages
+                .Select(g => talks.Find(t => t.Id == g.TalkId))
+                .Where(t => t != null)
+                .ToList();
         }
     }
 }
