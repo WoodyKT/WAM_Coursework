@@ -46,7 +46,7 @@ namespace WAM_Coursework.Forms
                 return;
             }
 
-            CurrentUser.Instance.User.CreateAction($"{reviewID},{int.Parse(talkID)},{ScoreComboBox.SelectedItem},{ReasonTextBox.Text.Replace(",", "%")}");
+            CurrentUser.Instance.User.CreateAction($"{reviewID},{int.Parse(talkID)},{ScoreComboBox.SelectedItem},{ReasonTextBox.Text.Replace(",", "%")},{CurrentUser.Instance.User.record.Email}");
             TalkRecord talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks).Where(t => t.Id == int.Parse(talkID)).FirstOrDefault();
             talks.ReviewPassed = true;
             FileManager.UpdateRecord(talks, FileManager.StorageFile.talks);

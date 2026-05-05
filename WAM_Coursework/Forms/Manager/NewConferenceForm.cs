@@ -58,10 +58,14 @@ namespace WAM_Coursework.Forms
                 });
             }
 
-            foreach (var talk in eligibleTalks)
+            //this part to stay here
+            for (int i = 0; i < slotTimes.Count; i++)
             {
-                talk.SubmittedToConference = true;
-                FileManager.UpdateRecord(talk, FileManager.StorageFile.talks);
+                selectedTalks.Add(new SelectedTalksRecord
+                {
+                    talkId = -1,
+                    startTime = slotTimes.ElementAt(i)
+                });
             }
 
             FileManager.WriteRecords(new List<ConferenceRecord> { conference.record }, FileManager.StorageFile.conferences);
