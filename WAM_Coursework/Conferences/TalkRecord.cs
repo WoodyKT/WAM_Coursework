@@ -13,7 +13,6 @@
         public string Reviewer1Email { get; set; }
         public string Reviewer2Email { get; set; }
         public bool ReviewPassed { get; set; } = false;
-
         public bool SubmittedToConference { get; set; } = false;
 
     }

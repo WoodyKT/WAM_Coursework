@@ -21,6 +21,9 @@ namespace WAM_Coursework.Conferences
         /// <param name="title">Title of talk.</param>
         /// <param name="description">Description of the talk's content.</param>
         /// <param name="speakerEmail">Email address of speaker proposing the talk.</param>
+        /// <param name="reviewer1email">First reviewer assigned to talk.</param>
+        /// <param name="reviewer2email">Second reviewer assigned to talk.</param>
+        /// <param name="speakerAffiliation">Affiliation of speaker that created application.</param>
         public Talk(string title, string description, string speakerEmail, string speakerAffiliation, string reviewer1email, string reviewer2email)
         {
             record.Title = title;

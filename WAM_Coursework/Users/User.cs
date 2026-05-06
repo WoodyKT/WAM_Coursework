@@ -19,6 +19,7 @@ namespace WAM_Coursework.Users
         /// <param name="lastName">User surname.</param>
         /// <param name="passwordHash">hashed User password.</param>
         /// <param name="role">User role (speaker, reviewer, or conference manager).</param>
+        /// <param name="affiliation">User affiliation.</param>
         public User(string email, string firstName, string lastName, string passwordHash, string role, string affiliation)
         {
             record.Email = email;
@@ -38,7 +39,7 @@ namespace WAM_Coursework.Users
         public static bool AttemptLogin(string email, string password)
         {
             var users = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users);
-            var user = users.FirstOrDefault(u => u.Email == email);
+            var user = users.FirstOrDefault(u => u.Email == email.ToLower());
             if (user == null) return false;
             if (BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
             {
@@ -73,6 +74,11 @@ namespace WAM_Coursework.Users
             }
 
         }
+
+        /// <summary>
+        /// Abstract method implemented by child classes.
+        /// </summary>
+        /// <param name="args">Arguments passed in.</param>
         public abstract void CreateAction(string args);
     }
 }

@@ -54,6 +54,12 @@ namespace WAM_Coursework.FileHandlers
             return path;
         }
 
+        /// <summary>
+        /// Add new records to end of csv file.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="records">record(s) to add.</param>
+        /// <param name="file">csv file to write to.</param>
         #region Read/Write
         public static void WriteRecords<T>(IEnumerable<T> records, StorageFile file)
         {
@@ -67,6 +73,12 @@ namespace WAM_Coursework.FileHandlers
             }
         }
 
+        /// <summary>
+        /// Read records from csv file.
+        /// </summary>
+        /// <typeparam name="T">record(s) to read.</typeparam>
+        /// <param name="file">csv file to read from.</param>
+        /// <returns></returns>
         public static List<T> ReadRecords<T>(StorageFile file)
         {
             CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture)
@@ -80,6 +92,10 @@ namespace WAM_Coursework.FileHandlers
             }
         }
 
+        /// <summary>
+        /// Clear all contents of csv file.
+        /// </summary>
+        /// <param name="file">csv file to empty.</param>
         public static void ClearFile(StorageFile file)
         {
             using (var writer = new StreamWriter(GetDir(file), append: false))
@@ -148,6 +164,9 @@ namespace WAM_Coursework.FileHandlers
             }
         }
 
+        /// <summary>
+        /// Sets up the admin account if absent from the users csv file.
+        /// </summary>
         private void CreateAdminIfNotExists()
         {
             var users = ReadRecords<UserRecord>(StorageFile.users);

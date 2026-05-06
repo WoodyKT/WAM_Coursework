@@ -60,6 +60,12 @@ namespace WAM_Coursework.Forms
             Close();
         }
 
+        /// <summary>
+        /// Performs validation on entered application information.
+        /// </summary>
+        /// <param name="title">Talk title.</param>
+        /// <param name="description">Talk description.</param>
+        /// <returns>True if validation passed, False if it failed.</returns>
         private bool ValidateApplication(string title, string description)
         {
             if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description))
@@ -83,34 +89,40 @@ namespace WAM_Coursework.Forms
             return true;
         }
 
+        /// <summary>
+        /// Assigns submitted application to two random reviewers that do not share an affiliation with the speaker.
+        /// </summary>
+        /// <param name="spkrAffiliation">Affiliation of the speaker.</param>
+        /// <returns>Emails of the two assigned reviewers, or Null if not enough valid reviewers found.</returns>
         private string[] AssignApplication(string spkrAffiliation)
         {
             //allocate the application to reviewers
             //use filemanager to read list of reviewers
             List<UserRecord> Users = FileManager.ReadRecords<UserRecord>(FileManager.StorageFile.users);
-            List<UserRecord> Reviewers = Users.FindAll(t => t.Role == "Reviewer");
+            //get list of reviewers with a different affiliation to the speaker
+            List<UserRecord> validReviewers = Users.FindAll(t => t.Role == "Reviewer" && t.Affiliation != spkrAffiliation);
             string reviewer1email = "";
             string reviewer2email = "";
             int index = -1;
             Random random = new Random();
 
-            if (Reviewers.Count < 2)
+            if (validReviewers.Count < 2)
             {
                 return null;
             }
             while (reviewer1email == "" || reviewer2email == "")
             {
-                index = random.Next(Reviewers.Count);
-                //find a reviewer with a different affiliation to the speaker who hasn't already been picked.
-                if (Reviewers[index].Affiliation != spkrAffiliation && Reviewers[index].Email != reviewer1email)
+                index = random.Next(validReviewers.Count);
+                //randomly find a reviewer who hasn't already been picked.
+                if (validReviewers[index].Email != reviewer1email)
                 {
                     if (string.IsNullOrEmpty(reviewer1email))
                     {
-                        reviewer1email = Reviewers[index].Email;
+                        reviewer1email = validReviewers[index].Email;
                     }
                     else if (string.IsNullOrEmpty(reviewer2email))
                     {
-                        reviewer2email = Reviewers[index].Email;
+                        reviewer2email = validReviewers[index].Email;
                     }
                 }
             }

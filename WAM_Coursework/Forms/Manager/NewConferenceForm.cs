@@ -12,6 +12,11 @@ namespace WAM_Coursework.Forms
     public partial class NewConferenceForm : Form
     {
         public HashSet<DateTime> slotTimes = new HashSet<DateTime>();
+
+        /// <summary>
+        /// NewConferenceForm constructor. 
+        /// Overrides date input fields to allow user to input both date and time.
+        /// </summary>
         public NewConferenceForm()
         {
             InitializeComponent();
@@ -22,6 +27,11 @@ namespace WAM_Coursework.Forms
             ApplicationDeadlinePicker.CustomFormat = "dd-MM-yyyy HH:mm";
         }
 
+        /// <summary>
+        /// Triggers validation on all user inputs, if all are valid a conference is created using the inputs.
+        /// </summary>
+        /// <param name="sender">submit button pressed.</param>
+        /// <param name="e">additional event info.</param>
         private void CreateConferenceButton_Click(object sender, System.EventArgs e)
         {
             if (!ValidateConText(ConferenceTitleTextBox.Text, LocationTextBox.Text) || !ValidateConTimes(StartDatePicker.Value, EndDatePicker.Value, ApplicationDeadlinePicker.Value))
@@ -47,6 +57,9 @@ namespace WAM_Coursework.Forms
                 });
             }
 
+            //clear all applications from previous conference
+            FileManager.ClearFile(FileManager.StorageFile.talks);
+            FileManager.ClearFile(FileManager.StorageFile.reviews);
 
             FileManager.ClearFile(FileManager.StorageFile.selectedTalks);
             FileManager.WriteRecords(selectedTalks, FileManager.StorageFile.selectedTalks);
@@ -54,6 +67,11 @@ namespace WAM_Coursework.Forms
             Close();
         }
 
+        /// <summary>
+        /// Validates and creates a time slot for the new conference.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddSlotButton_Click(object sender, EventArgs e)
         {
             if (SlotDatePicker.Value < StartDatePicker.Value || SlotDatePicker.Value > EndDatePicker.Value)
@@ -65,10 +83,10 @@ namespace WAM_Coursework.Forms
             SlotDatePicker.Value = StartDatePicker.Value;
             UpdateSlotList();
         }
-
-
    
-
+        /// <summary>
+        /// Updates the form with a list of created timeslots. Allows the user to click timeslots to remove them.
+        /// </summary>
         private void UpdateSlotList()
         {
             SlotsFlowPanel.Controls.Clear();
@@ -95,6 +113,12 @@ namespace WAM_Coursework.Forms
             }
         }
 
+        /// <summary>
+        /// Validates selected start date, and automatically changes it to be before the end date if needed.
+        /// Also updates deadline picker to prevent selections after start date.
+        /// </summary>
+        /// <param name="sender">Date picker changed.</param>
+        /// <param name="e">Additional event info.</param>
         private void StartDatePicker_ValueChanged(object sender, EventArgs e)
         {
             ApplicationDeadlinePicker.MaxDate = StartDatePicker.Value.AddDays(-1);
@@ -114,6 +138,11 @@ namespace WAM_Coursework.Forms
             }
         }
 
+        /// <summary>
+        /// Validates selected end date, and automatically changes it to be after the start date if needed.
+        /// </summary>
+        /// <param name="sender">Date picker changed.</param>
+        /// <param name="e">Additional event info.</param>
         private void EndDatePicker_ValueChanged(object sender, EventArgs e)
         {
             if (EndDatePicker.Value < StartDatePicker.Value)
@@ -130,6 +159,11 @@ namespace WAM_Coursework.Forms
             }
         }
 
+        /// <summary>
+        /// Validates selected end date, changing it to be before the start date if needed.
+        /// </summary>
+        /// <param name="sender">Date picker changed.</param>
+        /// <param name="e">Additional event info.</param>
         private void ApplicationDeadlinePicker_ValueChanged(object sender, EventArgs e)
         {
             if (ApplicationDeadlinePicker.Value > StartDatePicker.Value)
@@ -138,6 +172,14 @@ namespace WAM_Coursework.Forms
             }
         }
 
+        //-------------------------------INPUT VALIDATION CHECKS---------------------------------
+
+        /// <summary>
+        /// Validation checks for entered conference title and location.
+        /// </summary>
+        /// <param name="conTitle">Conference title.</param>
+        /// <param name="conLocation">Conference location.</param>
+        /// <returns>True if validation passed, False if it failed.</returns>
         private bool ValidateConText(string conTitle, string conLocation)
         {
             if (string.IsNullOrWhiteSpace(conTitle) || string.IsNullOrWhiteSpace(conLocation))
@@ -160,7 +202,13 @@ namespace WAM_Coursework.Forms
 
             return true;
         }
-
+        /// <summary>
+        /// Validation checks for all entered conference dates and times.
+        /// </summary>
+        /// <param name="start">Conference start date and time.</param>
+        /// <param name="end">Conference end date and time.</param>
+        /// <param name="deadline">Conference deadline date and time.</param>
+        /// <returns>True if validation passed, False if it failed.</returns>
         private bool ValidateConTimes(DateTime start, DateTime end, DateTime deadline)
         {
             if (start < DateTime.Now || end < DateTime.Now || deadline < DateTime.Now)

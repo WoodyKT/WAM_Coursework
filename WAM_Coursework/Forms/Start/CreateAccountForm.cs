@@ -64,14 +64,14 @@ namespace WAM_Coursework.Forms
         {
 
             //input validation
-            if (!NameValidation(FirstNameTextBox.Text, LastNameTextBox.Text) || !EmailValidation(EmailTextBox.Text) ||
+            if (!NameValidation(FirstNameTextBox.Text, LastNameTextBox.Text) || !EmailValidation(EmailTextBox.Text.ToLower()) ||
                 !PasswordValidation(PasswordTextBox.Text, ConfirmTextBox.Text) || !AffiliationValidation(AffiliationTextBox.Text))
             {
                 return;
             }
 
             //inputs valid, create user
-            UserFactory.CreateUser(EmailTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text, PasswordTextBox.Text, selectedRole, AffiliationTextBox.Text);
+            UserFactory.CreateUser(EmailTextBox.Text.ToLower(), FirstNameTextBox.Text, LastNameTextBox.Text, PasswordTextBox.Text, selectedRole, AffiliationTextBox.Text);
             MessageBox.Show($"Account created for {FirstNameTextBox.Text} {LastNameTextBox.Text} as {selectedRole}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
@@ -89,12 +89,18 @@ namespace WAM_Coursework.Forms
 
         //-------------------------------INPUT VALIDATION CHECKS---------------------------------
 
+        /// <summary>
+        /// Performs validation on entered first name and last name.
+        /// </summary>
+        /// <param name="firstname">Entered first name.</param>
+        /// <param name="lastname">Entered last name.</param>
+        /// <returns>True if validation passed, False if it failed.</returns>
         private bool NameValidation(string firstname, string lastname)
         {
             //no empty names
             if (string.IsNullOrWhiteSpace(FirstNameTextBox.Text) || string.IsNullOrWhiteSpace(LastNameTextBox.Text))
             {
-                MessageBox.Show("Please enter your first and last name.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter your first and last name.", "Empty Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -102,66 +108,88 @@ namespace WAM_Coursework.Forms
             if (firstname.Length > 35 || !Regex.IsMatch(firstname, @"^[a-zA-Z\s'-]+$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)) ||
                 lastname.Length > 35 || !Regex.IsMatch(lastname, @"^[a-zA-Z\s'-]+$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)))
             {
-                MessageBox.Show("Entered name is invalid. Please ensure names are no longer than 35 characters and do not contain any numbers or symbols.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Entered name is invalid. Please ensure names are no longer than 35 characters and do not contain any numbers or symbols.", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             return true;
         }
 
+        /// <summary>
+        /// Performs validation on entered email address.
+        /// </summary>
+        /// <param name="email">Entered email address.</param>
+        /// <returns>True if validation passed, False if it failed.</returns>
         private bool EmailValidation(string email)
         {
             //no empty emails
             if (string.IsNullOrWhiteSpace(email))
             {
-                MessageBox.Show("Please enter an email address.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter an email address.", "Empty Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (email.Length > 320)
+            {
+                MessageBox.Show("Please enter an email address no longer than 320 characters.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             //ensure email is in valid format
             if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)))
             {
-                MessageBox.Show("Please enter a valid email address.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             //check email is available
             if (UserFactory.GetUser(email) != null)
             {
-                MessageBox.Show("Email is already in use.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Email is already in use.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             return true;
         }
 
+        /// <summary>
+        /// Performs validation on entered affiliation.
+        /// </summary>
+        /// <param name="affiliation">Entered affiliation.</param>
+        /// <returns>True if validation passed, False if it failed.</returns>
         private bool AffiliationValidation(string affiliation)
         {
             if (string.IsNullOrEmpty(affiliation))
             {
-                MessageBox.Show("Please enter your affiliation - the organisation you work/volunteer for.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter your affiliation - the organisation you work/volunteer for.", "Empty Affiliation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (affiliation.Length > 160)
             {
-                MessageBox.Show("Entered affiliation too long - please only enter up to 160 characters.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Entered affiliation too long - please only enter up to 160 characters.", "Invalid Affiliation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             return true;
         }
 
+        /// <summary>
+        /// Performs validation on input to password and confirm password fields.
+        /// </summary>
+        /// <param name="password">Entered password.</param>
+        /// <param name="confirm">Password entered again - should be identical to password.</param>
+        /// <returns>True if validation passed, False if it failed.</returns>
         private bool PasswordValidation(string password, string confirm)
         {
             if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirm))
             {
-                MessageBox.Show("Please enter a password into both password fields.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a password into both password fields.", "Empty Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (password != confirm)
             {
-                MessageBox.Show("Passwords do not match.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Passwords do not match.", "Invalid Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
