@@ -65,7 +65,7 @@ namespace WAM_Coursework.Forms
                 string status = "";
                 if (selectedTalk != null)
                 {
-                    status = "Approved - Slot: " + selectedTalk.startTime;
+                    status = "Selected - Slot: " + selectedTalk.startTime;
                 }
                 else if (talk.ReviewPassed)
                 {
@@ -96,6 +96,11 @@ namespace WAM_Coursework.Forms
             Close();
         }
 
+        /// <summary>
+        /// Logs out user when homepage form closed.
+        /// </summary>
+        /// <param name="sender">Form closed event.</param>
+        /// <param name="e">Addditional event info.</param>
         private void SpeakerMainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             CurrentUser.Instance.User = null;

@@ -12,6 +12,15 @@ namespace WAM_Coursework.Conferences
         public Conference()
         {
         }
+
+        /// <summary>
+        /// Conference constructor.
+        /// </summary>
+        /// <param name="title">conference title.</param>
+        /// <param name="location">physical location of conference.</param>
+        /// <param name="startDate">conference start date and time.</param>
+        /// <param name="endDate">conference end date and time.</param>
+        /// <param name="applicationDeadline">date and time when speaker applications close.</param>
         public Conference(string title, string location, DateTime startDate, DateTime endDate, DateTime applicationDeadline)
         {
             record.Title = title;

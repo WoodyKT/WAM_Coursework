@@ -106,7 +106,7 @@
             this.tableLayoutPanel.Controls.Add(this.panelReviewer, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.panelManager, 0, 2);
             this.tableLayoutPanel.Location = new System.Drawing.Point(187, 172);
-            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 3;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 123F));
@@ -125,7 +125,7 @@
             this.panelSpeaker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelSpeaker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSpeaker.Location = new System.Drawing.Point(4, 4);
-            this.panelSpeaker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelSpeaker.Margin = new System.Windows.Forms.Padding(4);
             this.panelSpeaker.Name = "panelSpeaker";
             this.panelSpeaker.Size = new System.Drawing.Size(819, 115);
             this.panelSpeaker.TabIndex = 0;
@@ -135,7 +135,7 @@
             // 
             this.pbSpeaker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
             this.pbSpeaker.Location = new System.Drawing.Point(24, 22);
-            this.pbSpeaker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbSpeaker.Margin = new System.Windows.Forms.Padding(4);
             this.pbSpeaker.Name = "pbSpeaker";
             this.pbSpeaker.Size = new System.Drawing.Size(75, 69);
             this.pbSpeaker.TabIndex = 0;
@@ -178,7 +178,7 @@
             this.panelReviewer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelReviewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelReviewer.Location = new System.Drawing.Point(4, 127);
-            this.panelReviewer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelReviewer.Margin = new System.Windows.Forms.Padding(4);
             this.panelReviewer.Name = "panelReviewer";
             this.panelReviewer.Size = new System.Drawing.Size(819, 115);
             this.panelReviewer.TabIndex = 1;
@@ -188,7 +188,7 @@
             // 
             this.pbReviewer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
             this.pbReviewer.Location = new System.Drawing.Point(24, 22);
-            this.pbReviewer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbReviewer.Margin = new System.Windows.Forms.Padding(4);
             this.pbReviewer.Name = "pbReviewer";
             this.pbReviewer.Size = new System.Drawing.Size(75, 69);
             this.pbReviewer.TabIndex = 0;
@@ -231,7 +231,7 @@
             this.panelManager.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelManager.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelManager.Location = new System.Drawing.Point(4, 364);
-            this.panelManager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelManager.Margin = new System.Windows.Forms.Padding(4);
             this.panelManager.Name = "panelManager";
             this.panelManager.Size = new System.Drawing.Size(819, 164);
             this.panelManager.TabIndex = 2;
@@ -241,7 +241,7 @@
             // 
             this.pbManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
             this.pbManager.Location = new System.Drawing.Point(24, 25);
-            this.pbManager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbManager.Margin = new System.Windows.Forms.Padding(4);
             this.pbManager.Name = "pbManager";
             this.pbManager.Size = new System.Drawing.Size(75, 69);
             this.pbManager.TabIndex = 0;
@@ -256,9 +256,9 @@
             this.lblManagerTitle.Location = new System.Drawing.Point(127, 27);
             this.lblManagerTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblManagerTitle.Name = "lblManagerTitle";
-            this.lblManagerTitle.Size = new System.Drawing.Size(252, 32);
+            this.lblManagerTitle.Size = new System.Drawing.Size(253, 32);
             this.lblManagerTitle.TabIndex = 1;
-            this.lblManagerTitle.Text = "Conference manager";
+            this.lblManagerTitle.Text = "Conference Manager";
             this.lblManagerTitle.Click += new System.EventHandler(this.ManagerClick);
             // 
             // lblManagerDesc
@@ -298,7 +298,7 @@
             this.Controls.Add(this.lblSubtitle);
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.SignUpLink);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WelcomeForm";
             this.Text = "F@irView";
             this.tableLayoutPanel.ResumeLayout(false);

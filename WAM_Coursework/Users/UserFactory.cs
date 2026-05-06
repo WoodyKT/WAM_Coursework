@@ -17,6 +17,7 @@ namespace WAM_Coursework.Users
         /// <param name="lastName">User's last name.</param>
         /// <param name="password">Plaintext password entered by user (to be hashed).</param>
         /// <param name="role">Defines whether account to be created should be a speaker or reviewer account.</param>
+        /// <param name="affiliation">User affiliation.</param>
         /// <returns>Created user object.</returns>
         public static User CreateUser(string email, string firstName, string lastName, string password, string role, string affiliation)
         {

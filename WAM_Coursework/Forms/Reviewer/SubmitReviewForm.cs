@@ -58,6 +58,12 @@ namespace WAM_Coursework.Forms
             Close();
         }
 
+        /// <summary>
+        /// Performs validation on entered review information.
+        /// </summary>
+        /// <param name="score">Provided score out of 10.</param>
+        /// <param name="reason">Free-text feedback on talk.</param>
+        /// <returns>True if validation passed, False if it failed.</returns>
         private bool ValidateReview(object score, string reason)
         {
             if (score == null)
@@ -90,7 +96,10 @@ namespace WAM_Coursework.Forms
             TalkDescriptionLabel.Text = talks?.Description;
         }
 
-
+        /// <summary>
+        /// Creates an unsorted list of all talks that have been reviewed by both assigned reviewers.
+        /// </summary>
+        /// <returns>List of TalkRecord objects with two attached reviews.</returns>
         private List<TalkRecord> GetTalksWithTwoReviews()
         {
             var reviews = FileManager.ReadRecords<ReviewRecord>(FileManager.StorageFile.reviews);

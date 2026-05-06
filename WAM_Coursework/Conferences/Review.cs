@@ -13,6 +13,8 @@
         /// <param name="TalkId">ID of talk associated with review.</param>
         /// <param name="Score">Rating out of 10 given to talk.</param>
         /// <param name="Comment">String of feedback on talk provided by reviewer.</param>
+        /// <param name="attachedTalkId">Talk that review is provided for.</param>
+        /// <param name="reviewerEmail">Email of reviewer conducting review.</param>
  public Review(int Id, int attachedTalkId, int Score, string Comment, string reviewerEmail)
         {
             this.Score = Score;

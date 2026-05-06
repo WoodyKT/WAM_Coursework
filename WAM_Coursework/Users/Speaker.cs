@@ -16,6 +16,7 @@ namespace WAM_Coursework.Users
         /// <param name="firstName">Speaker first name.</param>
         /// <param name="lastName">Speaker surname.</param>
         /// <param name="passwordHash">Hashed speaker password.</param>
+        /// <param name="affiliation">Speaker affiliation.</param>
         public Speaker(string email, string firstName, string lastName, string passwordHash, string affiliation)
       : base(email, firstName, lastName, passwordHash, UserConstants.SpeakerRole, affiliation) { }
 

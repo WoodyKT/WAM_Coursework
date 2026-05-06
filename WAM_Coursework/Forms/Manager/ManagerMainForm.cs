@@ -22,6 +22,11 @@ namespace WAM_Coursework.Forms.Manager
             CheckForSavedConference();
         }
 
+        /// <summary>
+        /// Display creation form when 'new conference' button clicked.
+        /// </summary>
+        /// <param name="sender">new button clicked.</param>
+        /// <param name="e">additional event info.</param>
         private void StartNewButton_Click(object sender, EventArgs e)
         {
             NewConferenceForm newConferenceForm = new NewConferenceForm();
@@ -29,6 +34,9 @@ namespace WAM_Coursework.Forms.Manager
             CheckForSavedConference();
         }
 
+        /// <summary>
+        /// Updates the active conference to the one most recently created.
+        /// </summary>
         private void CheckForSavedConference()
         {
             List<ConferenceRecord> conferences = FileManager.ReadRecords<ConferenceRecord>(FileManager.StorageFile.conferences);
@@ -43,7 +51,7 @@ namespace WAM_Coursework.Forms.Manager
         }
 
         /// <summary>
-        /// Set the active conference if there is one
+        /// Sets and displays the active conference on the conference manager homepage if there is one.
         /// </summary>
         private void SetActiveConference(ConferenceRecord conference)
         {
@@ -95,16 +103,26 @@ namespace WAM_Coursework.Forms.Manager
             Close();
         }
 
+        /// <summary>
+        /// Clears the current user when homepage closed.
+        /// </summary>
+        /// <param name="sender">Close window button pressed.</param>
+        /// <param name="e">additional event info.</param>
         private void ManagerMainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             CurrentUser.Instance.User = null;
             Close();
         }
 
+        /// <summary>
+        /// Assigns the highest-rated talks to all available slots in the conference when refresh button clicked.
+        /// </summary>
+        /// <param name="sender">refresh button clicked.</param>
+        /// <param name="e">additional event info.</param>
         private void RefreshTalkSelection_Click(object sender, EventArgs e)
         {
 
-            List<TalkRecord> eligibleTalks = GetTalksWithTwoReviews();
+            List<TalkRecord> eligibleTalks = SortTalksWithTwoReviews();
             List<SelectedTalksRecord> currentSelectedTalks = FileManager.ReadRecords<SelectedTalksRecord>(FileManager.StorageFile.selectedTalks);
             foreach (SelectedTalksRecord talk in currentSelectedTalks)
             {
@@ -138,18 +156,23 @@ namespace WAM_Coursework.Forms.Manager
             CheckForSavedConference();
         }
 
-        private List<TalkRecord> GetTalksWithTwoReviews()
+        /// <summary>
+        /// Gets all applications ready to be assigned slots and sorts them based on score.
+        /// </summary>
+        /// <returns>List of all applications with two reviews, sorted in order of highest average score first (ties are randomly ordered).</returns>
+        private List<TalkRecord> SortTalksWithTwoReviews()
         {
             var reviews = FileManager.ReadRecords<ReviewRecord>(FileManager.StorageFile.reviews);
             var talks = FileManager.ReadRecords<TalkRecord>(FileManager.StorageFile.talks);
+            var rnd = new Random();
 
             var talkAverages = reviews
             .GroupBy(r => r.attachedTalkId)
             .Where(g => g.Count() >= 2)
-            .Select(g => new { TalkId = g.Key, AvgScore = g.Average(r => r.Score) })
+            .Select(g => new { TalkId = g.Key, AvgScore = g.Average(r => r.Score), RandomId= rnd.Next() })
             .OrderByDescending(g => g.AvgScore)
+            .ThenBy(g => g.RandomId)
             .ToList();
-
             return talkAverages
                 .Select(g => talks.Find(t => t.Id == g.TalkId))
                 .Where(t => t != null)

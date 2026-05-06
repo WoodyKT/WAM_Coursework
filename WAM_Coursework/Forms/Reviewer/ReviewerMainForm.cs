@@ -102,6 +102,11 @@ namespace WAM_Coursework.Forms
             Close();
         }
 
+        /// <summary>
+        /// Logs user out when homepage form closed.
+        /// </summary>
+        /// <param name="sender">Form closed event.</param>
+        /// <param name="e">Additional event info.</param>
         private void ReviewerMainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             CurrentUser.Instance.User = null;

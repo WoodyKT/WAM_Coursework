@@ -16,6 +16,7 @@ namespace WAM_Coursework.Users
         /// <param name="firstName">Reviewer first name.</param>
         /// <param name="lastName">Reviewer surname.</param>
         /// <param name="passwordHash">Hashed reviewer password.</param>
+        /// <param name="affiliation">Reviewer affiliation.</param>
         public Reviewer(string email, string firstName, string lastName, string passwordHash, string affiliation)
    : base(email, firstName, lastName, passwordHash, UserConstants.ReviewerRole, affiliation) { }
 
